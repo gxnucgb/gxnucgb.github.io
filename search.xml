@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>坦克项目小学习1</title>
+      <link href="/2019/07/24/%E5%9D%A6%E5%85%8B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E5%AD%A6%E4%B9%A01/"/>
+      <url>/2019/07/24/%E5%9D%A6%E5%85%8B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E5%AD%A6%E4%B9%A01/</url>
+      
+        <content type="html"><![CDATA[<p>####坦克小项目学习</p><p>#####1，分析。<br>在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。  </p><p>#####2，再分析。<br>  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。  </p><p>#####3，建框架。<br>在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。  </p><p>#####4，写主窗口。<br>写出显示主窗口，可到官网<a href="http://www.pygame.org学习查看文档。" target="_blank" rel="noopener">www.pygame.org学习查看文档。</a>   </p><p>######1，导入pygame    </p><p>######2，显示一个窗口先要调用init方法初始化一个窗口<br>  set_mode(resolution = (0, 0), flags = 0, depth = 0)   -&gt;suface，创建一个显示surface，传入的参数是resolution参数是一对表示宽度和高度的数字用（元组），flags参数是其他选项的集合，depth表示用于颜色的位数。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Thanks</title>
       <link href="/2019/07/24/Thanks/"/>
       <url>/2019/07/24/Thanks/</url>
