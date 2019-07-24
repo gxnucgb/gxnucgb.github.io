@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>Hello World</title>
+      <link href="/2019/07/24/hello-world/"/>
+      <url>/2019/07/24/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>坦克项目小学习1</title>
       <link href="/2019/07/24/%E5%9D%A6%E5%85%8B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E5%AD%A6%E4%B9%A01/"/>
       <url>/2019/07/24/%E5%9D%A6%E5%85%8B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E5%AD%A6%E4%B9%A01/</url>
       
-        <content type="html"><![CDATA[<p>####坦克小项目学习</p><p>#####1，分析。<br>在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。  </p><p>#####2，再分析。<br>  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。  </p><p>#####3，建框架。<br>在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。  </p><p>#####4，写主窗口。<br>写出显示主窗口，可到官网<a href="http://www.pygame.org学习查看文档。" target="_blank" rel="noopener">www.pygame.org学习查看文档。</a>   </p><p>######1，导入pygame    </p><p>######2，显示一个窗口先要调用init方法初始化一个窗口<br>  set_mode(resolution = (0, 0), flags = 0, depth = 0)   -&gt;suface，创建一个显示surface，传入的参数是resolution参数是一对表示宽度和高度的数字用（元组），flags参数是其他选项的集合，depth表示用于颜色的位数。</p>]]></content>
+        <content type="html"><![CDATA[<h4 id="坦克小项目学习"><a href="#坦克小项目学习" class="headerlink" title="坦克小项目学习"></a>坦克小项目学习</h4><h5 id="1，分析。"><a href="#1，分析。" class="headerlink" title="1，分析。"></a>1，分析。</h5><p>在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。  </p><h5 id="2，再分析。"><a href="#2，再分析。" class="headerlink" title="2，再分析。"></a>2，再分析。</h5><p>  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。  </p><h5 id="3，建框架。"><a href="#3，建框架。" class="headerlink" title="3，建框架。"></a>3，建框架。</h5><p>在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。  </p><h5 id="4，写主窗口。"><a href="#4，写主窗口。" class="headerlink" title="4，写主窗口。"></a>4，写主窗口。</h5><p>写出显示主窗口，可到官网<a href="http://www.pygame.org学习查看文档。" target="_blank" rel="noopener">www.pygame.org学习查看文档。</a>   </p><h6 id="1，导入pygame"><a href="#1，导入pygame" class="headerlink" title="1，导入pygame"></a>1，导入pygame</h6><h6 id="2，显示一个窗口先要调用init方法初始化一个窗口"><a href="#2，显示一个窗口先要调用init方法初始化一个窗口" class="headerlink" title="2，显示一个窗口先要调用init方法初始化一个窗口"></a>2，显示一个窗口先要调用init方法初始化一个窗口</h6><p>  set_mode(resolution = (0, 0), flags = 0, depth = 0)   -&gt;suface，创建一个显示surface，传入的参数是resolution参数是一对表示宽度和高度的数字用（元组），flags参数是其他选项的集合，depth表示用于颜色的位数。</p>]]></content>
       
       
       
@@ -22,19 +35,6 @@
       <url>/2019/07/24/Thanks/</url>
       
         <content type="html"><![CDATA[<h1 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h1><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="测试测试！！！"><a href="#测试测试！！！" class="headerlink" title="测试测试！！！"></a>测试测试！！！</h2>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/07/23/hello-world/"/>
-      <url>/2019/07/23/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
       
