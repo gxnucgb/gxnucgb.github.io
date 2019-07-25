@@ -3,20 +3,21 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <title>sqlite3学习 | welcome to my blog</title>
-  <meta name="keywords" content>
+  <meta name="keywords" content=" sqlite3 ">
   <meta name="description" content="sqlite3学习 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
+<meta name="keywords" content="sqlite3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite3学习">
 <meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/25/sqlite3学习/index.html">
 <meta property="og:site_name" content="welcome to my blog">
-<meta property="og:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta property="og:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T04:38:51.071Z">
+<meta property="og:updated_time" content="2019-07-25T05:37:38.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite3学习">
-<meta name="twitter:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="twitter:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -175,6 +176,10 @@
     </form>
     <div class="tags-list">
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">sqlite3</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -190,6 +195,14 @@
         </a>
         
         <a  class=""
+           href="/2019/07/24/坦克项目小学习1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
+            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+        <a  class=""
            href="/2019/07/24/hello-world/"
            data-tag=""
            data-author="" >
@@ -199,18 +212,10 @@
         
         <a  class=""
            href="/2019/07/25/sqlite3学习/"
-           data-tag=""
+           data-tag="sqlite3"
            data-author="" >
             <span class="post-title" title="sqlite3学习">sqlite3学习</span>
             <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/24/坦克项目小学习1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
-            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
         </a>
         
     </nav>
@@ -234,10 +239,16 @@
         
         
         
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">sqlite3</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-25 12:38:51'>2019-07-25 12:24</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-25 13:37:38'>2019-07-25 12:24</time>
         
     </div>
     <div class="article-meta">
@@ -259,7 +270,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags"><span class="toc-text">tags:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1，操作流程"><span class="toc-text">1，操作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3创建表"><span class="toc-text">2，使用SQLite3创建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3插入数据"><span class="toc-text">2，使用SQLite3插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3插入数据-1"><span class="toc-text">2，使用SQLite3插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3修改数据"><span class="toc-text">3，使用SQLite3修改数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3删除数据"><span class="toc-text">3，使用SQLite3删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1，操作流程"><span class="toc-text">1，操作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3创建表"><span class="toc-text">2，使用SQLite3创建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3插入数据"><span class="toc-text">2，使用SQLite3插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3查询数据"><span class="toc-text">2，使用SQLite3查询数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3修改数据"><span class="toc-text">3，使用SQLite3修改数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3删除数据"><span class="toc-text">3，使用SQLite3删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -274,28 +285,26 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: sqlite3<br>date: 2019-07-25 09:19:23</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h2 id="1，操作流程"><a href="#1，操作流程" class="headerlink" title="1，操作流程"></a>1，操作流程</h2><p>（1）先在文件夹创建出一个.db文件<br>  （2）导入相关库或模块（SQLite3)<br>  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：<br>  .cursor() 方法来创建一个游标对象<br>  .commit() 方法来处理事务提交<br>  .rollback() 方法来处理事务回滚<br>  .close() 方法来关闭一个数据库连接<br>  （4）使用con.cursor() 获取游标对象<br>  （5）使用游标对象的方法execute()、executemany()、fetchall() 等来操作数据库，实现数据库插入、修改和删除操作，并查询获取显示相关的记录。在Python程序中，连接函数sqlite3.connert()有如下两个常用的参数：<br>database:表示要访问的数据库名。<br>timeout():表示访问数据的超时设定。<br>  （6）使用close()关闭游标对象和数据库连接。数据库操作完成之后，必须及时调用其close()方法关闭数据库连接，这样做的目的是减轻数据服务器的压力。<br>  （7）他的的不同有sql语句，执行的时候的参数</p>
+        <h2 id="1，操作流程"><a href="#1，操作流程" class="headerlink" title="1，操作流程"></a>1，操作流程</h2><p>（1）先在文件夹创建出一个.db文件<br>  （2）导入相关库或模块（SQLite3)<br>  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：<br>  .cursor() 方法来创建一个游标对象<br>  .commit() 方法来处理事务提交<br>  .rollback() 方法来处理事务回滚<br>  .close() 方法来关闭一个数据库连接<br>  （4）使用con.cursor() 获取游标对象<br>  （5）使用游标对象的方法execute()、executemany()、fetchall() 等来操作数据库，实现数据库插入、修改和删除操作，并查询获取显示相关的记录。在Python程序中，连接函数sqlite3.connert()有如下两个常用的参数：<br>database:表示要访问的数据库名。<br>timeout():表示访问数据的超时设定。<br>  （6）使用close()关闭游标对象和数据库连接。数据库操作完成之后，必须及时调用其close()方法关闭数据库连接，这样做的目的是减轻数据服务器的压力。<br>  （7）他的的不同有sql语句，执行的时候的参数</p>
 <h2 id="2，使用SQLite3创建表"><a href="#2，使用SQLite3创建表" class="headerlink" title="2，使用SQLite3创建表"></a>2，使用SQLite3创建表</h2><p>使用sqlite3模块的connect方法来创建/打开数据库，需要指定数据库路径，不存在则创建一个新的数据库。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con = sqlite3.connect(<span class="string">'e:/sqlitedb/first.db'</span>)   <span class="comment">#路径的那个斜杠要反过来写，文件不存在则创建文件</span></span><br></pre></td></tr></table></figure>
 
 <p><strong><em>【实例】</em></strong>使用sqlite3创建表</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor(游标)对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line">sql = <span class="string">'create table Student (id int(10) primary key, \</span></span><br><span class="line"><span class="string">                                name char(20) not null \</span></span><br><span class="line"><span class="string">                              )'</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行语句</span></span><br><span class="line">    cur.execute(sql)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"创建成功"</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"创建失败"</span>)</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="2，使用SQLite3插入数据"><a href="#2，使用SQLite3插入数据" class="headerlink" title="2，使用SQLite3插入数据"></a>2，使用SQLite3插入数据</h2><p>调用游标对象的execute执行插入的sql，使用executemany()执行多条sql语句，使用executmany()比循环使用execu()执行多条sql语句效率高<br><strong><em>【实例】</em></strong>使用sqlite3创建表</p>
+<h2 id="2，使用SQLite3插入数据"><a href="#2，使用SQLite3插入数据" class="headerlink" title="2，使用SQLite3插入数据"></a>2，使用SQLite3插入数据</h2><p>调用游标对象的execute执行插入的sql，使用executemany()执行多条sql语句，使用executmany()比循环使用execu()执行多条sql语句效率高<br><strong><em>【实例】</em></strong>使用sqlite3在表中插入数据</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 在硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 执行sql创建表</span></span><br><span class="line">sql = <span class="string">'insert into Student(id, name) values(?, ?)'</span>      <span class="comment"># 问号是用来占位的</span></span><br><span class="line">try:</span><br><span class="line">    cur.execute(sql, (112, <span class="string">'小潘'</span>))       <span class="comment"># 用元组来写数据</span></span><br><span class="line">    <span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">    插入多条数据</span></span><br><span class="line"><span class="string">    cur.executemany(sql, [(100, "小陈"), (101, "小李")])    #执行多条插入的时候，要用列表＋元组来存，插入重复数据会报错</span></span><br><span class="line"><span class="string">    '</span><span class="string">''</span></span><br><span class="line">    <span class="comment"># 提交事务</span></span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"插入失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="2，使用SQLite3插入数据-1"><a href="#2，使用SQLite3插入数据-1" class="headerlink" title="2，使用SQLite3插入数据"></a>2，使用SQLite3插入数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<h2 id="2，使用SQLite3查询数据"><a href="#2，使用SQLite3查询数据" class="headerlink" title="2，使用SQLite3查询数据"></a>2，使用SQLite3查询数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line">sql = <span class="string">'select * from Student'</span></span><br><span class="line">try:</span><br><span class="line">    cur.execute(sql)</span><br><span class="line">    <span class="comment"># 与插入不同的是要获取结果集</span></span><br><span class="line">    <span class="comment"># 获取一条结果</span></span><br><span class="line">    stu1 = cur.fetchone()</span><br><span class="line">    <span class="built_in">print</span>(stu1)</span><br><span class="line">    stu_all = cur.fetchall()</span><br><span class="line">    <span class="comment"># print(stu_all)</span></span><br><span class="line">    <span class="keyword">for</span> stu <span class="keyword">in</span> stu_all:</span><br><span class="line">        <span class="built_in">print</span>(stu)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'查询所有数据失败'</span>)</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="3，使用SQLite3修改数据"><a href="#3，使用SQLite3修改数据" class="headerlink" title="3，使用SQLite3修改数据"></a>3，使用SQLite3修改数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<h2 id="3，使用SQLite3修改数据"><a href="#3，使用SQLite3修改数据" class="headerlink" title="3，使用SQLite3修改数据"></a>3，使用SQLite3修改数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3修改表</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 写修改语句</span></span><br><span class="line">sql = <span class="string">'update Student set name=? where id = ?'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行sql</span></span><br><span class="line">try:</span><br><span class="line">     <span class="comment"># 执行修改</span></span><br><span class="line">     cur.execute(sql, (<span class="string">"hahah"</span>, 112))</span><br><span class="line">     <span class="comment"># 提交事务</span></span><br><span class="line">     con.commit()</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"修改失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="3，使用SQLite3删除数据"><a href="#3，使用SQLite3删除数据" class="headerlink" title="3，使用SQLite3删除数据"></a>3，使用SQLite3删除数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<h2 id="3，使用SQLite3删除数据"><a href="#3，使用SQLite3删除数据" class="headerlink" title="3，使用SQLite3删除数据"></a>3，使用SQLite3删除数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3删除表中数据</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写删除语句</span></span><br><span class="line">sqldel = <span class="string">'delete from Student where id =?'</span></span><br><span class="line"><span class="comment"># 执行sql</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行删除</span></span><br><span class="line">    cur.execute(sqldel, (112,))       <span class="comment"># 必须是元组类型，所以（112, )逗号不能少</span></span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'删除成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"修改失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
 
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在上面的实例中，首先定义查询在上述实例代码中，首先定义查询所有数据、插入数据、修改数据、删除数据的方法。然后，定义主方法中依次建立连接，获取连接的cursor，通过cursor的execute()等方法来执行SQL语句，调用插入记录、更加记录、删除记录的方法。<br>  特别注意，execute参数中的是sql语句和元组！！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在上面的实例中，首先定义查询在上述实例代码中，首先定义查询所有数据、插入数据、修改数据、删除数据的方法。然后，定义主方法中依次建立连接，获取连接的cursor，通过cursor的execute()等方法来执行SQL语句，调用插入记录、更加记录、删除记录的方法。<br>  特别注意：execute参数中的是sql语句和元组！！</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -313,7 +322,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
     <p><span class="copy-title">发布时间:</span>2019-07-25, 12:24:44</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-25, 12:38:51</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-25, 13:37:38</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/25/sqlite3学习/" title="sqlite3学习">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/25/sqlite3学习/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -375,7 +384,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': [],
+            'data': ['#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

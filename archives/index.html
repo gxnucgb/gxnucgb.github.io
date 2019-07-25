@@ -6,17 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
+<meta name="keywords" content="sqlite3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite3学习">
 <meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/25/sqlite3学习/index.html">
 <meta property="og:site_name" content="welcome to my blog">
-<meta property="og:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta property="og:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T04:38:51.071Z">
+<meta property="og:updated_time" content="2019-07-25T05:37:38.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite3学习">
-<meta name="twitter:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="twitter:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -175,6 +176,10 @@
     </form>
     <div class="tags-list">
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">sqlite3</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -190,6 +195,14 @@
         </a>
         
         <a  class=""
+           href="/2019/07/24/坦克项目小学习1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
+            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+        <a  class=""
            href="/2019/07/24/hello-world/"
            data-tag=""
            data-author="" >
@@ -199,18 +212,10 @@
         
         <a  class=""
            href="/2019/07/25/sqlite3学习/"
-           data-tag=""
+           data-tag="sqlite3"
            data-author="" >
             <span class="post-title" title="sqlite3学习">sqlite3学习</span>
             <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/24/坦克项目小学习1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
-            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
         </a>
         
     </nav>
@@ -242,7 +247,7 @@
 </style>
 </div>
             <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>通过这个博客，记录自己学习生活路上的一些点点滴滴</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>就读于广西师范大学计算机科学与信息工程学院/软件学院 信息管理与信息系统专业, 大三在读。<br><em><a href="https://github.com/gxnucgb*是我的github。">https://github.com/gxnucgb*是我的github。</a><br>*gxnucgb@qq.com</em> 是我的邮箱</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>就读于广西师范大学计算机科学与信息工程学院/软件学院 信息管理与信息系统专业, 大三在读。<br><em><a href="https://github.com/gxnucgb">https://github.com/gxnucgb</a></em>是我的github。<br>  <strong><a href="mailto:gxnucgb@qq.com">gxnucgb@qq.com</a></strong> 是我的邮箱</p>
 <p>到目前为止已经写了<code class="article_number"></code>篇文章</p>
 <p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
 
@@ -299,7 +304,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': [],
+            'data': ['#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

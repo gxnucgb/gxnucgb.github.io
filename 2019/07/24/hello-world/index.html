@@ -6,17 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="Hello World | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
+<meta name="keywords" content="sqlite3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqlite3学习">
 <meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/25/sqlite3学习/index.html">
 <meta property="og:site_name" content="welcome to my blog">
-<meta property="og:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta property="og:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T04:38:51.071Z">
+<meta property="og:updated_time" content="2019-07-25T05:37:38.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqlite3学习">
-<meta name="twitter:description" content="title: sqlite3date: 2019-07-25 09:19:23 tags:1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚">
+<meta name="twitter:description" content="1，操作流程（1）先在文件夹创建出一个.db文件  （2）导入相关库或模块（SQLite3)  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：  .cursor() 方法来创建一个游标对象  .commit() 方法来处理事务提交  .rollback() 方法来处理事务回滚  .close() 方法来关闭一个数据库连接  （4）使用con.cursor() 获取游标对">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -175,6 +176,10 @@
     </form>
     <div class="tags-list">
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">sqlite3</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -190,6 +195,14 @@
         </a>
         
         <a  class=""
+           href="/2019/07/24/坦克项目小学习1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
+            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+        <a  class=""
            href="/2019/07/24/hello-world/"
            data-tag=""
            data-author="" >
@@ -199,18 +212,10 @@
         
         <a  class=""
            href="/2019/07/25/sqlite3学习/"
-           data-tag=""
+           data-tag="sqlite3"
            data-author="" >
             <span class="post-title" title="sqlite3学习">sqlite3学习</span>
             <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/24/坦克项目小学习1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
-            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
         </a>
         
     </nav>
@@ -366,7 +371,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': [],
+            'data': ['#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
