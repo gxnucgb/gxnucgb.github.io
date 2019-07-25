@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>sqlite3学习 | welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="sqlite3学习 | welcome to my blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="坦克小项目学习1，分析。在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。   2，再分析。  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。   3，建框架。在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。   4，写主窗口。写出显示主窗口，可到官网www.p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="坦克项目小学习1">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/24/坦克项目小学习1/index.html">
+<meta property="og:site_name" content="welcome to my blog">
+<meta property="og:description" content="坦克小项目学习1，分析。在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。   2，再分析。  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。   3，建框架。在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。   4，写主窗口。写出显示主窗口，可到官网www.p">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-24T14:27:08.185Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="坦克项目小学习1">
+<meta name="twitter:description" content="坦克小项目学习1，分析。在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。   2，再分析。  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。   3，建框架。在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。   4，写主窗口。写出显示主窗口，可到官网www.p">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>陈桂彬</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/gxnucgb" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:gxnucgb@qq.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1724910086&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/gxnucgb">github</a>
+    
+    </div>
+    <div><a  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="4">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/gxnucgb">gxnucgb</a></li>
+            
+            <li><a target="_blank" href="https://www.gxnu.edu.cn/">师大官网</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2019/07/24/Thanks/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Thanks">Thanks</span>
+            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/24/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/24/坦克项目小学习1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
+            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/25/sqlite3学习/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
+            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-sqlite3学习" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">sqlite3学习</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-25 12:38:51'>2019-07-25 12:24</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags"><span class="toc-text">tags:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1，操作流程"><span class="toc-text">1，操作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3创建表"><span class="toc-text">2，使用SQLite3创建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3插入数据"><span class="toc-text">2，使用SQLite3插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，使用SQLite3插入数据-1"><span class="toc-text">2，使用SQLite3插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3修改数据"><span class="toc-text">3，使用SQLite3修改数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，使用SQLite3删除数据"><span class="toc-text">3，使用SQLite3删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: sqlite3<br>date: 2019-07-25 09:19:23</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h2 id="1，操作流程"><a href="#1，操作流程" class="headerlink" title="1，操作流程"></a>1，操作流程</h2><p>（1）先在文件夹创建出一个.db文件<br>  （2）导入相关库或模块（SQLite3)<br>  （3）使用connect()连接数据库并获取数据库对象。他提供了以下方法：<br>  .cursor() 方法来创建一个游标对象<br>  .commit() 方法来处理事务提交<br>  .rollback() 方法来处理事务回滚<br>  .close() 方法来关闭一个数据库连接<br>  （4）使用con.cursor() 获取游标对象<br>  （5）使用游标对象的方法execute()、executemany()、fetchall() 等来操作数据库，实现数据库插入、修改和删除操作，并查询获取显示相关的记录。在Python程序中，连接函数sqlite3.connert()有如下两个常用的参数：<br>database:表示要访问的数据库名。<br>timeout():表示访问数据的超时设定。<br>  （6）使用close()关闭游标对象和数据库连接。数据库操作完成之后，必须及时调用其close()方法关闭数据库连接，这样做的目的是减轻数据服务器的压力。<br>  （7）他的的不同有sql语句，执行的时候的参数</p>
+<h2 id="2，使用SQLite3创建表"><a href="#2，使用SQLite3创建表" class="headerlink" title="2，使用SQLite3创建表"></a>2，使用SQLite3创建表</h2><p>使用sqlite3模块的connect方法来创建/打开数据库，需要指定数据库路径，不存在则创建一个新的数据库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con = sqlite3.connect(<span class="string">'e:/sqlitedb/first.db'</span>)   <span class="comment">#路径的那个斜杠要反过来写，文件不存在则创建文件</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>【实例】</em></strong>使用sqlite3创建表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor(游标)对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line">sql = <span class="string">'create table Student (id int(10) primary key, \</span></span><br><span class="line"><span class="string">                                name char(20) not null \</span></span><br><span class="line"><span class="string">                              )'</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行语句</span></span><br><span class="line">    cur.execute(sql)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"创建成功"</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"创建失败"</span>)</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2，使用SQLite3插入数据"><a href="#2，使用SQLite3插入数据" class="headerlink" title="2，使用SQLite3插入数据"></a>2，使用SQLite3插入数据</h2><p>调用游标对象的execute执行插入的sql，使用executemany()执行多条sql语句，使用executmany()比循环使用execu()执行多条sql语句效率高<br><strong><em>【实例】</em></strong>使用sqlite3创建表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 在硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 执行sql创建表</span></span><br><span class="line">sql = <span class="string">'insert into Student(id, name) values(?, ?)'</span>      <span class="comment"># 问号是用来占位的</span></span><br><span class="line">try:</span><br><span class="line">    cur.execute(sql, (112, <span class="string">'小潘'</span>))       <span class="comment"># 用元组来写数据</span></span><br><span class="line">    <span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">    插入多条数据</span></span><br><span class="line"><span class="string">    cur.executemany(sql, [(100, "小陈"), (101, "小李")])    #执行多条插入的时候，要用列表＋元组来存，插入重复数据会报错</span></span><br><span class="line"><span class="string">    '</span><span class="string">''</span></span><br><span class="line">    <span class="comment"># 提交事务</span></span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"插入失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2，使用SQLite3插入数据-1"><a href="#2，使用SQLite3插入数据-1" class="headerlink" title="2，使用SQLite3插入数据"></a>2，使用SQLite3插入数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line">sql = <span class="string">'select * from Student'</span></span><br><span class="line">try:</span><br><span class="line">    cur.execute(sql)</span><br><span class="line">    <span class="comment"># 与插入不同的是要获取结果集</span></span><br><span class="line">    <span class="comment"># 获取一条结果</span></span><br><span class="line">    stu1 = cur.fetchone()</span><br><span class="line">    <span class="built_in">print</span>(stu1)</span><br><span class="line">    stu_all = cur.fetchall()</span><br><span class="line">    <span class="comment"># print(stu_all)</span></span><br><span class="line">    <span class="keyword">for</span> stu <span class="keyword">in</span> stu_all:</span><br><span class="line">        <span class="built_in">print</span>(stu)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'查询所有数据失败'</span>)</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3，使用SQLite3修改数据"><a href="#3，使用SQLite3修改数据" class="headerlink" title="3，使用SQLite3修改数据"></a>3，使用SQLite3修改数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 写修改语句</span></span><br><span class="line">sql = <span class="string">'update Student set name=? where id = ?'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行sql</span></span><br><span class="line">try:</span><br><span class="line">     <span class="comment"># 执行修改</span></span><br><span class="line">     cur.execute(sql, (<span class="string">"hahah"</span>, 112))</span><br><span class="line">     <span class="comment"># 提交事务</span></span><br><span class="line">     con.commit()</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"修改失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3，使用SQLite3删除数据"><a href="#3，使用SQLite3删除数据" class="headerlink" title="3，使用SQLite3删除数据"></a>3，使用SQLite3删除数据</h2><p><strong><em>【实例】</em></strong>使用sqlite3查询表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入sqlite3模块</span></span><br><span class="line">import sqlite3</span><br><span class="line"><span class="comment"># 硬盘上创建连接</span></span><br><span class="line">con = sqlite3.connect(<span class="string">'E:/python/tank/sqlite3.db'</span>)</span><br><span class="line"><span class="comment"># 获取cursor对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写删除语句</span></span><br><span class="line">sqldel = <span class="string">'delete from Student where id =?'</span></span><br><span class="line"><span class="comment"># 执行sql</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行删除</span></span><br><span class="line">    cur.execute(sqldel, (112,))       <span class="comment"># 必须是元组类型，所以（112, )逗号不能少</span></span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'删除成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"修改失败"</span>)</span><br><span class="line">    con.rollback()</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭游标</span></span><br><span class="line">    cur.close()</span><br><span class="line">    <span class="comment"># 关闭连接</span></span><br><span class="line">    con.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在上面的实例中，首先定义查询在上述实例代码中，首先定义查询所有数据、插入数据、修改数据、删除数据的方法。然后，定义主方法中依次建立连接，获取连接的cursor，通过cursor的execute()等方法来执行SQL语句，调用插入记录、更加记录、删除记录的方法。<br>  特别注意，execute参数中的是sql语句和元组！！</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>sqlite3学习</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-25, 12:24:44</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-25, 12:38:51</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/25/sqlite3学习/" title="sqlite3学习">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/25/sqlite3学习/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 陈桂彬</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/gxnucgb">github</a>
+    
+</div>
+
+
+</html>
