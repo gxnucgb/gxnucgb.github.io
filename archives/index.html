@@ -6,17 +6,17 @@
   <meta name="keywords" content>
   <meta name="description" content="welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="【实例】 123456789101112131415161718192021import pymysql# 创建与数据的连接con = pymysql.connect(host=&apos;localhost&apos;, password=&apos;root&apos;, user=&apos;root&apos;, database=&apos;testmysql&apos;, port=3306)# 创建游标对象cur = con.cursor()# 写插入数据库">
+<meta name="description" content="MySql修改表对表的修改失败要用rollback（）方法进行回滚execute()中要用元组，mysql传递一个参数的时候，可以不用逗号(103)或者(103,)都可以，在sqlite中逗号不能少  【实例】 123456789101112131415161718192021# 修改有rollbackimport pymysqltry:    # 创建与数据库的连接    con = pymys">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySql插入数据">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/MySql插入数据/index.html">
+<meta property="og:title" content="MySql修改表">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/MySql修改表/index.html">
 <meta property="og:site_name" content="welcome to my blog">
-<meta property="og:description" content="【实例】 123456789101112131415161718192021import pymysql# 创建与数据的连接con = pymysql.connect(host=&apos;localhost&apos;, password=&apos;root&apos;, user=&apos;root&apos;, database=&apos;testmysql&apos;, port=3306)# 创建游标对象cur = con.cursor()# 写插入数据库">
+<meta property="og:description" content="MySql修改表对表的修改失败要用rollback（）方法进行回滚execute()中要用元组，mysql传递一个参数的时候，可以不用逗号(103)或者(103,)都可以，在sqlite中逗号不能少  【实例】 123456789101112131415161718192021# 修改有rollbackimport pymysqltry:    # 创建与数据库的连接    con = pymys">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-26T02:21:35.747Z">
+<meta property="og:updated_time" content="2019-07-26T03:18:18.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySql插入数据">
-<meta name="twitter:description" content="【实例】 123456789101112131415161718192021import pymysql# 创建与数据的连接con = pymysql.connect(host=&apos;localhost&apos;, password=&apos;root&apos;, user=&apos;root&apos;, database=&apos;testmysql&apos;, port=3306)# 创建游标对象cur = con.cursor()# 写插入数据库">
+<meta name="twitter:title" content="MySql修改表">
+<meta name="twitter:description" content="MySql修改表对表的修改失败要用rollback（）方法进行回滚execute()中要用元组，mysql传递一个参数的时候，可以不用逗号(103)或者(103,)都可以，在sqlite中逗号不能少  【实例】 123456789101112131415161718192021# 修改有rollbackimport pymysqltry:    # 创建与数据库的连接    con = pymys">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -190,14 +190,6 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2019/07/26/MySql创建表/"
-           data-tag="MySql"
-           data-author="" >
-            <span class="post-title" title="MySql创建表">MySql创建表</span>
-            <span class="post-date" title="2019-07-26 08:50:25">2019/07/26</span>
-        </a>
-        
-        <a  class=""
            href="/2019/07/26/MySql修改表/"
            data-tag=""
            data-author="" >
@@ -206,11 +198,11 @@
         </a>
         
         <a  class=""
-           href="/2019/07/26/Mysql查询数据/"
-           data-tag=""
+           href="/2019/07/26/MySql创建表/"
+           data-tag="MySql"
            data-author="" >
-            <span class="post-title" title="Mysql查询数据">Mysql查询数据</span>
-            <span class="post-date" title="2019-07-26 10:24:43">2019/07/26</span>
+            <span class="post-title" title="MySql创建表">MySql创建表</span>
+            <span class="post-date" title="2019-07-26 08:50:25">2019/07/26</span>
         </a>
         
         <a  class=""
@@ -222,14 +214,6 @@
         </a>
         
         <a  class=""
-           href="/2019/07/24/Thanks/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Thanks">Thanks</span>
-            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
-        </a>
-        
-        <a  class=""
            href="/2019/07/24/hello-world/"
            data-tag=""
            data-author="" >
@@ -238,11 +222,11 @@
         </a>
         
         <a  class=""
-           href="/2019/07/25/sqlite3学习/"
-           data-tag="sqlite3"
+           href="/2019/07/24/Thanks/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
-            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
+            <span class="post-title" title="Thanks">Thanks</span>
+            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
         </a>
         
         <a  class=""
@@ -251,6 +235,22 @@
            data-author="" >
             <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
             <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/26/Mysql查询数据/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mysql查询数据">Mysql查询数据</span>
+            <span class="post-date" title="2019-07-26 10:24:43">2019/07/26</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/25/sqlite3学习/"
+           data-tag="sqlite3"
+           data-author="" >
+            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
+            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
         </a>
         
     </nav>
