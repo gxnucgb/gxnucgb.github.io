@@ -12,6 +12,12 @@
       
       
       
+        <tags>
+            
+            <tag> MySql </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -25,6 +31,12 @@
       
       
       
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -37,6 +49,12 @@
         <content type="html"><![CDATA[<p>  <strong>【实例】</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"><span class="comment"># 创建与数据的连接</span></span><br><span class="line">con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)</span><br><span class="line"><span class="comment"># 创建游标对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 写插入数据库的sql</span></span><br><span class="line">sql = <span class="string">'insert into student(sno, sname, sex, age, score) values(%s, %s, %s, %s, %s)'</span>      <span class="comment"># s要小写，不然会报unsupported format character 'S' (0x53) at index 72</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行sql插入一条数据</span></span><br><span class="line">    <span class="comment"># cur.execute(sql, (1100, '张三', '男', 33, 33.3))</span></span><br><span class="line">    <span class="comment"># 插入多条数据</span></span><br><span class="line">    args = [(102, <span class="string">'张2'</span>, <span class="string">'男'</span>, 33, 33.3), (103, <span class="string">'张4'</span>, <span class="string">'男'</span>, 33, 33.3), (104, <span class="string">'张5'</span>, <span class="string">'男'</span>, 33, 33.3)]     <span class="comment"># 插入多条数据要用executemany</span></span><br><span class="line">    cur.executemany(sql, args)</span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入失败'</span>)</span><br><span class="line">finally:</span><br><span class="line">    con.close()</span><br><span class="line">    cur.close()</span><br></pre></td></tr></table></figure>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
       
     </entry>
     
