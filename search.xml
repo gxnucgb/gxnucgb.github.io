@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2019/07/26/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/07/26/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><p><strong>Linux是区分大小写的</strong></p><table><thead><tr><th>命令</th><th>对应英文</th><th>作用</th></tr></thead><tbody><tr><td>ls</td><td>list</td><td>查看当前文件夹下的内容</td></tr><tr><td>cd[目录名]</td><td>change directory</td><td>切换文件夹（cd xxx）</td></tr><tr><td>pwd</td><td>print work directory</td><td>查看当前所在文件夹</td></tr><tr><td>touch[文件名]</td><td>touch</td><td>如果文件不存在，新建文件</td></tr><tr><td>mkdir[目录名]</td><td>make directory</td><td>创建目录</td></tr><tr><td>rm[文件名]</td><td>remove</td><td>删除指定的文件名</td></tr><tr><td>clear</td><td>clear</td><td>清屏</td></tr></tbody></table><h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><ul><li>ctrl + shift + =    放大终端窗口的字体显示</li><li>ctrl + -    缩小终端窗口的字体显示</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySql修改表</title>
       <link href="/2019/07/26/MySql%E4%BF%AE%E6%94%B9%E8%A1%A8/"/>
       <url>/2019/07/26/MySql%E4%BF%AE%E6%94%B9%E8%A1%A8/</url>
@@ -14,7 +27,7 @@
       
         <tags>
             
-            <tag> MySql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -33,7 +46,7 @@
       
         <tags>
             
-            <tag> Mysql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -52,7 +65,7 @@
       
         <tags>
             
-            <tag> Mysql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -71,7 +84,7 @@
       
         <tags>
             
-            <tag> MySql </tag>
+            <tag> MySQL </tag>
             
         </tags>
       
