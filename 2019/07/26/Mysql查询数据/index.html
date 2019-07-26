@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>坦克项目小学习1 | welcome to my blog</title>
+  <title>Mysql查询数据 | welcome to my blog</title>
   <meta name="keywords" content>
-  <meta name="description" content="坦克项目小学习1 | welcome to my blog">
+  <meta name="description" content="Mysql查询数据 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="【实例】 123456789101112131415161718192021import pymysql# 创建与数据的连接con = pymysql.connect(host=&apos;localhost&apos;, password=&apos;root&apos;, user=&apos;root&apos;, database=&apos;testmysql&apos;, port=3306)# 创建游标对象cur = con.cursor()# 写插入数据库">
 <meta property="og:type" content="article">
@@ -257,9 +257,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-坦克项目小学习1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Mysql查询数据" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">坦克项目小学习1</h1>
+        <h1 class="article-title">Mysql查询数据</h1>
     
     <div class="article-meta">
         
@@ -269,7 +269,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-24 22:27:08'>2019-07-24 22:14</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-26 10:43:51'>2019-07-26 10:24</time>
         
     </div>
     <div class="article-meta">
@@ -291,7 +291,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#坦克小项目学习"><span class="toc-text">坦克小项目学习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1，分析。"><span class="toc-text">1，分析。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2，再分析。"><span class="toc-text">2，再分析。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3，建框架。"><span class="toc-text">3，建框架。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4，写主窗口。"><span class="toc-text">4，写主窗口。</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1，导入pygame"><span class="toc-text">1，导入pygame</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2，显示一个窗口先要调用init方法初始化一个窗口"><span class="toc-text">2，显示一个窗口先要调用init方法初始化一个窗口</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -306,11 +306,35 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="坦克小项目学习"><a href="#坦克小项目学习" class="headerlink" title="坦克小项目学习"></a>坦克小项目学习</h4><h5 id="1，分析。"><a href="#1，分析。" class="headerlink" title="1，分析。"></a>1，分析。</h5><p>在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。  </p>
-<h5 id="2，再分析。"><a href="#2，再分析。" class="headerlink" title="2，再分析。"></a>2，再分析。</h5><p>  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。  </p>
-<h5 id="3，建框架。"><a href="#3，建框架。" class="headerlink" title="3，建框架。"></a>3，建框架。</h5><p>在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。  </p>
-<h5 id="4，写主窗口。"><a href="#4，写主窗口。" class="headerlink" title="4，写主窗口。"></a>4，写主窗口。</h5><p>写出显示主窗口，可到官网<a href="http://www.pygame.org学习查看文档。" target="_blank" rel="noopener">www.pygame.org学习查看文档。</a>   </p>
-<h6 id="1，导入pygame"><a href="#1，导入pygame" class="headerlink" title="1，导入pygame"></a>1，导入pygame</h6><h6 id="2，显示一个窗口先要调用init方法初始化一个窗口"><a href="#2，显示一个窗口先要调用init方法初始化一个窗口" class="headerlink" title="2，显示一个窗口先要调用init方法初始化一个窗口"></a>2，显示一个窗口先要调用init方法初始化一个窗口</h6><p>  set_mode(resolution = (0, 0), flags = 0, depth = 0)   -&gt;suface，创建一个显示surface，传入的参数是resolution参数是一对表示宽度和高度的数字用（元组），flags参数是其他选项的集合，depth表示用于颜色的位数。</p>
+        <p>  <strong>【实例】</strong><br>  获取要用元组的下标索引，与插入不同的是要处理结果集</p>
+<pre><code class="bash">import pymysql
+<span class="comment"># 创建连接</span>
+con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)
+<span class="comment"># 创建事务</span>
+cur = con.cursor()
+<span class="comment"># 编写查询的sql</span>
+sql = <span class="string">'select * from student'</span>
+<span class="comment"># 执行sql</span>
+try:
+    cur.execute(sql)
+    <span class="comment"># 处理结果集</span>
+    stu = cur.fetchone()
+    <span class="built_in">print</span>(stu)
+    students = cur.fetchall()
+    <span class="keyword">for</span> student <span class="keyword">in</span> students:    <span class="comment"># 获取要用下标，索引从0开始</span>
+        sno = student[0]
+        sname = student[1]
+        sex = student[2]
+        age = student[3]
+        score = student[4]
+        <span class="built_in">print</span>(<span class="string">'sno:'</span>, sno, <span class="string">'sname:'</span>, sname, <span class="string">'age:'</span>, age, <span class="string">'sex:'</span>, sex, <span class="string">'age:'</span>, age,  <span class="string">'score:'</span>, score)
+except Exception as e:
+    <span class="built_in">print</span>(e)
+    <span class="built_in">print</span>(<span class="string">'查询失败'</span>)
+finally:
+    cur.close()
+    con.close()
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -324,12 +348,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>坦克项目小学习1</p>
+    <p><span class="copy-title">文章标题:</span>Mysql查询数据</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-24, 22:14:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-24, 22:27:08</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/24/坦克项目小学习1/" title="坦克项目小学习1">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/24/坦克项目小学习1/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-26, 10:24:43</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-26, 10:43:51</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/Mysql查询数据/" title="Mysql查询数据">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/Mysql查询数据/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

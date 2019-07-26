@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Mysql查询数据</title>
+      <link href="/2019/07/26/Mysql%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE/"/>
+      <url>/2019/07/26/Mysql%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE/</url>
+      
+        <content type="html"><![CDATA[<p>  <strong>【实例】</strong><br>  获取要用元组的下标索引，与插入不同的是要处理结果集</p><pre><code class="bash">import pymysql<span class="comment"># 创建连接</span>con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)<span class="comment"># 创建事务</span>cur = con.cursor()<span class="comment"># 编写查询的sql</span>sql = <span class="string">'select * from student'</span><span class="comment"># 执行sql</span>try:    cur.execute(sql)    <span class="comment"># 处理结果集</span>    stu = cur.fetchone()    <span class="built_in">print</span>(stu)    students = cur.fetchall()    <span class="keyword">for</span> student <span class="keyword">in</span> students:    <span class="comment"># 获取要用下标，索引从0开始</span>        sno = student[0]        sname = student[1]        sex = student[2]        age = student[3]        score = student[4]        <span class="built_in">print</span>(<span class="string">'sno:'</span>, sno, <span class="string">'sname:'</span>, sname, <span class="string">'age:'</span>, age, <span class="string">'sex:'</span>, sex, <span class="string">'age:'</span>, age,  <span class="string">'score:'</span>, score)except Exception as e:    <span class="built_in">print</span>(e)    <span class="built_in">print</span>(<span class="string">'查询失败'</span>)finally:    cur.close()    con.close()</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySql插入数据</title>
       <link href="/2019/07/26/MySql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/"/>
       <url>/2019/07/26/MySql%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
