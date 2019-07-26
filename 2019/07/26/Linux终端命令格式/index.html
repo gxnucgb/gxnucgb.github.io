@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>2.Mysql查询数据 | welcome to my blog</title>
-  <meta name="keywords" content=" MySQL ">
-  <meta name="description" content="2.Mysql查询数据 | welcome to my blog">
+  <title>2.Linux终端命令格式 | welcome to my blog</title>
+  <meta name="keywords" content=" Linux ">
+  <meta name="description" content="2.Linux终端命令格式 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="文件和目录常用命令1，查看目录内容ls 1.1 终端实用技巧1，自动补全 在敲出 文件/目录/命令/的前几个字母之后，按下tab键   如果输入的没有歧义，系统会自动补全 如果还存在其他 文件/目录/命令，再按一下tab键，系统会提示可能存在的命令2，曾经使用过的命令 按 上/下 光标键可以在曾经使用过的命令之间来回切换 如果想要退出选择，并且不想执行当前选中的命令，可以按ctrl+c1.2 ls">
 <meta name="keywords" content="Linux">
@@ -294,9 +294,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Mysql查询数据" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Linux终端命令格式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">2.Mysql查询数据</h1>
+        <h1 class="article-title">2.Linux终端命令格式</h1>
     
     <div class="article-meta">
         
@@ -305,14 +305,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">MySQL</a>
+            <a href="javascript:" class="color1">Linux</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-26 19:18:13'>2019-07-26 10:24</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-26 19:17:09'>2019-07-26 18:09</time>
         
     </div>
     <div class="article-meta">
@@ -334,7 +334,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux终端命令格式"><span class="toc-text">Linux终端命令格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1，终端命令格式"><span class="toc-text">1，终端命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2，查阅命令帮助信息"><span class="toc-text">2，查阅命令帮助信息</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -349,35 +349,16 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  <strong>【实例】</strong><br>  获取要用元组的下标索引，与插入不同的是要处理结果集</p>
-<pre><code class="bash">import pymysql
-<span class="comment"># 创建连接</span>
-con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)
-<span class="comment"># 创建事务</span>
-cur = con.cursor()
-<span class="comment"># 编写查询的sql</span>
-sql = <span class="string">'select * from student'</span>
-<span class="comment"># 执行sql</span>
-try:
-    cur.execute(sql)
-    <span class="comment"># 处理结果集</span>
-    stu = cur.fetchone()
-    <span class="built_in">print</span>(stu)
-    students = cur.fetchall()
-    <span class="keyword">for</span> student <span class="keyword">in</span> students:    <span class="comment"># 获取要用下标，索引从0开始</span>
-        sno = student[0]
-        sname = student[1]
-        sex = student[2]
-        age = student[3]
-        score = student[4]
-        <span class="built_in">print</span>(<span class="string">'sno:'</span>, sno, <span class="string">'sname:'</span>, sname, <span class="string">'age:'</span>, age, <span class="string">'sex:'</span>, sex, <span class="string">'age:'</span>, age,  <span class="string">'score:'</span>, score)
-except Exception as e:
-    <span class="built_in">print</span>(e)
-    <span class="built_in">print</span>(<span class="string">'查询失败'</span>)
-finally:
-    cur.close()
-    con.close()
-</code></pre>
+        <h2 id="Linux终端命令格式"><a href="#Linux终端命令格式" class="headerlink" title="Linux终端命令格式"></a>Linux终端命令格式</h2><h3 id="1，终端命令格式"><a href="#1，终端命令格式" class="headerlink" title="1，终端命令格式"></a>1，终端命令格式</h3><p>command [-options] [parameter]<br><strong>说明：</strong></p>
+<ul>
+<li>command：命令名，相应功能的英文单词或单词的缩写</li>
+<li>[-options]：选项，可用来对命令进行控制，也可以省略</li>
+<li>parameter：传给命令的参数，可以是零个，一个，或者多个</li>
+</ul>
+<h3 id="2，查阅命令帮助信息"><a href="#2，查阅命令帮助信息" class="headerlink" title="2，查阅命令帮助信息"></a>2，查阅命令帮助信息</h3><p>–help<br><code>command --help</code><br><strong>说明：</strong></p>
+<ul>
+<li>显示command命令的帮助信息</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -391,12 +372,12 @@ finally:
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>2.Mysql查询数据</p>
+    <p><span class="copy-title">文章标题:</span>2.Linux终端命令格式</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-26, 10:24:43</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-26, 19:18:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/Mysql查询数据/" title="2.Mysql查询数据">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/Mysql查询数据/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-26, 18:09:48</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-26, 19:17:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/Linux终端命令格式/" title="2.Linux终端命令格式">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/Linux终端命令格式/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

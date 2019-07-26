@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>2.Mysql查询数据 | welcome to my blog</title>
-  <meta name="keywords" content=" MySQL ">
-  <meta name="description" content="2.Mysql查询数据 | welcome to my blog">
+  <title>3.Linux文件和目录常用命令 | welcome to my blog</title>
+  <meta name="keywords" content=" Linux ">
+  <meta name="description" content="3.Linux文件和目录常用命令 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="文件和目录常用命令1，查看目录内容ls 1.1 终端实用技巧1，自动补全 在敲出 文件/目录/命令/的前几个字母之后，按下tab键   如果输入的没有歧义，系统会自动补全 如果还存在其他 文件/目录/命令，再按一下tab键，系统会提示可能存在的命令2，曾经使用过的命令 按 上/下 光标键可以在曾经使用过的命令之间来回切换 如果想要退出选择，并且不想执行当前选中的命令，可以按ctrl+c1.2 ls">
 <meta name="keywords" content="Linux">
@@ -294,9 +294,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Mysql查询数据" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-文件和目录常用命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">2.Mysql查询数据</h1>
+        <h1 class="article-title">3.Linux文件和目录常用命令</h1>
     
     <div class="article-meta">
         
@@ -305,14 +305,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">MySQL</a>
+            <a href="javascript:" class="color1">Linux</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-26 19:18:13'>2019-07-26 10:24</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-26 23:09:19'>2019-07-26 18:31</time>
         
     </div>
     <div class="article-meta">
@@ -334,7 +334,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文件和目录常用命令"><span class="toc-text">文件和目录常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1，查看目录内容"><span class="toc-text">1，查看目录内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-终端实用技巧"><span class="toc-text">1.1 终端实用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1，自动补全"><span class="toc-text">1，自动补全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2，曾经使用过的命令"><span class="toc-text">2，曾经使用过的命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-ls命令说明"><span class="toc-text">1.2 ls命令说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-ls常用选项"><span class="toc-text">1.3 ls常用选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2，切换目录"><span class="toc-text">2，切换目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-cd"><span class="toc-text">2.1 cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-相对路径和绝对路径"><span class="toc-text">2.2 相对路径和绝对路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3，创建和删除操作"><span class="toc-text">3，创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-touch"><span class="toc-text">3.1 touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-mkdir"><span class="toc-text">3.2 mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-rm"><span class="toc-text">3.3 rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5，查看文件内容"><span class="toc-text">5，查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-cat"><span class="toc-text">5.1 cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-more"><span class="toc-text">5.2 more</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6，其他"><span class="toc-text">6，其他</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -349,35 +349,286 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  <strong>【实例】</strong><br>  获取要用元组的下标索引，与插入不同的是要处理结果集</p>
-<pre><code class="bash">import pymysql
-<span class="comment"># 创建连接</span>
-con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)
-<span class="comment"># 创建事务</span>
-cur = con.cursor()
-<span class="comment"># 编写查询的sql</span>
-sql = <span class="string">'select * from student'</span>
-<span class="comment"># 执行sql</span>
-try:
-    cur.execute(sql)
-    <span class="comment"># 处理结果集</span>
-    stu = cur.fetchone()
-    <span class="built_in">print</span>(stu)
-    students = cur.fetchall()
-    <span class="keyword">for</span> student <span class="keyword">in</span> students:    <span class="comment"># 获取要用下标，索引从0开始</span>
-        sno = student[0]
-        sname = student[1]
-        sex = student[2]
-        age = student[3]
-        score = student[4]
-        <span class="built_in">print</span>(<span class="string">'sno:'</span>, sno, <span class="string">'sname:'</span>, sname, <span class="string">'age:'</span>, age, <span class="string">'sex:'</span>, sex, <span class="string">'age:'</span>, age,  <span class="string">'score:'</span>, score)
-except Exception as e:
-    <span class="built_in">print</span>(e)
-    <span class="built_in">print</span>(<span class="string">'查询失败'</span>)
-finally:
-    cur.close()
-    con.close()
-</code></pre>
+        <h1 id="文件和目录常用命令"><a href="#文件和目录常用命令" class="headerlink" title="文件和目录常用命令"></a>文件和目录常用命令</h1><h2 id="1，查看目录内容"><a href="#1，查看目录内容" class="headerlink" title="1，查看目录内容"></a>1，查看目录内容</h2><p><code>ls</code></p>
+<h3 id="1-1-终端实用技巧"><a href="#1-1-终端实用技巧" class="headerlink" title="1.1 终端实用技巧"></a>1.1 终端实用技巧</h3><h4 id="1，自动补全"><a href="#1，自动补全" class="headerlink" title="1，自动补全"></a>1，自动补全</h4><ul>
+<li>在敲出 文件/目录/命令/的前几个字母之后，按下tab键</li>
+</ul>
+<ol>
+<li>如果输入的没有歧义，系统会自动补全</li>
+<li>如果还存在其他 文件/目录/命令，再按一下tab键，系统会提示可能存在的命令<h4 id="2，曾经使用过的命令"><a href="#2，曾经使用过的命令" class="headerlink" title="2，曾经使用过的命令"></a>2，曾经使用过的命令</h4></li>
+<li>按 上/下 光标键可以在曾经使用过的命令之间来回切换</li>
+<li>如果想要退出选择，并且不想执行当前选中的命令，可以按ctrl+c<h3 id="1-2-ls命令说明"><a href="#1-2-ls命令说明" class="headerlink" title="1.2 ls命令说明"></a>1.2 ls命令说明</h3></li>
+</ol>
+<ul>
+<li>ls是英文单词list的简写，其功能为列出目录的内容，是用户最常用的命令之一，类似于DOS下的dir命令</li>
+</ul>
+<ol>
+<li>Linux下文件的目录的特点</li>
+<li>Linux文件或者目录名称最长可以有256个字符</li>
+<li>以 . 开头的文件为隐藏文件，需要用 -a 参数才能显示</li>
+<li>. 代表当前目录</li>
+<li>.. 代表上一级目录（cd ..）<h3 id="1-3-ls常用选项"><a href="#1-3-ls常用选项" class="headerlink" title="1.3 ls常用选项"></a>1.3 ls常用选项</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示指定目录下所有子目录与文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>以列表方式显示文件的详细信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>配合 -l 以人性化的方式显示文件的大小</td>
+</tr>
+<tr>
+<td>### 1.4 ls 通配符的使用</td>
+<td></td>
+</tr>
+<tr>
+<td>通配符</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>————</td>
+<td>————</td>
+</tr>
+<tr>
+<td>*</td>
+<td>代表任意一个字符</td>
+</tr>
+<tr>
+<td>？</td>
+<td>代表任意一个字符，至少一个</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>表示可以匹配字符组中任意一个</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>匹配a、b、c中的任意一个</td>
+</tr>
+<tr>
+<td>[a-f]</td>
+<td>匹配从a到f范围内的任意一个字符</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h2 id="2，切换目录"><a href="#2，切换目录" class="headerlink" title="2，切换目录"></a>2，切换目录</h2><p><code>cd</code></p>
+<h3 id="2-1-cd"><a href="#2-1-cd" class="headerlink" title="2.1 cd"></a>2.1 cd</h3><ul>
+<li>cd是英文单词change directory的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</li>
+</ul>
+<p><strong>注意：Linux所有的目录和文件名都是大小写敏感的</strong><br>| 命令  |  含义 |<br>| ———— | ———— |<br>| cd ~  | 切换到当前用户的主目录（/home/用户目录）  |<br>|  cd . | 保持在当前目录不变  |<br>|  cd .. | 切换到上级目录  |<br>| cd -  | 可以在最近两次工作目录之间来回切换  |<br>| cd  | 切换到当前用户的主目录（/home/用户目录）  |</p>
+<h3 id="2-2-相对路径和绝对路径"><a href="#2-2-相对路径和绝对路径" class="headerlink" title="2.2 相对路径和绝对路径"></a>2.2 相对路径和绝对路径</h3><ul>
+<li><strong>相对路径</strong>：在输入路径时，最前面不是 / 或者 ~ ，表示相对<strong>当前目录</strong>所在的目录位置</li>
+<li><strong>绝对路径</strong>：在输入路径时，最前面的是 / 或者 ~ ，表示从<strong>根目录/家目录</strong>最开始的具体目录位置<h2 id="3，创建和删除操作"><a href="#3，创建和删除操作" class="headerlink" title="3，创建和删除操作"></a>3，创建和删除操作</h2><code>touch</code><br><code>rm</code><br><code>mkdir</code><h3 id="3-1-touch"><a href="#3-1-touch" class="headerlink" title="3.1 touch"></a>3.1 touch</h3></li>
+<li>创建文件或者修改文件时间</li>
+</ul>
+<ol>
+<li>如果文件不存在，可以创建一个空白文件</li>
+<li>如果文件已经存在，可以修改文件末次修改日期<h3 id="3-2-mkdir"><a href="#3-2-mkdir" class="headerlink" title="3.2 mkdir"></a>3.2 mkdir</h3></li>
+</ol>
+<ul>
+<li>创建一个新的目录（mkdir -p a/b/c/d）<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>可以递归创建目录</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>新建目录的名称不能与当前目录中已有的目录或文件同明</strong></p>
+<h3 id="3-3-rm"><a href="#3-3-rm" class="headerlink" title="3.3 rm"></a>3.3 rm</h3><ul>
+<li>删除文件或目录</li>
+</ul>
+<ol>
+<li>使用rm命令要小心，因为文件删除后不能恢复<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>强制删除，忽略不存在的文件，无需提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归地删除目录下的内容，删除文件夹时必须加此参数</td>
+</tr>
+<tr>
+<td>（rm -r a）删除a目录下所有内容</td>
+<td></td>
+</tr>
+<tr>
+<td>## 4，拷贝和移动文件</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td></td>
+</tr>
+<tr>
+<td>序号</td>
+<td>命令</td>
+</tr>
+<tr>
+<td>————</td>
+<td>————</td>
+</tr>
+<tr>
+<td>01</td>
+<td>tree[目录名]</td>
+</tr>
+<tr>
+<td>02</td>
+<td>cp 源文件 目标文件</td>
+</tr>
+<tr>
+<td>03</td>
+<td>mv 源文件 目标文件</td>
+</tr>
+<tr>
+<td>### 4.1 tree</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<ul>
+<li>tree 命令可以以树状图列出文件目录结构<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>只显示目录</td>
+</tr>
+<tr>
+<td>### 4.2 cp</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>cp 命令的功能是将给出的文件或目录复制到另一个文件或目录中，相当于DOS下的copy命令<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>已经存在的目标文件会直接覆盖，不会提示</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>若给除的源文件是目录文件，则cp将递归复制该目录下的所有子目录和文件，目标文件为一个目录名</td>
+</tr>
+<tr>
+<td>### 4.3 mv</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li>mv 命令可以用来移动文件或者目录，也可以给文件或者目录重命名<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="5，查看文件内容"><a href="#5，查看文件内容" class="headerlink" title="5，查看文件内容"></a>5，查看文件内容</h2><p><code>cat</code><br><code>more</code><br><code>grep</code><br>| 序号  | 命令  | 对应英文  | 作用  |<br>| ———— | ———— | ———— | ———— |<br>| 01  | cat 文件名  | concatenate  | 查看文件内容、创建文件、文件合并、追加文件内容等功能  |<br>| 02  | more 文件名  | more  | 分屏显示文件内容  |<br>| 03  | grep 搜索文本文件名  | grep  | 搜索文本文件内容  |</p>
+<h3 id="5-1-cat"><a href="#5-1-cat" class="headerlink" title="5.1 cat"></a>5.1 cat</h3><ul>
+<li>cat 命令可以用来查看文件内容、常见文件、文件合并、追加文件内容等功能</li>
+<li>cat 会一次显示所有的内容，适合查看内容较少的文本文件<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>对非空输出行编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>对输出所有行编号</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><em>Linux 中还有一个 nl 命令和 cat -b 的效果等价</em></p>
+<h3 id="5-2-more"><a href="#5-2-more" class="headerlink" title="5.2 more"></a>5.2 more</h3><ul>
+<li>more 命令可以用于分屏显示文件内容，每次只显示一页内容</li>
+<li>适合与查看内容较多的文本文件<br>使用 more 的操作键：<table>
+<thead>
+<tr>
+<th>操作键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格键</td>
+<td>显示手册页的下一屏</td>
+</tr>
+<tr>
+<td>Enter键</td>
+<td>一次滚动手册页的一行</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td>f</td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>/word</td>
+<td>搜索 word 字符串</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="6，其他"><a href="#6，其他" class="headerlink" title="6，其他"></a>6，其他</h2><p><code>exho</code><br><code>重定向 &gt; 和 &gt;&gt;</code><br><code>管道 |</code></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -391,12 +642,12 @@ finally:
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>2.Mysql查询数据</p>
+    <p><span class="copy-title">文章标题:</span>3.Linux文件和目录常用命令</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-26, 10:24:43</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-26, 19:18:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/Mysql查询数据/" title="2.Mysql查询数据">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/Mysql查询数据/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-26, 18:31:58</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-26, 23:09:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/文件和目录常用命令/" title="3.Linux文件和目录常用命令">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/文件和目录常用命令/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
