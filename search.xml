@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>MySql创建表</title>
+      <link href="/2019/07/26/MySql%E5%88%9B%E5%BB%BA%E8%A1%A8/"/>
+      <url>/2019/07/26/MySql%E5%88%9B%E5%BB%BA%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="MySql创建表"><a href="#MySql创建表" class="headerlink" title="MySql创建表"></a>MySql创建表</h2><p>首先要在navicat中连接数据库，创建一个testtmysql的数据库<br>  <strong>【实例】</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 创建与数据库的连接</span></span><br><span class="line">    db = pymysql.connect(host=<span class="string">'localhost'</span>, user=<span class="string">'root'</span>, password=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)</span><br><span class="line">    <span class="comment"># 创建游标对象cursor</span></span><br><span class="line">    cursor = db.cursor()</span><br><span class="line">    <span class="comment"># 使用execute()方法执行sql，如果表存在则删除</span></span><br><span class="line">    cursor.execute(<span class="string">'drop table if EXISTS student'</span>)</span><br><span class="line">    <span class="comment"># 创建表的sql</span></span><br><span class="line">    sql = <span class="string">''</span><span class="string">'</span></span><br><span class="line"><span class="string">        create table student(</span></span><br><span class="line"><span class="string">        sno int(8) primary key auto_increment,</span></span><br><span class="line"><span class="string">        sname varchar(30) not null,</span></span><br><span class="line"><span class="string">        sex varchar(5) ,</span></span><br><span class="line"><span class="string">        age int(2),</span></span><br><span class="line"><span class="string">        score float(3,1)</span></span><br><span class="line"><span class="string">        )</span></span><br><span class="line"><span class="string">    '</span><span class="string">''</span></span><br><span class="line">    cursor.execute(sql)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"创建成功"</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'创建表失败'</span>)</span><br><span class="line">finally:</span><br><span class="line">    <span class="comment"># 关闭数据库连接</span></span><br><span class="line">    db.close()</span><br><span class="line">    cursor.close()</span><br></pre></td></tr></table></figure><p>![]<br>(<a href="https://github.com/gxnucgb/python/blob/master/MYSq%E5%88%9B%E5%BB%BA%E8%A1%A8.png">https://github.com/gxnucgb/python/blob/master/MYSq%E5%88%9B%E5%BB%BA%E8%A1%A8.png</a>)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sqlite3学习</title>
       <link href="/2019/07/25/sqlite3%E5%AD%A6%E4%B9%A0/"/>
       <url>/2019/07/25/sqlite3%E5%AD%A6%E4%B9%A0/</url>
