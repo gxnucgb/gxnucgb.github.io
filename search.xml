@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux 远程管理命令-01关机和重启</title>
+      <link href="/2019/07/27/Linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-01%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF/"/>
+      <url>/2019/07/27/Linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-01%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h1><table><thead><tr><th>序号</th><th>命令</th><th>对应英文</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>shutdown 选项 时间</td><td>shutdown</td><td>关机/重新启动</td></tr></tbody></table><p>1.1 shutdown</p><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-r</td><td>重新启动</td></tr><tr><td><strong>提示：</strong></td><td></td></tr><tr><td>- 不指定选项和参数，默认表示一分钟之后关闭电脑</td><td></td></tr><tr><td>- 远程维护服务器时，最好不要关闭系统，而应该重启系统</td><td></td></tr><tr><td><strong>常用命令示例</strong></td><td></td></tr><tr><td>1. 重新启动系统，其中 now 表示现在</td><td></td></tr><tr><td><code>shutdown now</code></td><td></td></tr><tr><td>2. 立刻关机，其中now表示现在</td><td></td></tr><tr><td><code>shutdown now</code></td><td></td></tr><tr><td>3. 系统在今天的 20：35 会关机</td><td></td></tr><tr><td><code>shutdown 20：35</code></td><td></td></tr><tr><td>4. 取消之前指定的关机计划</td><td></td></tr><tr><td><code>shutdown -c</code></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3.Linux文件和目录常用命令</title>
       <link href="/2019/07/26/%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/07/26/%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
