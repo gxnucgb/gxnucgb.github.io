@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux远程管理命令-02网卡和IP地址的概念</title>
+      <link href="/2019/07/27/Linux%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-02%E7%BD%91%E5%8D%A1%E5%92%8CIP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A6%82%E5%BF%B5/"/>
+      <url>/2019/07/27/Linux%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-02%E7%BD%91%E5%8D%A1%E5%92%8CIP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A6%82%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="02，查看或配置网卡信息"><a href="#02，查看或配置网卡信息" class="headerlink" title="02，查看或配置网卡信息"></a>02，查看或配置网卡信息</h1><table><thead><tr><th>序号</th><th>命令</th><th>对应英文</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>ifconfig</td><td>confi</td><td>查看/配置</td></tr><tr><td>02</td><td>ping ip地中</td><td>ping</td><td>检测目标ip地址的连接是否正常</td></tr><tr><td>## 2.1 网卡和IP地址</td><td></td><td></td><td></td></tr><tr><td><strong>网卡</strong></td><td></td><td></td><td></td></tr><tr><td>- 网卡是一个专门负责网络通讯的硬件设备</td><td></td><td></td><td></td></tr><tr><td>- IP地址是设置在网卡上的地址信息</td><td></td><td></td><td></td></tr><tr><td>我们可以把电脑比作电话，网卡相当于SIM卡，IP地址相当于电话号码</td><td></td><td></td><td></td></tr><tr><td><strong>IP地址</strong></td><td></td><td></td><td></td></tr><tr><td>- 每台联网的电脑上都有IP地址，是保证电脑之间正常通讯的重要设置</td><td></td><td></td><td></td></tr><tr><td><strong>注意：</strong>每台电脑的IP地址不能相同，否则会出现IP地址冲突，并且没有办法正常通讯</td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux 远程管理命令-01关机和重启</title>
       <link href="/2019/07/27/Linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-01%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF/"/>
       <url>/2019/07/27/Linux-%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-01%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF/</url>
