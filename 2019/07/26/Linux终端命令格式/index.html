@@ -6,18 +6,18 @@
   <meta name="keywords" content=" Linux ">
   <meta name="description" content="2.Linux终端命令格式 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="关机/重启   序号 命令 对应英文 作用    01 shutdown 选项 时间 shutdown 关机/重新启动   1.1 shutdown    选项 含义    -r 重新启动   提示：    - 不指定选项和参数，默认表示一分钟之后关闭电脑    - 远程维护服务器时，最好不要关闭系统，而应该重启系统    常用命令示例    1. 重新启动系统，其中 now 表示现在    sh">
+<meta name="description" content="02，查看或配置网卡信息   序号 命令 对应英文 作用    01 ifconfig confi 查看/配置   02 ping ip地中 ping 检测目标ip地址的连接是否正常   ## 2.1 网卡和IP地址      网卡      - 网卡是一个专门负责网络通讯的硬件设备      - IP地址是设置在网卡上的地址信息      我们可以把电脑比作电话，网卡相当于SIM卡，IP地址相当">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 远程管理命令-01关机和重启">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux-远程管理命令-01关机和重启/index.html">
+<meta property="og:title" content="Linux远程管理命令-02网卡和IP地址的概念">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-02网卡和IP地址的概念/index.html">
 <meta property="og:site_name" content="welcome to my blog">
-<meta property="og:description" content="关机/重启   序号 命令 对应英文 作用    01 shutdown 选项 时间 shutdown 关机/重新启动   1.1 shutdown    选项 含义    -r 重新启动   提示：    - 不指定选项和参数，默认表示一分钟之后关闭电脑    - 远程维护服务器时，最好不要关闭系统，而应该重启系统    常用命令示例    1. 重新启动系统，其中 now 表示现在    sh">
+<meta property="og:description" content="02，查看或配置网卡信息   序号 命令 对应英文 作用    01 ifconfig confi 查看/配置   02 ping ip地中 ping 检测目标ip地址的连接是否正常   ## 2.1 网卡和IP地址      网卡      - 网卡是一个专门负责网络通讯的硬件设备      - IP地址是设置在网卡上的地址信息      我们可以把电脑比作电话，网卡相当于SIM卡，IP地址相当">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-27T02:56:01.014Z">
+<meta property="og:updated_time" content="2019-07-27T03:32:29.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 远程管理命令-01关机和重启">
-<meta name="twitter:description" content="关机/重启   序号 命令 对应英文 作用    01 shutdown 选项 时间 shutdown 关机/重新启动   1.1 shutdown    选项 含义    -r 重新启动   提示：    - 不指定选项和参数，默认表示一分钟之后关闭电脑    - 远程维护服务器时，最好不要关闭系统，而应该重启系统    常用命令示例    1. 重新启动系统，其中 now 表示现在    sh">
+<meta name="twitter:title" content="Linux远程管理命令-02网卡和IP地址的概念">
+<meta name="twitter:description" content="02，查看或配置网卡信息   序号 命令 对应英文 作用    01 ifconfig confi 查看/配置   02 ping ip地中 ping 检测目标ip地址的连接是否正常   ## 2.1 网卡和IP地址      网卡      - 网卡是一个专门负责网络通讯的硬件设备      - IP地址是设置在网卡上的地址信息      我们可以把电脑比作电话，网卡相当于SIM卡，IP地址相当">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -126,7 +126,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(13)</small></div></li>
+    <li><div class="all active">全部文章<small>(20)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -140,7 +140,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="13">
+<input type="hidden" id="yelog_site_posts_number" value="20">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -195,27 +195,11 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2019/07/26/Linux常用命令/"
-           data-tag="Linux"
+           href="/2019/07/27/Linux远程管理命令-03-ifconfig和ping作用的介绍/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="1.Linux常用命令">1.Linux常用命令</span>
-            <span class="post-date" title="2019-07-26 18:29:52">2019/07/26</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/27/Linux-远程管理命令-01关机和重启/"
-           data-tag="Linux"
-           data-author="" >
-            <span class="post-title" title="Linux 远程管理命令-01关机和重启">Linux 远程管理命令-01关机和重启</span>
-            <span class="post-date" title="2019-07-27 10:41:29">2019/07/27</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/27/Linux远程管理命令-02网卡和IP地址的概念/"
-           data-tag="Linux"
-           data-author="" >
-            <span class="post-title" title="Linux远程管理命令-02网卡和IP地址的概念">Linux远程管理命令-02网卡和IP地址的概念</span>
-            <span class="post-date" title="2019-07-27 10:59:17">2019/07/27</span>
+            <span class="post-title" title="Linux远程管理命令-03 ifconfig和ping作用的介绍">Linux远程管理命令-03 ifconfig和ping作用的介绍</span>
+            <span class="post-date" title="2019-07-27 11:34:30">2019/07/27</span>
         </a>
         
         <a  class=""
@@ -227,19 +211,83 @@
         </a>
         
         <a  class=""
+           href="/2019/07/27/Linux远程管理命令-02网卡和IP地址的概念/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-02网卡和IP地址的概念">Linux远程管理命令-02网卡和IP地址的概念</span>
+            <span class="post-date" title="2019-07-27 10:59:17">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux-远程管理命令-01关机和重启/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux 远程管理命令-01关机和重启">Linux 远程管理命令-01关机和重启</span>
+            <span class="post-date" title="2019-07-27 10:41:29">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-04-ifconfig查询网卡信息/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-04 ifconfig查询网卡信息">Linux远程管理命令-04 ifconfig查询网卡信息</span>
+            <span class="post-date" title="2019-07-27 11:36:40">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-05-ping测试网络连接/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-05 ping测试网络连接">Linux远程管理命令-05 ping测试网络连接</span>
+            <span class="post-date" title="2019-07-27 11:37:18">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/26/Linux常用命令/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="1.Linux常用命令">1.Linux常用命令</span>
+            <span class="post-date" title="2019-07-26 18:29:52">2019/07/26</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-06-SSH工作方式简介/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-06 SSH工作方式简介">Linux远程管理命令-06 SSH工作方式简介</span>
+            <span class="post-date" title="2019-07-27 11:37:57">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-12-scp作用以及命令格式/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-9 scp作用以及命令格式">Linux远程管理命令-9 scp作用以及命令格式</span>
+            <span class="post-date" title="2019-07-27 15:47:50">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-07-域名和端口的概念/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-07 域名和端口的概念">Linux远程管理命令-07 域名和端口的概念</span>
+            <span class="post-date" title="2019-07-27 11:38:49">2019/07/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/27/Linux远程管理命令-08-ssh命令格式介绍和演练目标确定/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-08 ssh命令格式介绍和演练目标确定">Linux远程管理命令-08 ssh命令格式介绍和演练目标确定</span>
+            <span class="post-date" title="2019-07-27 11:41:58">2019/07/27</span>
+        </a>
+        
+        <a  class=""
            href="/2019/07/26/MySql修改表/"
            data-tag="MySQL"
            data-author="" >
             <span class="post-title" title="3.MySql修改表">3.MySql修改表</span>
             <span class="post-date" title="2019-07-26 11:00:33">2019/07/26</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/24/Thanks/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Thanks">Thanks</span>
-            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
         </a>
         
         <a  class=""
@@ -267,11 +315,11 @@
         </a>
         
         <a  class=""
-           href="/2019/07/25/sqlite3学习/"
-           data-tag="sqlite3"
+           href="/2019/07/24/Thanks/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
-            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
+            <span class="post-title" title="Thanks">Thanks</span>
+            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
         </a>
         
         <a  class=""
@@ -280,6 +328,14 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/25/sqlite3学习/"
+           data-tag="sqlite3"
+           data-author="" >
+            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
+            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
         </a>
         
         <a  class=""

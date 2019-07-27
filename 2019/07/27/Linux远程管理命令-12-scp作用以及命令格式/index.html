@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux 远程管理命令-01关机和重启 | welcome to my blog</title>
+  <title>Linux远程管理命令-9 scp作用以及命令格式 | welcome to my blog</title>
   <meta name="keywords" content=" Linux ">
-  <meta name="description" content="Linux 远程管理命令-01关机和重启 | welcome to my blog">
+  <meta name="description" content="Linux远程管理命令-9 scp作用以及命令格式 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="02，查看或配置网卡信息   序号 命令 对应英文 作用    01 ifconfig confi 查看/配置   02 ping ip地中 ping 检测目标ip地址的连接是否正常   ## 2.1 网卡和IP地址      网卡      - 网卡是一个专门负责网络通讯的硬件设备      - IP地址是设置在网卡上的地址信息      我们可以把电脑比作电话，网卡相当于SIM卡，IP地址相当">
 <meta name="keywords" content="Linux">
@@ -366,9 +366,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux-远程管理命令-01关机和重启" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Linux远程管理命令-12-scp作用以及命令格式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux 远程管理命令-01关机和重启</h1>
+        <h1 class="article-title">Linux远程管理命令-9 scp作用以及命令格式</h1>
     
     <div class="article-meta">
         
@@ -384,7 +384,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-27 10:56:01'>2019-07-27 10:41</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-27 15:29:21'>2019-07-27 15:47</time>
         
     </div>
     <div class="article-meta">
@@ -406,7 +406,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关机-重启"><span class="toc-text">关机/重启</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-scp（掌握）"><span class="toc-text">3.2 scp（掌握）</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -421,23 +421,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h1><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>命令</th>
-<th>对应英文</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>01</td>
-<td>shutdown 选项 时间</td>
-<td>shutdown</td>
-<td>关机/重新启动</td>
-</tr>
-</tbody></table>
-<p>1.1 shutdown</p>
+        <h2 id="3-2-scp（掌握）"><a href="#3-2-scp（掌握）" class="headerlink" title="3.2 scp（掌握）"></a>3.2 scp（掌握）</h2><ul>
+<li>scp就是 secure copy，是一个在Linux下用来进行远程拷贝文件的命令</li>
+<li>它的格式地址与ssh基本相同，需要注意的是，在指定端口时，用的是大写的 -P 而不是小写的</li>
+</ul>
+<ol>
+<li>把本地目录下的01.py 文件 复制到远程 家 目录下的 Desktop/01.py </li>
+</ol>
+<p><strong>注意：</strong>“：”后面的路径如果不是绝对路径，则以用户的家目录为参考路径<br><code>scp -P port 01.py user@remote:Decktop/01.py</code></p>
+<ol start="2">
+<li>把远程目录 家目录下的 Desktop/01.py 文件 复制到 本地目录下的01.py<br><code>scp -P port user@remote:Dedktop/01.py 01.py .</code><br>加上 -r 选项可以传送文件夹</li>
+<li>把当前目录下的 demo 文件夹复制到远程家目录下单 Desktop<br><code>scp -r demo user@remote:Desktop</code></li>
+<li>把远程家目录下的Desktop 复制到 当前目录下的 demo 文件夹<br><code>scp -r user@remote:Desktop demo</code></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -447,57 +443,18 @@
 </thead>
 <tbody><tr>
 <td>-r</td>
-<td>重新启动</td>
+<td>若给出的源文件是目录文件，则scp将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
 </tr>
 <tr>
-<td><strong>提示：</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>- 不指定选项和参数，默认表示一分钟之后关闭电脑</td>
-<td></td>
-</tr>
-<tr>
-<td>- 远程维护服务器时，最好不要关闭系统，而应该重启系统</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>常用命令示例</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>1. 重新启动系统，其中 now 表示现在</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shutdown now</code></td>
-<td></td>
-</tr>
-<tr>
-<td>2. 立刻关机，其中now表示现在</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shutdown now</code></td>
-<td></td>
-</tr>
-<tr>
-<td>3. 系统在今天的 20：35 会关机</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shutdown 20：35</code></td>
-<td></td>
-</tr>
-<tr>
-<td>4. 取消之前指定的关机计划</td>
-<td></td>
-</tr>
-<tr>
-<td><code>shutdown -c</code></td>
-<td></td>
+<td>-P</td>
+<td>若远程SSH服务器的端口不是22，需要使用大写字母 -P 选项指定端口</td>
 </tr>
 </tbody></table>
+<p><strong>注意：</strong></p>
+<ul>
+<li>scp 这个终端命令只能在Linux 或者UNIX系统下使用</li>
+<li>如果在Windows系统中，可以安装PuTTY，使用pscp命令工具行或者安装FileZilla 使用FTP进行文件传输（因是ftp，故端口号设置为21）</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -511,12 +468,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux 远程管理命令-01关机和重启</p>
+    <p><span class="copy-title">文章标题:</span>Linux远程管理命令-9 scp作用以及命令格式</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-27, 10:41:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-27, 10:56:01</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux-远程管理命令-01关机和重启/" title="Linux 远程管理命令-01关机和重启">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux-远程管理命令-01关机和重启/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-27, 15:47:50</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-27, 15:29:21</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux远程管理命令-12-scp作用以及命令格式/" title="Linux远程管理命令-9 scp作用以及命令格式">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-12-scp作用以及命令格式/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
