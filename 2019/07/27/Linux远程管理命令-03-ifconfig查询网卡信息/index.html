@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>welcome to my blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="welcome to my blog">
+  <title>Linux远程管理命令-03-ifconfig查询网卡信息 | welcome to my blog</title>
+  <meta name="keywords" content=" Linux ">
+  <meta name="description" content="Linux远程管理命令-03-ifconfig查询网卡信息 | welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Linux常用命令Linux是区分大小写的    命令 对应英文 作用    ls list 查看当前文件夹下的内容   cd[目录名] change directory 切换文件夹（cd xxx）   pwd print work directory 查看当前所在文件夹   touch[文件名] touch 如果文件不存在，新建文件   mkdir[目录名] make directory 创建目">
 <meta name="keywords" content="Linux">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -364,12 +364,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Linux远程管理命令-03-ifconfig查询网卡信息" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于我"><span class="toc-text">关于我</span></a></li></ol></li></ol>
+        <h1 class="article-title">Linux远程管理命令-03-ifconfig查询网卡信息</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Linux">Linux</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">Linux</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-07-27 15:55:58'>2019-07-27 11:36</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-ifconfig"><span class="toc-text">2.2 ifconfig</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -382,18 +425,52 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>通过这个博客，记录自己学习生活路上的一些点点滴滴</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>就读于广西师范大学计算机科学与信息工程学院/软件学院 信息管理与信息系统专业, 大三在读。<br><em><a href="https://github.com/gxnucgb">https://github.com/gxnucgb</a></em>是我的github。<br>  <strong><a href="mailto:gxnucgb@qq.com">gxnucgb@qq.com</a></strong> 是我的邮箱</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2-2-ifconfig"><a href="#2-2-ifconfig" class="headerlink" title="2.2 ifconfig"></a>2.2 ifconfig</h2><ul>
+<li>ifconfig 可以查看/配置计算机当前网卡配置信息</li>
+</ul>
+<ol>
+<li>查看网卡配置信息<br><code>ifconfig</code></li>
+<li>查看网卡对应的IP地址<br><code>ifconfig | grep inet</code></li>
+</ol>
+<p><strong>提示：</strong>一台计算机中有可能会有一个物理网卡和多个虚拟网卡，在Linux中物理网卡的名字通常以ensXX表示</p>
+<ul>
+<li>127.0.0.1 被称为本地回环/环回地址， 一般用来测试本机网卡是否正常</li>
+</ul>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Linux远程管理命令-03-ifconfig查询网卡信息</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-27, 11:36:40</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-27, 15:55:58</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux远程管理命令-03-ifconfig查询网卡信息/" title="Linux远程管理命令-03-ifconfig查询网卡信息">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-03-ifconfig查询网卡信息/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 陈桂彬</p>
