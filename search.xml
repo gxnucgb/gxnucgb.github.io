@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux系统信息相关命令</title>
+      <link href="/2019/07/28/Linux%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/07/28/Linux%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><h2 id="01，时间和日期"><a href="#01，时间和日期" class="headerlink" title="01，时间和日期"></a>01，时间和日期</h2><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>date</td><td>查看系统时间</td></tr><tr><td>02</td><td>cal</td><td>查看系统日历</td></tr></tbody></table><h2 id="02，磁盘信息"><a href="#02，磁盘信息" class="headerlink" title="02，磁盘信息"></a>02，磁盘信息</h2><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>df -h</td><td>disk free 显示磁盘剩余空间</td></tr><tr><td>02</td><td>du -h [目录名]</td><td>disk usage 显示目录下的文件大小</td></tr><tr><td><strong>选项说明</strong></td><td></td><td></td></tr><tr><td><code>-h   以人性化的方式显示文件大小</code></td><td></td><td></td></tr><tr><td>## 03，进程信息</td><td></td><td></td></tr><tr><td>- 所谓进程，通俗地说就是当前正在执行的一个程序</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>序号</th><th>命令</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td>ps aux</td><td>process status 查看进程的详细状况</td></tr><tr><td>02</td><td>top</td><td>动态显示运行中的程序并且排序</td></tr><tr><td>03</td><td>kill [-9] 进程代号</td><td>终止指定代号的进程，-9表示强行终止</td></tr><tr><td>ps <strong>默认只会显示当前用户通过终端启动的应用程序</strong></td><td></td><td></td></tr><tr><td>- ps 选项功能说明</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>a</td><td>显示终端上的所有程序，包括其他用户的进程</td></tr><tr><td>u</td><td>显示进程的详细状态</td></tr><tr><td>x</td><td>显示没有控制终端的进程</td></tr><tr><td><strong>提示：使用kill 命令时，最好只终止由当前用户开启的进程，而不要终止root身份开启的进程，否则可能导致系统崩溃</strong></td><td></td></tr><tr><td>- 要退出top 可以直接输入 q</td><td></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux远程管理命令-08-scp作用以及命令格式</title>
       <link href="/2019/07/27/Linux%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-08-scp%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/"/>
       <url>/2019/07/27/Linux%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4-08-scp%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F/</url>
