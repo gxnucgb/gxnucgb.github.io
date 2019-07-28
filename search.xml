@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux软件安装</title>
+      <link href="/2019/07/28/Linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <url>/2019/07/28/Linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><ul><li>4.1 通过apt安装/卸载软件</li><li>apt是 advanced packaging tool，是Linux下的一款安装包管理工具</li><li>可以在终端中方便的安装/卸载/更新软件包<br>安装软件<br><code>sudu apt install 软件包</code><br>卸载软件<br><code>sudo apt remove 软件名</code><br>更新已安装的包<br><code>sudu apt upgrade</code></li></ul><p>sudu是获取超级管理员的意思</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux其他命令</title>
       <link href="/2019/07/28/Linux%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/07/28/Linux%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4/</url>
