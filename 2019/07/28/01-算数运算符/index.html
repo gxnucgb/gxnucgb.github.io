@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux远程管理命令-04-SSH工作方式简介 | Welcome to my blog</title>
-  <meta name="keywords" content=" Linux ">
-  <meta name="description" content="Linux远程管理命令-04-SSH工作方式简介 | Welcome to my blog">
+  <title>01.算数运算符 | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="01.算数运算符 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="什么时候使用注释 注释不是越多越好，对于一目了然的代码，不需要添加注释  对于复杂的操作，应该在操作开始之前写上若干行注释  对于不是一目了然的代码，应该在其行尾添加注释（注释应该至少离开代码2个空格）  绝不要描述代码，只要知道代码要做什么就可以了 空格的使用 使用空格来表示缩进而不要用制表符（Tab）。  和语法相关的每一层缩进都用4个空格来表示。  每行的字符数不要超过79个字符，如果表达式">
 <meta property="og:type" content="article">
@@ -413,9 +413,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux远程管理命令-05-SSH工作方式简介" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-01-算数运算符" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux远程管理命令-04-SSH工作方式简介</h1>
+        <h1 class="article-title">01.算数运算符</h1>
     
     <div class="article-meta">
         
@@ -423,21 +423,15 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Linux">Linux</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color1">Linux</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-27 16:02:09'>2019-07-27 11:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-28 17:20:19'>2019-07-28 17:06</time>
         
     </div>
     <div class="article-meta">
@@ -459,7 +453,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#03-远程登陆和复制文件"><span class="toc-text">03.远程登陆和复制文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-ssh基础（重点）"><span class="toc-text">3.1 ssh基础（重点）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-算数运算符"><span class="toc-text">01.算数运算符</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -474,46 +468,91 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="03-远程登陆和复制文件"><a href="#03-远程登陆和复制文件" class="headerlink" title="03.远程登陆和复制文件"></a>03.远程登陆和复制文件</h2><table>
+        <h2 id="01-算数运算符"><a href="#01-算数运算符" class="headerlink" title="01.算数运算符"></a>01.算数运算符</h2><p>是完成基本的算数运算使用的符号，用来处理四则运算</p>
+<table>
 <thead>
 <tr>
-<th>序号</th>
-<th>命令</th>
-<th>对应英文</th>
-<th>作用</th>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>01</td>
-<td>ssh用户名@ip</td>
-<td>secure shell</td>
-<td>关机/从新启动</td>
+<td>+</td>
+<td>加</td>
+<td>10+20=30</td>
 </tr>
 <tr>
-<td>02</td>
-<td>scp用户名@ip:文件名或路径 用户名@ip:文件名或路径</td>
-<td>secure copy</td>
-<td>远程复制文件</td>
+<td>-</td>
+<td>减</td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td></td>
+</tr>
+<tr>
+<td>//</td>
+<td>取整除</td>
+<td>返回除法的整数部分，9//2=4</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余数</td>
+<td>返回除法的余数9%2=1</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂</td>
+<td>又称次方，乘方，2**3=8</td>
+</tr>
+<tr>
+<td>- 在python中*运算符还可以用于字符串，计算结果就是字符串重复指定次数的结果</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>“-”*50</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## 02.算数运算符的优先级</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 和数学中的运算符优先级一致，在python中进行数学计算时，</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 先乘除后加减</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 同级运算符从左至右计算</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 可以使用（）调整计算的优先级</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>**   &gt;  * / % //  &gt;  + -</code></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<h2 id="3-1-ssh基础（重点）"><a href="#3-1-ssh基础（重点）" class="headerlink" title="3.1 ssh基础（重点）"></a>3.1 ssh基础（重点）</h2><ul>
-<li>在Linux中SSH是非常常用的工具，通过SSH客户端我们可以连接到运行了SSH服务器的远程机器上</li>
-</ul>
-<ol>
-<li>数据传输是加密的，可以防止信息泄露</li>
-<li>数据时输是压缩的，可以提高传输速度</li>
-</ol>
-<ul>
-<li>SSH客户端是一种使用 Secure Shell（SSH）协议连接到远程计算机的软件程序</li>
-<li>SSH是目前较可靠，专为远程登陆会话和其他网络服务提供安全性的协议</li>
-</ul>
-<ol>
-<li>利用SSH协议可以有效防止远程管理过程中的信息泄露</li>
-<li>通过SSH协议可以对所有数据传输进行加密，也能够防止DNS欺骗和IP欺骗</li>
-</ol>
-<ul>
-<li>SSH的另一项优点是可以经过压缩的，所以可以加快传输的速度</li>
-</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -527,12 +566,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux远程管理命令-04-SSH工作方式简介</p>
+    <p><span class="copy-title">文章标题:</span>01.算数运算符</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-27, 11:37:57</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-27, 16:02:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux远程管理命令-05-SSH工作方式简介/" title="Linux远程管理命令-04-SSH工作方式简介">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-05-SSH工作方式简介/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-28, 17:06:45</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-28, 17:20:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/28/01-算数运算符/" title="01.算数运算符">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/28/01-算数运算符/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

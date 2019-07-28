@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>01.算数运算符</title>
+      <link href="/2019/07/28/01-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+      <url>/2019/07/28/01-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="01-算数运算符"><a href="#01-算数运算符" class="headerlink" title="01.算数运算符"></a>01.算数运算符</h2><p>是完成基本的算数运算使用的符号，用来处理四则运算</p><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>+</td><td>加</td><td>10+20=30</td></tr><tr><td>-</td><td>减</td><td></td></tr><tr><td>*</td><td>乘</td><td></td></tr><tr><td>/</td><td>除</td><td></td></tr><tr><td>//</td><td>取整除</td><td>返回除法的整数部分，9//2=4</td></tr><tr><td>%</td><td>取余数</td><td>返回除法的余数9%2=1</td></tr><tr><td>**</td><td>幂</td><td>又称次方，乘方，2**3=8</td></tr><tr><td>- 在python中*运算符还可以用于字符串，计算结果就是字符串重复指定次数的结果</td><td></td><td></td></tr><tr><td><code>“-”*50</code></td><td></td><td></td></tr><tr><td>## 02.算数运算符的优先级</td><td></td><td></td></tr><tr><td>- 和数学中的运算符优先级一致，在python中进行数学计算时，</td><td></td><td></td></tr><tr><td>- 先乘除后加减</td><td></td><td></td></tr><tr><td>- 同级运算符从左至右计算</td><td></td><td></td></tr><tr><td>- 可以使用（）调整计算的优先级</td><td></td><td></td></tr><tr><td><code>**   &gt;  * / % //  &gt;  + -</code></td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python注释与代码风格</title>
       <link href="/2019/07/28/python%E6%B3%A8%E9%87%8A%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/"/>
       <url>/2019/07/28/python%E6%B3%A8%E9%87%8A%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/</url>
