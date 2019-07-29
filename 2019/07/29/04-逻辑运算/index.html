@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux远程管理命令-08-scp作用以及命令格式 | Welcome to my blog</title>
-  <meta name="keywords" content=" Linux ">
-  <meta name="description" content="Linux远程管理命令-08-scp作用以及命令格式 | Welcome to my blog">
+  <title>04.逻辑运算 | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="04.逻辑运算 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="01.算数运算符是完成基本的算数运算使用的符号，用来处理四则运算    运算符 描述 实例    + 加 10+20=30   - 减    * 乘    / 除    // 取整除 返回除法的整数部分，9//2=4   % 取余数 返回除法的余数9%2=1   ** 幂 又称次方，乘方，2**3=8   - 在python中*运算符还可以用于字符串，计算结果就是字符串重复指定次数的结果">
 <meta property="og:type" content="article">
@@ -441,9 +441,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux远程管理命令-08-scp作用以及命令格式" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-04-逻辑运算" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux远程管理命令-08-scp作用以及命令格式</h1>
+        <h1 class="article-title">04.逻辑运算</h1>
     
     <div class="article-meta">
         
@@ -451,21 +451,15 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Linux">Linux</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color1">Linux</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-27 16:02:49'>2019-07-27 15:47</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-29 10:12:14'>2019-07-29 10:05</time>
         
     </div>
     <div class="article-meta">
@@ -487,7 +481,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-scp（掌握）"><span class="toc-text">3.2 scp（掌握）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#04-逻辑运算"><span class="toc-text">04.逻辑运算</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -502,39 +496,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="3-2-scp（掌握）"><a href="#3-2-scp（掌握）" class="headerlink" title="3.2 scp（掌握）"></a>3.2 scp（掌握）</h2><ul>
-<li>scp就是 secure copy，是一个在Linux下用来进行远程拷贝文件的命令</li>
-<li>它的格式地址与ssh基本相同，需要注意的是，在指定端口时，用的是大写的 -P 而不是小写的</li>
-</ul>
-<ol>
-<li>把本地目录下的01.py 文件 复制到远程 家 目录下的 Desktop/01.py </li>
-</ol>
-<p><strong>注意：</strong>“：”后面的路径如果不是绝对路径，则以用户的家目录为参考路径<br><code>scp -P port 01.py user@remote:Decktop/01.py</code></p>
-<ol start="2">
-<li>把远程目录 家目录下的 Desktop/01.py 文件 复制到 本地目录下的01.py<br><code>scp -P port user@remote:Dedktop/01.py 01.py .</code><br>加上 -r 选项可以传送文件夹</li>
-<li>把当前目录下的 demo 文件夹复制到远程家目录下单 Desktop<br><code>scp -r demo user@remote:Desktop</code></li>
-<li>把远程家目录下的Desktop 复制到 当前目录下的 demo 文件夹<br><code>scp -r user@remote:Desktop demo</code></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-r</td>
-<td>若给出的源文件是目录文件，则scp将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
-</tr>
-<tr>
-<td>-P</td>
-<td>若远程SSH服务器的端口不是22，需要使用大写字母 -P 选项指定端口</td>
-</tr>
-</tbody></table>
-<p><strong>注意：</strong></p>
-<ul>
-<li>scp 这个终端命令只能在Linux 或者UNIX系统下使用</li>
-<li>如果在Windows系统中，可以安装PuTTY，使用pscp命令工具行或者安装FileZilla 使用FTP进行文件传输（因是ftp，故端口号设置为21）</li>
+        <h3 id="04-逻辑运算"><a href="#04-逻辑运算" class="headerlink" title="04.逻辑运算"></a>04.逻辑运算</h3><ul>
+<li>在程序开发中，通常在判断条件时，会需要同时判断多个条件</li>
+<li>只有在多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符</li>
+<li>逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件</li>
+<li>python中的逻辑运算符包括：与and/ 或or/ 非not 三种</li>
 </ul>
 
       
@@ -549,12 +515,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux远程管理命令-08-scp作用以及命令格式</p>
+    <p><span class="copy-title">文章标题:</span>04.逻辑运算</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-27, 15:47:50</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-27, 16:02:49</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux远程管理命令-08-scp作用以及命令格式/" title="Linux远程管理命令-08-scp作用以及命令格式">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-08-scp作用以及命令格式/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-29, 10:05:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-29, 10:12:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/29/04-逻辑运算/" title="04.逻辑运算">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/29/04-逻辑运算/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
