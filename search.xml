@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>05.随机数的处理</title>
+      <link href="/2019/07/30/05-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86/"/>
+      <url>/2019/07/30/05-%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<ul><li>再python中，要使用随机数，首先需要导入随机数的模块——“工具包”</li><li>import random</li><li>导入模块后，可以直接再模块后面敲一个 . 然后按tab键，会提示该模块中包含的所有函数</li><li>random.randint(a, b)  返回[a, b]之间的一个随机数，包含a 和 b</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>04.逻辑运算</title>
       <link href="/2019/07/29/04-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/"/>
       <url>/2019/07/29/04-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="04-逻辑运算"><a href="#04-逻辑运算" class="headerlink" title="04.逻辑运算"></a>04.逻辑运算</h3><ul><li>在程序开发中，通常在判断条件时，会需要同时判断多个条件</li><li>只有在多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符</li><li>逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件</li><li>python中的逻辑运算符包括：与and/ 或or/ 非not 三种</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="04-逻辑运算"><a href="#04-逻辑运算" class="headerlink" title="04.逻辑运算"></a>04.逻辑运算</h3><ul><li><p>在程序开发中，通常在判断条件时，会需要同时判断多个条件</p></li><li><p>只有在多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符</p></li><li><p>逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件</p></li><li><p>python中的逻辑运算符包括：与and/ 或or/ 非not 三种</p></li><li><p>在开发中，通常希望某个条件不满足时，执行一些代码，可以使用 not</p></li><li><p>如果需要拼接复杂的逻辑计算条件，同样也有可能使用到 not</p></li></ul>]]></content>
       
       
       <categories>
@@ -27,7 +46,7 @@
       <link href="/2019/07/28/03-if%E5%9F%BA%E7%A1%80/"/>
       <url>/2019/07/28/03-if%E5%9F%BA%E7%A1%80/</url>
       
-        <content type="html"><![CDATA[<h2 id="if-基础"><a href="#if-基础" class="headerlink" title="if 基础"></a>if 基础</h2><p>在python 中，if语句就是用来进行判断的，格式如下</p><pre><code>if 要判断的条件:    条件达成时，要做的事情    ....</code></pre><p><strong>注意：代码的缩进为一个tab键，或者4个空格–建议使用空格</strong></p><ul><li>在python开发中，Tab和空格不要混用</li></ul><p><strong>注意：</strong><br><strong>if语句以及缩进部分是一个完整的代码块</strong></p><h2 id="else"><a href="#else" class="headerlink" title="else"></a>else</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 要判断的条件：</span><br><span class="line">    条件成立时，要做的事情</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">条件不成立时，要做的事情</span><br></pre></td></tr></table></figure><p>注意：<br>if和else语句以及各自的缩进部分共同是一个完整的代码块</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="if-基础"><a href="#if-基础" class="headerlink" title="if 基础"></a>if 基础</h2><p>在python 中，if语句就是用来进行判断的，格式如下</p><pre><code>if 要判断的条件:    条件达成时，要做的事情    ....</code></pre><p><strong>注意：代码的缩进为一个tab键，或者4个空格–建议使用空格</strong></p><ul><li>在python开发中，Tab和空格不要混用</li></ul><p><strong>注意：</strong><br><strong>if语句以及缩进部分是一个完整的代码块</strong></p><h2 id="else"><a href="#else" class="headerlink" title="else"></a>else</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 要判断的条件：</span><br><span class="line">    条件成立时，要做的事情</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">条件不成立时，要做的事情</span><br></pre></td></tr></table></figure><p>注意：<br>if和else，else语句以及各自的缩进部分共同是一个完整的代码块<br>elif 和else都必须和if联合使用，而不能单独使用</p><ul><li>elif 的应用场景是：同时判断多个条件，所有条件都是平级的</li><li>在开发中，使用if 进行条件判断，如果希望在条件成立的执行语句中再增加条件判断，就可以使用if嵌套</li><li>if的嵌套的应用场景就是：在之前满足条件的前提下，再增加额外的判断</li><li>if 的嵌套的语法格式，除了了缩进之外和之前的没有区别</li></ul>]]></content>
       
       
       <categories>
