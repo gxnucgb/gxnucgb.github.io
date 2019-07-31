@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | Welcome to my blog</title>
+  <title>07.break和continue关键字 | Welcome to my blog</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | Welcome to my blog">
+  <meta name="description" content="07.break和continue关键字 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="04.逻辑运算 在程序开发中，通常在判断条件时，会需要同时判断多个条件  只有在多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符  逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件  python中的逻辑运算符包括：与and/ 或or/ 非not 三种  在开发中，通常希望某个条件不满足时，执行一些代码，可以使用 not  如果需要拼接复杂的逻辑计算条件，同样也有可能使用">
 <meta property="og:type" content="article">
@@ -473,21 +473,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-07-break和continue关键字" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">07.break和continue关键字</h1>
     
     <div class="article-meta">
         
-        <span class="top"><a href="javascript:">置顶</a></span>
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-28 15:51:22'>2019-07-24 22:32</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-31 23:11:06'>2019-07-31 22:46</time>
         
     </div>
     <div class="article-meta">
@@ -509,7 +513,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#break-和-continue"><span class="toc-text">break 和 continue</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -524,19 +528,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h2><p><strong>break 和 continue是专门在循环中使用的关键字</strong></p>
+<ul>
+<li>break 某一条件满足时，退出循环，不再执行后续重复的代码</li>
+<li>continue 某一条件满足时，不执行后续重复的代码</li>
+</ul>
+<p><strong>break 和 continue 只针对当前所在的循环有效</strong></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -550,12 +547,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>07.break和continue关键字</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-24, 22:32:28</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-28, 15:51:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/24/hello-world/" title="Hello World">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/24/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-31, 22:46:25</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-31, 23:11:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/31/07-break和continue关键字/" title="07.break和continue关键字">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/31/07-break和continue关键字/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
