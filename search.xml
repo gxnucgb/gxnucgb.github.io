@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>13.列表（1）</title>
+      <link href="/2019/08/01/13-%E5%88%97%E8%A1%A8%EF%BC%881%EF%BC%89/"/>
+      <url>/2019/08/01/13-%E5%88%97%E8%A1%A8%EF%BC%881%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>12.列表</title>
+      <link href="/2019/08/01/12-%E5%88%97%E8%A1%A8/"/>
+      <url>/2019/08/01/12-%E5%88%97%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h3><ul><li>list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组</li><li>专门用于存储一串信息</li><li>列表用 [] 定义，数据之间使用 ，分隔</li><li>列表的索引从 0 开始<br>索引就是数据在列表中的位置编号，索引又可以被称为下表</li></ul><p><strong>注意：从列表中取值时，如果超出索引范围，程序会报错</strong></p><table><thead><tr><th>分类</th><th>关键字/函数/方法</th><th>说明</th></tr></thead><tbody><tr><td>增加</td><td>列表.insert(索引，数据)</td><td>在指定位置插入数据</td></tr><tr><td></td><td>列表.append(数据)</td><td>在末尾追加数据</td></tr><tr><td></td><td>列表.extend(列表2)</td><td>将列表2的数据追加到列表</td></tr><tr><td>修改</td><td>列表[索引] = 数据</td><td>修改指定索引的数据</td></tr><tr><td>删除</td><td>del 列表[索引]</td><td>删除指定索引的数据</td></tr><tr><td></td><td>列表.remove[数据]</td><td>删除第一个出现的指定数据</td></tr><tr><td></td><td>列表.pop</td><td>删除末尾数据</td></tr><tr><td></td><td>列表pop（索引）</td><td>删除指定索引数据</td></tr><tr><td></td><td>列表.clear</td><td>清空列表</td></tr><tr><td>统计</td><td>len（列表）</td><td>列表长度</td></tr><tr><td></td><td>列表.count（数据）</td><td>数据在列表中出现的次数</td></tr><tr><td>排序</td><td>列表.sort()</td><td>升序排序</td></tr><tr><td></td><td>列表.sort(reverse=True)</td><td>降序排序</td></tr><tr><td></td><td>列表.reverse()</td><td>逆序、反转</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 列表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>11.预先知识</title>
+      <link href="/2019/08/01/11-%E9%A2%84%E5%85%88%E7%9F%A5%E8%AF%86/"/>
+      <url>/2019/08/01/11-%E9%A2%84%E5%85%88%E7%9F%A5%E8%AF%86/</url>
+      
+        <content type="html"><![CDATA[<p>python 中的数据类型可分为数字型和非数字型</p><ul><li>非数字型：</li></ul><ol><li>字符串</li><li>列表</li><li>元组</li><li>字典</li></ol><ul><li>在python中，所有非数字型变量都支持以下特点：</li></ul><ol><li>都是一个序列 sequence ，也可以理解为容器</li><li>取值[]</li><li>遍历 for in</li><li>计算长度、最大/最小值、比较、删除</li><li>连接 + 和 重复 *</li><li>切片</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>10.模块中的函数</title>
+      <link href="/2019/08/01/10-%E6%A8%A1%E5%9D%97%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/"/>
+      <url>/2019/08/01/10-%E6%A8%A1%E5%9D%97%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<p><strong>模块是python程序构架的一个核心概念</strong></p><ul><li>模块就好比是工具包，要想使用这个工具包中的工具，就需要导入impor这个模块</li><li>每一个以扩展名py结尾的python源代码文件都是一个模块</li><li>在模块中定义的的全局变量、函数 都是模块能够提供给外界直接使用的工具</li></ul><p><strong>小结：</strong></p><ol><li>可以在一个python文件中定义变量或者函数</li><li>然后在另一个文件中使用impor导入这个模块</li><li>导入之后，就可以使用模块名.变量/模块名.函数的方式，使用这个模块中定义的变量或者函数</li></ol><p><strong>模块可以让编写过的代码方便的被复用</strong><br>模块名也是一个标识符，遵守标识符的规则</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>09.函数基本使用（1）</title>
       <link href="/2019/08/01/09-%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%881%EF%BC%89/"/>
       <url>/2019/08/01/09-%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%881%EF%BC%89/</url>
@@ -23,7 +99,7 @@
     
     
     <entry>
-      <title>07.函数基本使用</title>
+      <title>08.函数基本使用</title>
       <link href="/2019/08/01/08-%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/08/01/08-%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</url>
       

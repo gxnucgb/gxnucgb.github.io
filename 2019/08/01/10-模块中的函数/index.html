@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux其他命令 | Welcome to my blog</title>
-  <meta name="keywords" content=" Linux ">
-  <meta name="description" content="Linux其他命令 | Welcome to my blog">
+  <title>10.模块中的函数 | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="10.模块中的函数 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="函数调用注意：定义好函数之后，只表示这个函数封装了一段代码而已，入托不主动调用函数，函数是不会主动执行的** 不能将调用函数放在函数定义上方**否则控制台会提示 NameError：name xxx is not defined Pychram 的调试工具 F8 Step Over 可以单步执行代码，会把函数调用看作是一行代码直接执行 F7 Step Into 可以单步执行代码，如果是hi函数，会">
 <meta property="og:type" content="article">
@@ -525,9 +525,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux其他命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-10-模块中的函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux其他命令</h1>
+        <h1 class="article-title">10.模块中的函数</h1>
     
     <div class="article-meta">
         
@@ -535,21 +535,15 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Linux">Linux</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color1">Linux</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-28 15:09:54'>2019-07-28 10:33</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 17:01:00'>2019-08-01 15:51</time>
         
     </div>
     <div class="article-meta">
@@ -571,7 +565,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#其他命令"><span class="toc-text">其他命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-查找文件"><span class="toc-text">01. 查找文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-软连接"><span class="toc-text">2.软连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-打包压缩"><span class="toc-text">03.打包压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-打包-解包"><span class="toc-text">3.1 打包/解包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-压缩-解压缩"><span class="toc-text">3.2 压缩/解压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）gzip"><span class="toc-text">1）gzip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）bzip2-two"><span class="toc-text">2）bzip2(two)</span></a></li></ol></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -586,99 +580,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><ol>
-<li>查找文件<br>find</li>
-<li>软链接<br>ln</li>
-<li>打包和压缩<br>tar</li>
-<li>软件安装<br>apt-get<h2 id="01-查找文件"><a href="#01-查找文件" class="headerlink" title="01. 查找文件"></a>01. 查找文件</h2></li>
-</ol>
+        <p><strong>模块是python程序构架的一个核心概念</strong></p>
 <ul>
-<li>find 命令功能非常强大，通常用来在特定的目录下搜索符合条件的文件<br><code>find [路径] -name &quot;*.py&quot;             作用：查找指定路径下扩展名时 .py 的文件，包括子目录</code></li>
-<li>如果省略路径，表示在当前文件夹下查找</li>
-<li>之前学习的通配符，在使用find命令时同时可用</li>
+<li>模块就好比是工具包，要想使用这个工具包中的工具，就需要导入impor这个模块</li>
+<li>每一个以扩展名py结尾的python源代码文件都是一个模块</li>
+<li>在模块中定义的的全局变量、函数 都是模块能够提供给外界直接使用的工具</li>
 </ul>
+<p><strong>小结：</strong></p>
 <ol>
-<li>搜索桌面目录下，文件名包含1 的文件<br><code>find -name “*1*”</code></li>
-<li>搜索桌面目录下，所有以.txt为扩展名的文件<br><code>find -name &quot;*.txt&quot;</code></li>
-<li>搜索桌面目录下，以数字1开头的文件<br><code>find -name &quot;1*&quot;</code><h2 id="2-软连接"><a href="#2-软连接" class="headerlink" title="2.软连接"></a>2.软连接</h2><code>ln -s 被链接的源文件 链接文件            作用：建立文件的软链接，用通俗的方式讲类似于Windows下的快捷方式</code></li>
+<li>可以在一个python文件中定义变量或者函数</li>
+<li>然后在另一个文件中使用impor导入这个模块</li>
+<li>导入之后，就可以使用模块名.变量/模块名.函数的方式，使用这个模块中定义的变量或者函数</li>
 </ol>
-<p><strong>注意：</strong></p>
-<ul>
-<li>1，没有 -s 选项建立的是一个硬链接文件<br>两个文件占用大小相同的硬盘空间，工作中几乎不会建立文件的硬链接</li>
-<li>2，源文件要<strong>使用绝对路径</strong>，不能使用相对路径，这样可以方便移动链接文件后，仍然能够正常使用</li>
-</ul>
-<p><strong>【例子】</strong><br>1，将桌面目录下的01.py 移动到 demo/b/c 目录下<br><code>mv 01.py demo/b/c</code><br>2，在桌面目录下新建 01.py 的软链接 FirstPython<br>分别使用相对路径和绝对路径建立FirstPython<br>相对路径<code>ln -s demo/b/c/01.py 01_xiangdui</code><br>cat 显示文件内容<br>绝对路径<code>ln-s /home/chen/Desktop/demo/b/c/01.py 01_juedui</code><br>3，将FirstPython 移动到demo目录下，对比使用相对路径和绝对路径的区别</p>
-<p>在Linux中，文件名和文件数据时分开存储的</p>
-<h2 id="03-打包压缩"><a href="#03-打包压缩" class="headerlink" title="03.打包压缩"></a>03.打包压缩</h2><ul>
-<li>打包压缩时日常工作中备份文件的一种方式</li>
-<li>在不同的操作系统中，常用的打包压缩方式是不同的</li>
-</ul>
-<ol>
-<li>windows中常用rar</li>
-<li>Mac中常用zip</li>
-<li>Linux中常用tar.gz<h3 id="3-1-打包-解包"><a href="#3-1-打包-解包" class="headerlink" title="3.1 打包/解包"></a>3.1 打包/解包</h3></li>
-</ol>
-<ul>
-<li>tar是Linux中最常用的备份工具，此命令可以把一系列文件打包到一个大文件中，也可以把一个打包的大文件恢复成以系列文件</li>
-<li>tar 的命令格式如下：<br>打包文件<br><code>tar -cvf 打包文件.rar 被打包的文件/路径...</code><br>解包文件<br><code>tar -xvf 打包文件.tar</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>c</td>
-<td>生成档案文件，创建打包文件</td>
-</tr>
-<tr>
-<td>x</td>
-<td>解开档案文件</td>
-</tr>
-<tr>
-<td>v</td>
-<td>列出归档接档的详细过程，显示进度</td>
-</tr>
-<tr>
-<td>f</td>
-<td>指定档案文件名称，f后面一定是.tar 文件，所以必须放选项最好</td>
-</tr>
-<tr>
-<td><strong>注意：</strong>f 选项必须放在最后，其他选项顺序可以随意</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><strong>【例子】</strong></p>
-<ol>
-<li>删除桌面下的所有内容<br><code>rm -r *</code></li>
-<li>在桌面下新建3个空白文件 01.py，02.py 03.py<br><code>touch 01.py</code></li>
-<li>将这三个文件夹打一个 py.tar的包<br><code>tar -cvf py.tar 01.py 02.py 03.py</code></li>
-<li>新建 tar 目录，并且将 py.tar 移动到tar 目录下<br><code>mkdir tar</code><br><code>mv py.tar tar</code></li>
-<li>解包 py.tar<br><code>tar -xvf py.tar</code><h3 id="3-2-压缩-解压缩"><a href="#3-2-压缩-解压缩" class="headerlink" title="3.2 压缩/解压缩"></a>3.2 压缩/解压缩</h3><h4 id="1）gzip"><a href="#1）gzip" class="headerlink" title="1）gzip"></a><strong>1）gzip</strong></h4></li>
-</ol>
-<ul>
-<li>tar与gzip 命令结合可以实现文件打包和压缩</li>
-</ul>
-<ol>
-<li>tar只负责打包文件，但不压缩</li>
-<li>用gzip 压缩tar打包后的文件，其扩展名一般用 xxx.tar.gz</li>
-</ol>
-<p><em>在Linux中，最常见的压缩文件格式就是 xxx.tar.gz</em></p>
-<ul>
-<li>在tar 命令中有一个选项 -z 可以调用 gzip ，从而可以方便的实现压缩和解压缩的功能</li>
-<li>命令格式如下：<br>压缩文件<br><code>tar -zxcf 打包文件.tar.gz 被压缩的文件/路径...</code><br>解压缩文件<br><code>tar -zxvf 打包文件.tar.gz</code><br>解压缩到指定路径<br><code>tar -zxvf 打包文件.tar.gz -C 目标路径</code><br><code>-C         含义：解压缩到指定目录，注意：要解压缩的目录必须存在</code><h4 id="2）bzip2-two"><a href="#2）bzip2-two" class="headerlink" title="2）bzip2(two)"></a><strong>2）bzip2(two)</strong></h4></li>
-<li>tar 与bzip2 命令结合可以使用实现文件 打包和压缩 （用法和 gzip 一样）</li>
-</ul>
-<ol>
-<li>tar 只负责打包文件，但不压缩</li>
-<li>用 bzip2 压缩tar 打包后的文件，其扩展名一般用 xxx.tar.bz2</li>
-</ol>
-<ul>
-<li>在tar 命令中有一个选项 -j 可以调用 bzip2 ，从而可以方便的实现压缩和解压缩的功能</li>
-<li>命令格式如下：<br>压缩文件<br><code>tar -jcvf 打包文件.tar.bz2 被压缩的文件/路径/...</code><br>解压缩文件<br><code>tar -jxvf 打包文件.tar.bz2</code></li>
-</ul>
+<p><strong>模块可以让编写过的代码方便的被复用</strong><br>模块名也是一个标识符，遵守标识符的规则</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -692,12 +606,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux其他命令</p>
+    <p><span class="copy-title">文章标题:</span>10.模块中的函数</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-28, 10:33:53</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-28, 15:09:54</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/28/Linux其他命令/" title="Linux其他命令">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/28/Linux其他命令/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-01, 15:51:51</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 17:01:00</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/10-模块中的函数/" title="10.模块中的函数">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/10-模块中的函数/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
