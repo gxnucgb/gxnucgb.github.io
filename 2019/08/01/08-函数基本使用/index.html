@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>05.随机数的处理 | Welcome to my blog</title>
-  <meta name="keywords" content=" random ">
-  <meta name="description" content="05.随机数的处理 | Welcome to my blog">
+  <title>07.函数基本使用 | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="07.函数基本使用 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="break 和 continuebreak 和 continue是专门在循环中使用的关键字  break 某一条件满足时，退出循环，不再执行后续重复的代码 continue 某一条件满足时，不执行后续重复的代码  break 和 continue 只针对当前所在的循环有效注意：在循环重，如果使用continue这个关键字，在使用关键字之前，需要确认循环的计数是否修改，否则可能会导致死循环。  \t">
 <meta property="og:type" content="article">
@@ -489,9 +489,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-05-随机数的处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-08-函数基本使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">05.随机数的处理</h1>
+        <h1 class="article-title">07.函数基本使用</h1>
     
     <div class="article-meta">
         
@@ -504,16 +504,10 @@
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color2">random</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-30 22:20:09'>2019-07-30 21:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 15:46:38'>2019-08-01 10:59</time>
         
     </div>
     <div class="article-meta">
@@ -535,7 +529,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的定义"><span class="toc-text">函数的定义</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -551,11 +545,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>再python中，要使用随机数，首先需要导入随机数的模块——“工具包”</li>
-<li>import random</li>
-<li>导入模块后，可以直接再模块后面敲一个 . 然后按tab键，会提示该模块中包含的所有函数</li>
-<li>random.randint(a, b)  返回[a, b]之间的一个随机数，包含a 和 b</li>
+<li>所谓函数，就是把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
+<li>函数的使用包含两个步骤：</li>
 </ul>
+<ol>
+<li>定义函数——封装独立的功能</li>
+<li>调用函数——享受封装的成果</li>
+</ol>
+<ul>
+<li>函数的作用，在开发程序时，使用函数可以提高编写的效率以及代码的重用<h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2>定义函数的格式如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></span><br><span class="line">	函数封装的代码</span><br><span class="line">	......</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>def 时英文 define 的缩写</li>
+<li>函数名称应该能够表达函数封装代码的功能，方便后续的调用</li>
+<li>函数名称的命名应该符合标识符的命名规则<br>可以由字母，下划线和数字组成<br>不能以数字开头<br>不能与关键字重名</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -569,12 +574,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>05.随机数的处理</p>
+    <p><span class="copy-title">文章标题:</span>07.函数基本使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-30, 21:48:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-30, 22:20:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/30/05-随机数的处理/" title="05.随机数的处理">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/30/05-随机数的处理/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-01, 10:59:02</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 15:46:38</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/08-函数基本使用/" title="07.函数基本使用">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/08-函数基本使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

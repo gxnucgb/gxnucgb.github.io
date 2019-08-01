@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>05.随机数的处理 | Welcome to my blog</title>
-  <meta name="keywords" content=" random ">
-  <meta name="description" content="05.随机数的处理 | Welcome to my blog">
+  <title>09.函数基本使用（1） | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="09.函数基本使用（1） | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="break 和 continuebreak 和 continue是专门在循环中使用的关键字  break 某一条件满足时，退出循环，不再执行后续重复的代码 continue 某一条件满足时，不执行后续重复的代码  break 和 continue 只针对当前所在的循环有效注意：在循环重，如果使用continue这个关键字，在使用关键字之前，需要确认循环的计数是否修改，否则可能会导致死循环。  \t">
 <meta property="og:type" content="article">
@@ -489,9 +489,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-05-随机数的处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-09-函数基本使用（1）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">05.随机数的处理</h1>
+        <h1 class="article-title">09.函数基本使用（1）</h1>
     
     <div class="article-meta">
         
@@ -504,16 +504,10 @@
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color2">random</a>
-            
-        </span>
-        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-30 22:20:09'>2019-07-30 21:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 15:46:38'>2019-08-01 12:19</time>
         
     </div>
     <div class="article-meta">
@@ -535,7 +529,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数调用"><span class="toc-text">函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pychram-的调试工具"><span class="toc-text">Pychram 的调试工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数文档注释"><span class="toc-text">函数文档注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数的使用"><span class="toc-text">函数参数的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数的作用"><span class="toc-text">参数的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#形参和实参"><span class="toc-text">形参和实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的返回值"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的嵌套调用"><span class="toc-text">函数的嵌套调用</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -550,12 +544,39 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>再python中，要使用随机数，首先需要导入随机数的模块——“工具包”</li>
-<li>import random</li>
-<li>导入模块后，可以直接再模块后面敲一个 . 然后按tab键，会提示该模块中包含的所有函数</li>
-<li>random.randint(a, b)  返回[a, b]之间的一个随机数，包含a 和 b</li>
+        <h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>注意：定义好函数之后，只表示这个函数封装了一段代码而已，入托不主动调用函数，函数是不会主动执行的<br>** 不能将调用函数放在函数定义上方**否则控制台会提示 NameError：name xxx is not defined</p>
+<h3 id="Pychram-的调试工具"><a href="#Pychram-的调试工具" class="headerlink" title="Pychram 的调试工具"></a>Pychram 的调试工具</h3><ul>
+<li>F8 Step Over 可以单步执行代码，会把函数调用看作是一行代码直接执行</li>
+<li>F7 Step Into 可以单步执行代码，如果是hi函数，会进入函数内部<h3 id="函数文档注释"><a href="#函数文档注释" class="headerlink" title="函数文档注释"></a>函数文档注释</h3></li>
+<li>在开发中，如果希望给函数添加注释，应该在定义函数的下方，使用联系的三对引号</li>
+<li>在连续的三对引号之间编写对函数的说明文字</li>
+<li>在函数调用位置，使用快捷键ctrl + Q 可以查看函数的说明信息</li>
 </ul>
+<p><strong>注意：因为函数体相对独立，函数定义的上方，应该和其他代码（包括注释）保留两个空行</strong></p>
+<h3 id="函数参数的使用"><a href="#函数参数的使用" class="headerlink" title="函数参数的使用"></a>函数参数的使用</h3><ul>
+<li>在函数名的后面的小括号内部填写参数</li>
+<li>多个参数之间使用 , 分隔<h3 id="参数的作用"><a href="#参数的作用" class="headerlink" title="参数的作用"></a>参数的作用</h3></li>
+<li>函数，把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
+<li>函数的参数，增加函数的通用性，针对相同的数据处理逻辑，能适应更多的数据</li>
+</ul>
+<ol>
+<li>在函数的内部，把参数当作变量使用，进行需要的数据处理</li>
+<li>函数调用时，按照函数定义的参数顺序把希望在函数内部处理的数据，通过参数传递<h3 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h3></li>
+</ol>
+<ul>
+<li>形参：定义函数时，小括号中的参数，是用来接收参数用的，在函数内部作为变量使用</li>
+<li>实参：调用函数时，小括号中的参数，是用来把数据传递到函数内部的<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3></li>
+<li>在程序开发中，有时候，会希望一个函数执行结束之后，告诉调用者一个结果，一边调用者对具体的结果做后续处理</li>
+<li>返回值时函数完成工作后，最后给调用者的一个结果</li>
+<li>在函数中 return 关键字可以返回结果</li>
+<li>调用函数一方，可以使用变量来接受函数的返回结果</li>
+</ul>
+<p><strong>注意：return 之后的代码不会被执行</strong></p>
+<h3 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h3><ul>
+<li>一个函数里面又调用了另一个函数，这就是函数嵌套调用</li>
+<li>如果函数test2中，调用了另一个函数test1<br>那么执行到调用test1函数时，会先把函数test1中的任务都执行完才会回到test2中调用test1的位置，继续执行之后的代码</li>
+</ul>
+<p><strong>提示：工作中针对需求的变化，应该冷静思考，不要轻易修改之前已经完成的，能够正常执行的函数</strong>！</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -569,12 +590,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>05.随机数的处理</p>
+    <p><span class="copy-title">文章标题:</span>09.函数基本使用（1）</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-30, 21:48:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-30, 22:20:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/30/05-随机数的处理/" title="05.随机数的处理">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/30/05-随机数的处理/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-01, 12:19:22</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 15:46:38</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/09-函数基本使用（1）/" title="09.函数基本使用（1）">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/09-函数基本使用（1）/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
