@@ -4,13 +4,75 @@
   
     
     <entry>
+      <title>15.元组</title>
+      <link href="/2019/08/01/15-%E5%85%83%E7%BB%84/"/>
+      <url>/2019/08/01/15-%E5%85%83%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<h3 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h3><ul><li>Tuple（元组）与列表类似，不同之处在于元组的元素不能更改</li></ul><ol><li>元组表示多个元素组成的序列</li><li>元组在python开发中，有特定的应用场景</li></ol><ul><li>用于存储一串信息，数据之间使用 ，分隔</li><li>元组用（）定义</li><li>元组的索引从 0 开始<br>索引 就是数据在元组中的位置编号<br><code>info_tuple = (&quot;zhangsan &quot;, 22, 170)</code></li></ul><p><strong>元组中只包含一个元素时，需要在元素后面添加逗号</strong><br><code>info_tuple = (50, )</code><br><strong>没有逗号的话就是一个int类型的数据了</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 元组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>14.列表（1）循环遍历</title>
+      <link href="/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/"/>
+      <url>/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><p>遍历就是从头到尾一次从列表中获取数据<br>在循环体内部针对每一个元素，执行相同的操作<br>在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历<br>使用for 就能够实现迭代遍历</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span> 循环内部使用的变量 <span class="keyword">in</span> 列表：</span><br><span class="line">循环内部针对列表元素进行的操作</span><br></pre></td></tr></table></figure><p><strong>应用场景</strong></p><ul><li>尽管python的列表中可以存储不同类型的数据</li><li>但是在开发中，更多的应用场景事</li></ul><ol><li>列表 存储相同类型的数据</li><li>通过 迭代遍历，在循环体内部，针对列表中的每一项元素，执行相同的操作</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 列表 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>13.列表（1）</title>
       <link href="/2019/08/01/13-%E5%88%97%E8%A1%A8%EF%BC%881%EF%BC%89/"/>
       <url>/2019/08/01/13-%E5%88%97%E8%A1%A8%EF%BC%881%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="关键字，函数和方法出坑"><a href="#关键字，函数和方法出坑" class="headerlink" title="关键字，函数和方法出坑"></a>关键字，函数和方法出坑</h3><ul><li>关键字是python内置的，具有特殊意义的标识符</li></ul><p><strong>关键字后面不需要使用括号</strong></p><ul><li>函数 封装了独立功能，可以直接调用</li></ul><p><em>函数名（参数）</em><br><strong>函数需要死记硬背</strong></p><ul><li>方法和函数类似，同样是封装了独立的功能</li><li>方法需要通过对象来调用，表针对这个对象要做的操作</li></ul><p><em>对象.方法名（参数）</em><br>在变量后面输入 . 然后选择针对这个变量要执行的操作，记忆起来比函数简单很多</p>]]></content>
       
       
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 列表 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -21,7 +83,7 @@
       <link href="/2019/08/01/12-%E5%88%97%E8%A1%A8/"/>
       <url>/2019/08/01/12-%E5%88%97%E8%A1%A8/</url>
       
-        <content type="html"><![CDATA[<h3 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h3><ul><li>list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组</li><li>专门用于存储一串信息</li><li>列表用 [] 定义，数据之间使用 ，分隔</li><li>列表的索引从 0 开始<br>索引就是数据在列表中的位置编号，索引又可以被称为下表</li></ul><p><strong>注意：从列表中取值时，如果超出索引范围，程序会报错</strong></p><table><thead><tr><th>分类</th><th>关键字/函数/方法</th><th>说明</th></tr></thead><tbody><tr><td>增加</td><td>列表.insert(索引，数据)</td><td>在指定位置插入数据</td></tr><tr><td></td><td>列表.append(数据)</td><td>在末尾追加数据</td></tr><tr><td></td><td>列表.extend(列表2)</td><td>将列表2的数据追加到列表</td></tr><tr><td>修改</td><td>列表[索引] = 数据</td><td>修改指定索引的数据</td></tr><tr><td>删除</td><td>del 列表[索引]</td><td>删除指定索引的数据</td></tr><tr><td></td><td>列表.remove[数据]</td><td>删除第一个出现的指定数据</td></tr><tr><td></td><td>列表.pop</td><td>删除末尾数据</td></tr><tr><td></td><td>列表pop（索引）</td><td>删除指定索引数据</td></tr><tr><td></td><td>列表.clear</td><td>清空列表</td></tr><tr><td>统计</td><td>len（列表）</td><td>列表长度</td></tr><tr><td></td><td>列表.count（数据）</td><td>数据在列表中出现的次数</td></tr><tr><td>排序</td><td>列表.sort()</td><td>升序排序</td></tr><tr><td></td><td>列表.sort(reverse=True)</td><td>降序排序</td></tr><tr><td></td><td>列表.reverse()</td><td>逆序、反转</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<h3 id="列表的定义"><a href="#列表的定义" class="headerlink" title="列表的定义"></a>列表的定义</h3><ul><li>list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组</li><li>专门用于存储一串信息</li><li>列表用 [] 定义，数据之间使用 ，分隔</li><li>列表的索引从 0 开始<br>索引就是数据在列表中的位置编号，索引又可以被称为下表</li></ul><p><strong>注意：从列表中取值时，如果超出索引范围，程序会报错</strong></p><table><thead><tr><th>分类</th><th>关键字/函数/方法</th><th>说明</th></tr></thead><tbody><tr><td>增加</td><td>列表.insert(索引，数据)</td><td>在指定位置插入数据</td></tr><tr><td></td><td>列表.append(数据)</td><td>在末尾追加数据</td></tr><tr><td></td><td>列表.extend(列表2)</td><td>将列表2的数据追加到列表</td></tr><tr><td>修改</td><td>列表[索引] = 数据</td><td>修改指定索引的数据</td></tr><tr><td>删除</td><td>del 列表[索引]</td><td>删除指定索引的数据</td></tr><tr><td></td><td>列表.remove[数据]</td><td>删除第一个出现的指定数据</td></tr><tr><td></td><td>列表.pop</td><td>删除末尾数据</td></tr><tr><td></td><td>列表pop（索引）</td><td>删除指定索引数据</td></tr><tr><td></td><td>列表.clear</td><td>清空列表</td></tr><tr><td>统计</td><td>len（列表）</td><td>列表长度</td></tr><tr><td></td><td>列表.count（数据）</td><td>数据在列表中出现的次数</td></tr><tr><td>排序</td><td>列表.sort()</td><td>升序排序</td></tr><tr><td></td><td>列表.sort(reverse=True)</td><td>降序排序</td></tr><tr><td></td><td>列表.reverse()</td><td>逆序、反转</td></tr></tbody></table><p>提示：在日常开发中，要从列表删除数据，建议使用列表提供的方法<br>  注意：如果使用del 关键字将变量从内存中删除，后续代码就不能再使用这个变量了</p>]]></content>
       
       
       <categories>

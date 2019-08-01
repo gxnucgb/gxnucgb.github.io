@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Linux远程管理命令-05-ping测试网络连接 | Welcome to my blog</title>
-  <meta name="keywords" content=" Linux ">
-  <meta name="description" content="Linux远程管理命令-05-ping测试网络连接 | Welcome to my blog">
+  <title>15.元组 | Welcome to my blog</title>
+  <meta name="keywords" content=" 元组 ">
+  <meta name="description" content="15.元组 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
 <meta name="keywords" content="列表">
@@ -546,9 +546,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Linux远程管理命令-04-ping测试网络连接" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-15-元组" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux远程管理命令-05-ping测试网络连接</h1>
+        <h1 class="article-title">15.元组</h1>
     
     <div class="article-meta">
         
@@ -556,21 +556,21 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Linux">Linux</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">Linux</a>
+            <a href="javascript:" class="color3">元组</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-27 16:02:09'>2019-07-27 11:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 22:46:57'>2019-08-01 22:24</time>
         
     </div>
     <div class="article-meta">
@@ -592,7 +592,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-ping"><span class="toc-text">2.3 ping</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#元组的定义"><span class="toc-text">元组的定义</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -607,12 +607,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="2-3-ping"><a href="#2-3-ping" class="headerlink" title="2.3 ping"></a>2.3 ping</h2><p>检测到目标主机是否连接正常<br><code>ping IP地址</code><br>检测本地网卡工作正常<br><code>ping 127.0.0.1</code></p>
-<ul>
-<li>ping 一般用于检测当前计算机到目标计算机之间的网络是否通畅，数值越大，速度越慢</li>
-<li>ping一下计算机x，看他是否开着，原理：网络上的机器都有唯一确定的IP地址，我们给目标IP地址发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们可以确定目标主机的存在</li>
+        <h3 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h3><ul>
+<li>Tuple（元组）与列表类似，不同之处在于元组的元素不能更改</li>
 </ul>
-<p><strong>提示：</strong>在Linux中，想要终止一个终端程序的执行，绝大多数都可以用CTRL+ C</p>
+<ol>
+<li>元组表示多个元素组成的序列</li>
+<li>元组在python开发中，有特定的应用场景</li>
+</ol>
+<ul>
+<li>用于存储一串信息，数据之间使用 ，分隔</li>
+<li>元组用（）定义</li>
+<li>元组的索引从 0 开始<br>索引 就是数据在元组中的位置编号<br><code>info_tuple = (&quot;zhangsan &quot;, 22, 170)</code></li>
+</ul>
+<p><strong>元组中只包含一个元素时，需要在元素后面添加逗号</strong><br><code>info_tuple = (50, )</code><br><strong>没有逗号的话就是一个int类型的数据了</strong></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -626,12 +633,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Linux远程管理命令-05-ping测试网络连接</p>
+    <p><span class="copy-title">文章标题:</span>15.元组</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-27, 11:37:18</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-27, 16:02:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/27/Linux远程管理命令-04-ping测试网络连接/" title="Linux远程管理命令-05-ping测试网络连接">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/27/Linux远程管理命令-04-ping测试网络连接/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-01, 22:24:31</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 22:46:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/15-元组/" title="15.元组">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/15-元组/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

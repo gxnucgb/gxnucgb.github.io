@@ -3,20 +3,21 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <title>13.列表（1） | Welcome to my blog</title>
-  <meta name="keywords" content>
+  <meta name="keywords" content=" 列表 ">
   <meta name="description" content="13.列表（1） | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="函数调用注意：定义好函数之后，只表示这个函数封装了一段代码而已，入托不主动调用函数，函数是不会主动执行的** 不能将调用函数放在函数定义上方**否则控制台会提示 NameError：name xxx is not defined Pychram 的调试工具 F8 Step Over 可以单步执行代码，会把函数调用看作是一行代码直接执行 F7 Step Into 可以单步执行代码，如果是hi函数，会">
+<meta name="description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
+<meta name="keywords" content="列表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="09.函数基本使用（1）">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/09-函数基本使用（1）/index.html">
+<meta property="og:title" content="12.列表">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/12-列表/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="函数调用注意：定义好函数之后，只表示这个函数封装了一段代码而已，入托不主动调用函数，函数是不会主动执行的** 不能将调用函数放在函数定义上方**否则控制台会提示 NameError：name xxx is not defined Pychram 的调试工具 F8 Step Over 可以单步执行代码，会把函数调用看作是一行代码直接执行 F7 Step Into 可以单步执行代码，如果是hi函数，会">
+<meta property="og:description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T07:46:38.047Z">
+<meta property="og:updated_time" content="2019-08-01T12:51:25.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="09.函数基本使用（1）">
-<meta name="twitter:description" content="函数调用注意：定义好函数之后，只表示这个函数封装了一段代码而已，入托不主动调用函数，函数是不会主动执行的** 不能将调用函数放在函数定义上方**否则控制台会提示 NameError：name xxx is not defined Pychram 的调试工具 F8 Step Over 可以单步执行代码，会把函数调用看作是一行代码直接执行 F7 Step Into 可以单步执行代码，如果是hi函数，会">
+<meta name="twitter:title" content="12.列表">
+<meta name="twitter:description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -125,11 +126,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(35)</small></div></li>
+    <li><div class="all active">全部文章<small>(37)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(13)</small></div>
+            <li><div data-rel="python">python<small>(16)</small></div>
                 
             </li>
             
@@ -163,7 +164,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="35">
+<input type="hidden" id="yelog_site_posts_number" value="37">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -200,11 +201,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
+        <a href="javascript:" class="color3">if</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">if</a>
+        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -213,6 +214,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">列表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">元组</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -249,9 +254,25 @@
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
         </a>
         
-        <a  class=""
+        <a  class="python "
+           href="/2019/08/01/15-元组/"
+           data-tag="元组"
+           data-author="" >
+            <span class="post-title" title="15.元组">15.元组</span>
+            <span class="post-date" title="2019-08-01 22:24:31">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/14-列表（2）循环遍历/"
+           data-tag="列表"
+           data-author="" >
+            <span class="post-title" title="14.列表（1）循环遍历">14.列表（1）循环遍历</span>
+            <span class="post-date" title="2019-08-01 21:29:02">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
            href="/2019/08/01/13-列表（1）/"
-           data-tag=""
+           data-tag="列表"
            data-author="" >
             <span class="post-title" title="13.列表（1）">13.列表（1）</span>
             <span class="post-date" title="2019-08-01 18:06:04">2019/08/01</span>
@@ -533,11 +554,23 @@
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="python">python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">列表</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 18:06:04'>2019-08-01 18:06</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-01 22:46:57'>2019-08-01 18:06</time>
         
     </div>
     <div class="article-meta">
@@ -559,7 +592,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字，函数和方法出坑"><span class="toc-text">关键字，函数和方法出坑</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -574,7 +607,20 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="关键字，函数和方法出坑"><a href="#关键字，函数和方法出坑" class="headerlink" title="关键字，函数和方法出坑"></a>关键字，函数和方法出坑</h3><ul>
+<li>关键字是python内置的，具有特殊意义的标识符</li>
+</ul>
+<p><strong>关键字后面不需要使用括号</strong></p>
+<ul>
+<li>函数 封装了独立功能，可以直接调用</li>
+</ul>
+<p><em>函数名（参数）</em><br><strong>函数需要死记硬背</strong></p>
+<ul>
+<li>方法和函数类似，同样是封装了独立的功能</li>
+<li>方法需要通过对象来调用，表针对这个对象要做的操作</li>
+</ul>
+<p><em>对象.方法名（参数）</em><br>在变量后面输入 . 然后选择针对这个变量要执行的操作，记忆起来比函数简单很多</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
     </div>
@@ -591,7 +637,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
     <p><span class="copy-title">发布时间:</span>2019-08-01, 18:06:04</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-01, 18:06:04</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-01, 22:46:57</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/13-列表（1）/" title="13.列表（1）">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/13-列表（1）/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -653,7 +699,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#random','#if','#while','#列表','#Linux','#MySQL','#sqlite3',],
+            'data': ['#if','#random','#while','#列表','#元组','#Linux','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
