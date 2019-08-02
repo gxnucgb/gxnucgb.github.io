@@ -6,18 +6,18 @@
   <meta name="keywords" content=" while ">
   <meta name="description" content="06.while循环的基本使用 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
+<meta name="description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
 <meta name="keywords" content="列表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="12.列表">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/12-列表/index.html">
+<meta property="og:title" content="14.列表（1）循环遍历">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/14-列表（2）循环遍历/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
+<meta property="og:description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T12:51:25.695Z">
+<meta property="og:updated_time" content="2019-08-01T14:46:57.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="12.列表">
-<meta name="twitter:description" content="列表的定义 list （列表） 是python中使用最频繁的数据类型，在其他语言中通常叫做数组 专门用于存储一串信息 列表用 [] 定义，数据之间使用 ，分隔 列表的索引从 0 开始索引就是数据在列表中的位置编号，索引又可以被称为下表  注意：从列表中取值时，如果超出索引范围，程序会报错    分类 关键字/函数/方法 说明    增加 列表.insert(索引，数据) 在指定位置插入数据">
+<meta name="twitter:title" content="14.列表（1）循环遍历">
+<meta name="twitter:description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -126,11 +126,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(37)</small></div></li>
+    <li><div class="all active">全部文章<small>(42)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(16)</small></div>
+            <li><div data-rel="python">python<small>(21)</small></div>
                 
             </li>
             
@@ -164,7 +164,7 @@
     </div>
     <div><a  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="37">
+<input type="hidden" id="yelog_site_posts_number" value="42">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -201,11 +201,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">if</a>
+        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
+        <a href="javascript:" class="color3">if</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -218,6 +218,14 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">元组</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">字典</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">字符串</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -252,6 +260,46 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/20-字符串常用方法/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="20.字符串常用方法">20.字符串常用方法</span>
+            <span class="post-date" title="2019-08-02 16:29:20">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/19-字符串/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="19.字符串">19.字符串</span>
+            <span class="post-date" title="2019-08-02 14:28:22">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/18-字典（1）循环遍历/"
+           data-tag="字典"
+           data-author="" >
+            <span class="post-title" title="18.字典（1）循环遍历">18.字典（1）循环遍历</span>
+            <span class="post-date" title="2019-08-02 12:22:49">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/17-字典/"
+           data-tag="字典"
+           data-author="" >
+            <span class="post-title" title="17.字典">17.字典</span>
+            <span class="post-date" title="2019-08-02 11:39:46">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/16-元组（1）循环遍历/"
+           data-tag="元组"
+           data-author="" >
+            <span class="post-title" title="16.元组（1）循环遍历">16.元组（1）循环遍历</span>
+            <span class="post-date" title="2019-08-02 11:00:40">2019/08/02</span>
         </a>
         
         <a  class="python "
@@ -699,7 +747,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#if','#random','#while','#列表','#元组','#Linux','#MySQL','#sqlite3',],
+            'data': ['#random','#if','#while','#列表','#元组','#字典','#字符串','#Linux','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

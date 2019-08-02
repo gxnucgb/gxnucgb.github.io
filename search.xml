@@ -4,11 +4,136 @@
   
     
     <entry>
+      <title>20.字符串常用方法</title>
+      <link href="/2019/08/02/20-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/02/20-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="判断类型-9"><a href="#判断类型-9" class="headerlink" title="判断类型-9"></a>判断类型-9</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.isspace()</td><td>如果string 中只包含空格，则返回True</td></tr><tr><td>string.isalnum()</td><td>如果string 至少有一个字符并且所有字符都是字母或数字则返回True</td></tr><tr><td>string.isalpha()</td><td>如果string 至少有一个字符并且所有字符都是字母则返回True</td></tr><tr><td>string.isdecimal()</td><td>如果string 只包含数字则返回True，全角数字</td></tr><tr><td>string.isdigit</td><td>如果string 只包含数字则返回True，全角数字、（1）、\u00b2</td></tr><tr><td>string.isnumeric()</td><td>如果string 只包含数字则返回True，全角数字，汉字数字</td></tr><tr><td>string.istitle()</td><td>如果string 是标题化的（每个单词的首字母大写）则返回True</td></tr><tr><td>string.islower()</td><td>如果string 包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是小写的，则返回True</td></tr><tr><td>string.isupper()</td><td>如果string 中包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是大写，则返回True</td></tr></tbody></table><h3 id="查找和替换-7"><a href="#查找和替换-7" class="headerlink" title="查找和替换-7"></a>查找和替换-7</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.starstwith(str)</td><td>检查字符串是否以str开头，是则返回True</td></tr><tr><td>string.endswith(str)</td><td>检查字符串是否以str 结束，是则返回True</td></tr><tr><td>string.find(str, start=0, end=len(string))</td><td>检测str包含在string中，如果start和end指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1</td></tr><tr><td>stiring.rfind(str, start=0, end=len(string))</td><td>类似于find()函数，不过是从右边开始查找</td></tr><tr><td>string.index(str, start=0, end=len(string))</td><td>跟find()方法类似，只不过str不在string会报错</td></tr><tr><td>string.rindex(str, start=0, end=len(string))</td><td>类似于index()，不过是从右边开始</td></tr><tr><td>string.replace(old_str, new_str, num=string.count(old))</td><td>把是string 中的old_str 替换成new_str，如果num 指定，则替换不超过 num次</td></tr></tbody></table><h3 id="大小写转换-5"><a href="#大小写转换-5" class="headerlink" title="大小写转换-5"></a>大小写转换-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.capitalize()</td><td>把字符串的第一个字符大写</td></tr><tr><td>string.title()</td><td>把字符串的每个单子首字母大写</td></tr><tr><td>string.lower()</td><td>转换string 中所有大写字符为小写</td></tr><tr><td>string.upper()</td><td>转换string中的小写字母为大写</td></tr><tr><td>string.swapcase()</td><td>翻转string中的大小写</td></tr></tbody></table><h3 id="文本对齐-3"><a href="#文本对齐-3" class="headerlink" title="文本对齐-3"></a>文本对齐-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.ljust(width)</td><td>返回一个原字符串左对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.rjust(width)</td><td>返回一个原字符串右对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.center(width)</td><td>返回一个原字符串居中，并使用空格填充至width的新字符串</td></tr></tbody></table><h3 id="去除空白字符-3"><a href="#去除空白字符-3" class="headerlink" title="去除空白字符-3"></a>去除空白字符-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>sting.lstrip()</td><td>截掉string左边（开始）的空白字符</td></tr><tr><td>string.rstrip()</td><td>截掉string右边（末尾）的空白字符</td></tr><tr><td>string.strip()</td><td>截掉string左右两边的空白字符</td></tr></tbody></table><h3 id="拆分和连接-5"><a href="#拆分和连接-5" class="headerlink" title="拆分和连接-5"></a>拆分和连接-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.partition(str)</td><td>把字符串string分成一个3元组的元组（str前面, str, str后面）</td></tr><tr><td>string.rpartition</td><td>类似于partition()函数，不过是从右边开始查找</td></tr><tr><td>string.split(str=””, num)</td><td>以str为分隔符切片string，如果num有指定值，则仅分隔num+1个子字符串，str默认包含’\t’, ‘\r’, ‘\n’和空格</td></tr><tr><td>string.splitlines()</td><td>按照行（’\t’, ‘\r’, ‘\n’）分隔，返回一个包含各行元素的列表</td></tr><tr><td>string.join(seq)</td><td>以string 作为分隔符，将seq中所有的元素（的字符串表示）合并为一个新的字符串</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>19.字符串</title>
+      <link href="/2019/08/02/19-%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <url>/2019/08/02/19-%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="字符串的定义"><a href="#字符串的定义" class="headerlink" title="字符串的定义"></a>字符串的定义</h3><ul><li>字符串就是一串字符，是编程语言中表示文本的数据类型</li><li>在python中可以使用一对双引号 “ 或者一对单引号 ‘ 来定义一个字符串<br>虽然可以使用 \”或者&#39; 做字符串的转义，但是在实际开发中：<br>如果字符串内部需要使用 “ ,可以使用 ‘ 定义字符串<br>如果字符串内部需要使用 ‘ ,可以使用 “ 定义字符串</li><li>也可以使用索引获取字符串中指定位置的字符，索引计数从0开始</li><li>也可以使用 for 循环遍历字符串中每一个字符<br>大多数编程语言都是用 ”来定义字符串<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"hello python"</span></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> string:</span><br><span class="line">print(s)</span><br></pre></td></tr></table></figure></li></ul><p>len(字符串) 获取字符串的长度<br>字符串.count(字符串) 小字符串在大字符串中出现的次数<br>字符串[索引] 从字符串中取出单个字符<br>字符串.index(字符串)获得小字符串第一次出现的索引</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hello_str = <span class="string">"hello py"</span></span><br><span class="line"><span class="comment"># 统计字符串长度</span></span><br><span class="line">print(len(hello_str))</span><br><span class="line"><span class="comment"># 统计某一个子字符串出现的次数</span></span><br><span class="line">print(hello_str.count(<span class="string">"l"</span>))</span><br><span class="line"><span class="comment"># 某一个子字符串出现的位置，注意：如果使用index方法传递的子字符串不存在，程序会报错</span></span><br><span class="line">print(hello_str.index(<span class="string">"aaa"</span>))</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>18.字典（1）循环遍历</title>
+      <link href="/2019/08/02/18-%E5%AD%97%E5%85%B8%EF%BC%881%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/"/>
+      <url>/2019/08/02/18-%E5%AD%97%E5%85%B8%EF%BC%881%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><p>遍历基于是以此从字典中获取所有键值对</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 循环内部使用的“key”的变量 <span class="keyword">in</span> 字典：</span><br><span class="line">内容....</span><br></pre></td></tr></table></figure><p>提示:在实际开发中，由于字典中每一个键值对保存数据的类型是不同的，所以针对字典的遍历需求并不是很多</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xiaoming = &#123;<span class="string">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">            <span class="string">"age"</span>: <span class="number">19</span>,</span><br><span class="line">            <span class="string">"height"</span>: <span class="number">1.84</span>&#125;</span><br><span class="line"><span class="comment"># 迭代遍历字典</span></span><br><span class="line"><span class="comment"># 遍历k是每一次循环重，获取到的键值对的key</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> xiaoming:</span><br><span class="line">    print(<span class="string">"%s ——%s"</span> % (k, xiaoming[k]))</span><br></pre></td></tr></table></figure><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>尽管可以使用for in 遍历字典</li><li>但是在开发中，更多的应用场景是：</li></ul><ol><li>使用多个键值对，存储描述一个物体相关的信息——描述更复杂的数据信息</li><li>将多个字典放在一个列表中，再进行遍历，再循环体内部针对每一个字典进行相同的处理<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">car_list = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"li"</span>,</span><br><span class="line">     <span class="string">"sex"</span>: <span class="string">"boy"</span>,</span><br><span class="line">     <span class="string">"age"</span>: <span class="number">22</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"liaa"</span>,</span><br><span class="line">     <span class="string">"sex"</span>: <span class="string">"boy"</span>,</span><br><span class="line">     <span class="string">"age"</span>: <span class="number">22</span>&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> car_info <span class="keyword">in</span> car_list:</span><br><span class="line">    print(car_info)</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字典 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>17.字典</title>
+      <link href="/2019/08/02/17-%E5%AD%97%E5%85%B8/"/>
+      <url>/2019/08/02/17-%E5%AD%97%E5%85%B8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="字典的定义"><a href="#字典的定义" class="headerlink" title="字典的定义"></a>字典的定义</h3><ul><li>dictionary （字典）是除列表以为python之中最灵活的数据类型</li><li>字典通用可以用来存储多个数据</li></ul><ol><li>通常用来存储一个物体的相关信息</li></ol><ul><li>和列表的区别</li></ul><ol><li>列表是有序的对象集合</li><li>字典是无序的对象集合</li></ol><ul><li>字典用 {} 定义</li><li>字典用键值对存储数据，键值对之间使用 ，分隔</li></ul><ol><li>键 key 是索引</li><li>值 value 是数据</li><li>键和值之间使用 ：分隔</li><li>键必须是唯一的</li><li>值 可以取任何数据类型， 但键 只能使用 字符串、数据或元组<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xiaoming = &#123;<span class="string">"name"</span>: <span class="string">"小明"</span>,</span><br><span class="line">            <span class="string">"age"</span>: <span class="number">19</span>,</span><br><span class="line">            <span class="string">"height"</span>: <span class="number">1.84</span>&#125;</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取值，在取值的时候，如果指定的key不存在，程序会报错</span></span><br><span class="line">print(xiaoming[<span class="string">"name"</span>])</span><br><span class="line"><span class="comment"># 增加/修改</span></span><br><span class="line"><span class="comment"># 如果key不存在，会增加新键值对，如果key存在，会修改已经存在的键值对</span></span><br><span class="line">xiaoming[<span class="string">"age"</span>] = <span class="number">18</span></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line"><span class="comment"># 在删除指定键值对的时候，如果指定的key不存在，程序会报错</span></span><br><span class="line">xiaoming.pop(<span class="string">"height"</span>)</span><br><span class="line"><span class="comment"># 统计键值对数量</span></span><br><span class="line">print(len(xiaoming))</span><br><span class="line"><span class="comment"># 合并字典，注意:如果被合并的字典中包含已经存在的键值对，会覆盖原有的键值对</span></span><br><span class="line">temp_dict = (<span class="string">"height"</span>:<span class="number">178</span>, <span class="string">"age"</span>:<span class="number">33</span>)</span><br><span class="line">xiaoming.update(temp_dict)</span><br><span class="line"><span class="comment"># 清空字典</span></span><br><span class="line">xiaoming.clear()</span><br><span class="line">print(xiaoming)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字典 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>16.元组（1）循环遍历</title>
+      <link href="/2019/08/02/16-%E5%85%83%E7%BB%84%EF%BC%881%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/"/>
+      <url>/2019/08/02/16-%E5%85%83%E7%BB%84%EF%BC%881%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><ul><li><p>取值就是从元组中获取存储在指定位置的数据</p></li><li><p>遍历就是从头到尾一次从元组中获取数据</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 循环内部使用的变量 <span class="keyword">in</span> 元组：</span><br><span class="line">    循环内部针对元组进行操作</span><br></pre></td></tr></table></figure></li><li><p>在python中，可以使用for循环遍历所有非数字类型的遍历：列表、元组、字典以及字符串</p></li><li><p>提示：在实际开发中，除非能够确认元组中的数据类型，否则针对元组的循环遍历要求并不是很多</p></li></ul><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>尽管可以使用 for in 遍历元组</li><li>但是在开发中，更多的应用场景是：</li></ul><ol><li>函数的参数和返回值，一个函数可以接收任意多个参数，或者一次返回多个数据</li><li>格式字符串，格式化字符串后面的（）本质上就是一个元组</li><li>让列表不可以被修改，以保护数据安全<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">info = (<span class="string">"zhangsan"</span>, <span class="number">18</span>)</span><br><span class="line">print(<span class="string">"%s 的年龄是 %d"</span> % info)</span><br></pre></td></tr></table></figure></li></ol><p><strong>元组和列表之间的转换</strong></p><ul><li>使用list 函数可以把元组转换成列表<br><code>list(元组)</code></li><li>使用 tuple 函数可以把列表转换成元组<br><code>tuple(列表)</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 元组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>15.元组</title>
       <link href="/2019/08/01/15-%E5%85%83%E7%BB%84/"/>
       <url>/2019/08/01/15-%E5%85%83%E7%BB%84/</url>
       
-        <content type="html"><![CDATA[<h3 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h3><ul><li>Tuple（元组）与列表类似，不同之处在于元组的元素不能更改</li></ul><ol><li>元组表示多个元素组成的序列</li><li>元组在python开发中，有特定的应用场景</li></ol><ul><li>用于存储一串信息，数据之间使用 ，分隔</li><li>元组用（）定义</li><li>元组的索引从 0 开始<br>索引 就是数据在元组中的位置编号<br><code>info_tuple = (&quot;zhangsan &quot;, 22, 170)</code></li></ul><p><strong>元组中只包含一个元素时，需要在元素后面添加逗号</strong><br><code>info_tuple = (50, )</code><br><strong>没有逗号的话就是一个int类型的数据了</strong></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="元组的定义"><a href="#元组的定义" class="headerlink" title="元组的定义"></a>元组的定义</h3><ul><li>Tuple（元组）与列表类似，不同之处在于元组的元素不能更改</li></ul><ol><li>元组表示多个元素组成的序列</li><li>元组在python开发中，有特定的应用场景</li></ol><ul><li>用于存储一串信息，数据之间使用 ，分隔</li><li>元组用（）定义</li><li>元组的索引从 0 开始<br>索引 就是数据在元组中的位置编号<br><code>info_tuple = (&quot;zhangsan &quot;, 22, 170)</code></li></ul><p><strong>元组中只包含一个元素时，需要在元素后面添加逗号</strong><br><code>info_tuple = (50, )</code><br><strong>没有逗号的话就是一个int类型的数据了</strong><br>.index（） 已经知道数据的内容，希望知道该数据在元组中的索引<br>.count()统计元组中元素出现的个数</p>]]></content>
       
       
       <categories>
