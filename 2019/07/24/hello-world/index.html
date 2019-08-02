@@ -6,18 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="Hello World | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
-<meta name="keywords" content="列表">
+<meta name="description" content="判断类型-9   方法 说明    string.isspace() 如果string 中只包含空格，则返回True   string.isalnum() 如果string 至少有一个字符并且所有字符都是字母或数字则返回True   string.isalpha() 如果string 至少有一个字符并且所有字符都是字母则返回True   string.isdecimal() 如果string 只包">
+<meta name="keywords" content="字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="14.列表（1）循环遍历">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/14-列表（2）循环遍历/index.html">
+<meta property="og:title" content="20.字符串常用方法">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/02/20-字符串常用方法/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
+<meta property="og:description" content="判断类型-9   方法 说明    string.isspace() 如果string 中只包含空格，则返回True   string.isalnum() 如果string 至少有一个字符并且所有字符都是字母或数字则返回True   string.isalpha() 如果string 至少有一个字符并且所有字符都是字母则返回True   string.isdecimal() 如果string 只包">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-01T14:46:57.354Z">
+<meta property="og:updated_time" content="2019-08-02T09:39:49.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="14.列表（1）循环遍历">
-<meta name="twitter:description" content="循环遍历遍历就是从头到尾一次从列表中获取数据在循环体内部针对每一个元素，执行相同的操作在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历使用for 就能够实现迭代遍历 12  for 循环内部使用的变量 in 列表：循环内部针对列表元素进行的操作  应用场景  尽管python的列表中可以存储不同类型的数据 但是在开发中，更多的应用场景事   列表 存储相同类型的数据 通">
+<meta name="twitter:title" content="20.字符串常用方法">
+<meta name="twitter:description" content="判断类型-9   方法 说明    string.isspace() 如果string 中只包含空格，则返回True   string.isalnum() 如果string 至少有一个字符并且所有字符都是字母或数字则返回True   string.isalpha() 如果string 至少有一个字符并且所有字符都是字母则返回True   string.isdecimal() 如果string 只包">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -201,15 +201,11 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">if</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color1">while</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -238,6 +234,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">sqlite3</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">if</a>
     </li>
     
     <div class="clearfix"></div>
@@ -737,7 +737,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#random','#if','#while','#列表','#元组','#字典','#字符串','#Linux','#MySQL','#sqlite3',],
+            'data': ['#while','#random','#列表','#元组','#字典','#字符串','#Linux','#MySQL','#sqlite3','#if',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
