@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>05.随机数的处理 | Welcome to my blog</title>
-  <meta name="keywords" content=" random ">
-  <meta name="description" content="05.随机数的处理 | Welcome to my blog">
+  <title>24.公共方法（1）运算符 | Welcome to my blog</title>
+  <meta name="keywords" content=" 公共方法 ">
+  <meta name="description" content="24.公共方法（1）运算符 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="判断类型-9   方法 说明    string.isspace() 如果string 中只包含空格，则返回True （’\t’, ‘\r’, ‘\n’）   string.isalnum() 如果string 至少有一个字符并且所有字符都是字母或数字则返回True   string.isalpha() 如果string 至少有一个字符并且所有字符都是字母则返回True   string.isde">
 <meta name="keywords" content="字符串">
@@ -630,9 +630,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-05-随机数的处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-24-公共方法（1）运算符" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">05.随机数的处理</h1>
+        <h1 class="article-title">24.公共方法（1）运算符</h1>
     
     <div class="article-meta">
         
@@ -647,14 +647,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">random</a>
+            <a href="javascript:" class="color5">公共方法</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-30 22:20:09'>2019-07-30 21:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-03 08:44:15'>2019-08-03 08:23</time>
         
     </div>
     <div class="article-meta">
@@ -676,7 +676,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">运算符</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -691,11 +691,57 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>再python中，要使用随机数，首先需要导入随机数的模块——“工具包”</li>
-<li>import random</li>
-<li>导入模块后，可以直接再模块后面敲一个 . 然后按tab键，会提示该模块中包含的所有函数</li>
-<li>random.randint(a, b)  返回[a, b]之间的一个随机数，包含a 和 b</li>
+        <h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>描述</th>
+<th>支持的数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>[1, 2] + [3, 4]</td>
+<td>[1, 2, 3, 4]</td>
+<td>合并</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td>*</td>
+<td>[hi]</td>
+<td>[‘hi’, ‘hi’, ‘hi’, ‘hi’]</td>
+<td>重复</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td>in</td>
+<td>3 in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td>not in</td>
+<td>4 not in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否不存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td>&gt; &gt;= == &lt; &lt;=</td>
+<td>(1, 2, 3) &lt; (2, 3, 3)</td>
+<td>True</td>
+<td>元素比较</td>
+<td>字符串、列表、元组</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ul>
+<li>in 在对字典进行操作时，判断的是字典的键</li>
+<li>in 和 not in 被称为成员运算符</li>
+<li>extends 和 append 连接的时候，会生成一个新的对象，不修改原有对象</li>
 </ul>
 
       
@@ -710,12 +756,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>05.随机数的处理</p>
+    <p><span class="copy-title">文章标题:</span>24.公共方法（1）运算符</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-30, 21:48:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-30, 22:20:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/30/05-随机数的处理/" title="05.随机数的处理">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/30/05-随机数的处理/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-03, 08:23:45</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-03, 08:44:15</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/03/24-公共方法（1）运算符/" title="24.公共方法（1）运算符">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/03/24-公共方法（1）运算符/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

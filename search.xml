@@ -4,11 +4,111 @@
   
     
     <entry>
+      <title>25.公共方法（2）完整的for循环语法</title>
+      <link href="/2019/08/03/25-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95%EF%BC%882%EF%BC%89%E5%AE%8C%E6%95%B4%E7%9A%84for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E6%B3%95/"/>
+      <url>/2019/08/03/25-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95%EF%BC%882%EF%BC%89%E5%AE%8C%E6%95%B4%E7%9A%84for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="完整的for循环语法"><a href="#完整的for循环语法" class="headerlink" title="完整的for循环语法"></a>完整的for循环语法</h3><p>在Python中完整的for循环的语法如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 集合:</span><br><span class="line">循环体代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">没有通过<span class="keyword">break</span>退出循环，循环结束后，会执行的代码</span><br></pre></td></tr></table></figure><p>如果使用了break，那么else的代码就不会执行</p><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li>在迭代遍历嵌套的数据类型时，例如一个列表包含了多个字典</li><li>需求：要判断某一字典中是否存在指定的值<ol><li>如果存在，提示并且退出循环</li><li>如果不存在，在循环整体结束后，希望得到一个统一的提示</li></ol></li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"sex"</span>: <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"sex"</span>: <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="comment"># 搜索指定的姓名</span></span><br><span class="line">find_name = <span class="string">"张三"</span></span><br><span class="line"><span class="keyword">for</span> stu_dict <span class="keyword">in</span> students:</span><br><span class="line">    print(stu_dict)</span><br><span class="line">    <span class="keyword">if</span> stu_dict[<span class="string">"name"</span>] == find_name:</span><br><span class="line">        print(<span class="string">"找到了 %s"</span> % find_name)</span><br><span class="line"><span class="comment"># 找到结束</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"><span class="comment"># 如果在搜索列表时，所有的字典检查之后，都没有需要的目标，得到一个统一的提示</span></span><br><span class="line">print(<span class="string">"没找到"</span>)</span><br><span class="line">print(<span class="string">"循环结束"</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 公共方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>24.公共方法（1）运算符</title>
+      <link href="/2019/08/03/24-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95%EF%BC%881%EF%BC%89%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+      <url>/2019/08/03/24-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95%EF%BC%881%EF%BC%89%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table><thead><tr><th>运算符</th><th>Python 表达式</th><th>结果</th><th>描述</th><th>支持的数据类型</th></tr></thead><tbody><tr><td>+</td><td>[1, 2] + [3, 4]</td><td>[1, 2, 3, 4]</td><td>合并</td><td>字符串、列表、元组</td></tr><tr><td>*</td><td>[hi]</td><td>[‘hi’, ‘hi’, ‘hi’, ‘hi’]</td><td>重复</td><td>字符串、列表、元组</td></tr><tr><td>in</td><td>3 in (1, 2, 3)</td><td>True</td><td>元素是否存在</td><td>字符串、列表、元组、字典</td></tr><tr><td>not in</td><td>4 not in (1, 2, 3)</td><td>True</td><td>元素是否不存在</td><td>字符串、列表、元组、字典</td></tr><tr><td>&gt; &gt;= == &lt; &lt;=</td><td>(1, 2, 3) &lt; (2, 3, 3)</td><td>True</td><td>元素比较</td><td>字符串、列表、元组</td></tr></tbody></table><p><strong>注意：</strong></p><ul><li>in 在对字典进行操作时，判断的是字典的键</li><li>in 和 not in 被称为成员运算符</li><li>extends 和 append 连接的时候，会生成一个新的对象，不修改原有对象</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 公共方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>22.公共方法</title>
+      <link href="/2019/08/02/22-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/02/22-%E5%85%AC%E5%85%B1%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="python内置函数"><a href="#python内置函数" class="headerlink" title="python内置函数"></a>python内置函数</h3><p>python包含了一下内置函数：</p><table><thead><tr><th>函数</th><th>描述</th><th>备注</th></tr></thead><tbody><tr><td>len(item)</td><td>计算容器中元素个数</td><td></td></tr><tr><td>del(item)</td><td>删除变量</td><td>del 有两种方式，关键字或函数</td></tr><tr><td>max(item)</td><td>返回容器中元素最大值</td><td>如果是字典，只针对key比较</td></tr><tr><td>min(item)</td><td>返回容器中元素最小值</td><td>如果是字典，只针对key比较</td></tr><tr><td>cmp(item1, item2)</td><td>比较大小</td><td>python3取消，可用&lt;&gt;=比较运算符</td></tr></tbody></table><p>注意：字符串比较符合一下规则：“0”&lt; “A” &lt;”a”</p><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><table><thead><tr><th>描述</th><th>python表达式</th><th>结果</th><th>支持的数据类型</th></tr></thead><tbody><tr><td>切片</td><td>“0123456789”[::-2]</td><td>“97531”</td><td>字符串、列表、元组</td></tr></tbody></table><ul><li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li><li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li><li>字典是要给无序的集合，是使用键值对保存数据</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 公共方法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>21.字符串的切片</title>
+      <link href="/2019/08/02/21-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%87%E7%89%87/"/>
+      <url>/2019/08/02/21-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%87%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<h3 id="字符串的切片"><a href="#字符串的切片" class="headerlink" title="字符串的切片"></a>字符串的切片</h3><ul><li>切片方法适用于字符串、列表、元组</li></ul><ol><li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li><li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li><li>字典是一个无需的集合，是用键值对保存数据<br><code>字符串[开始索引 : 结束索引 : 步长]</code><br>逆序：字符串[: :-1]<br><strong>注意：</strong><br>1 .  指定的区间属于左闭右开型，从开始位开始，到结束位的前一位（不包括结束位本身）<br>2 .  从头开始，开始索引数字可以省略，冒号不能省略<br>3 .  到末尾结束，结束索引数字可以省略，冒号不能省略<br>4 .  步长默认为1，如果连续切片，数字和冒号都可以省略</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>20.字符串常用方法</title>
       <link href="/2019/08/02/20-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
       <url>/2019/08/02/20-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[<h3 id="判断类型-9"><a href="#判断类型-9" class="headerlink" title="判断类型-9"></a>判断类型-9</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.isspace()</td><td>如果string 中只包含空格，则返回True</td></tr><tr><td>string.isalnum()</td><td>如果string 至少有一个字符并且所有字符都是字母或数字则返回True</td></tr><tr><td>string.isalpha()</td><td>如果string 至少有一个字符并且所有字符都是字母则返回True</td></tr><tr><td>string.isdecimal()</td><td>如果string 只包含数字则返回True，全角数字 √</td></tr><tr><td>string.isdigit</td><td>如果string 只包含数字则返回True，全角数字、（1）、\u00b2</td></tr><tr><td>string.isnumeric()</td><td>如果string 只包含数字则返回True，全角数字，汉字数字</td></tr><tr><td>string.istitle()</td><td>如果string 是标题化的（每个单词的首字母大写）则返回True</td></tr><tr><td>string.islower()</td><td>如果string 包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是小写的，则返回True</td></tr><tr><td>string.isupper()</td><td>如果string 中包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是大写，则返回True</td></tr></tbody></table><h3 id="查找和替换-7"><a href="#查找和替换-7" class="headerlink" title="查找和替换-7"></a>查找和替换-7</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.starstwith(str)</td><td>检查字符串是否以str开头，是则返回True</td></tr><tr><td>string.endswith(str)</td><td>检查字符串是否以str 结束，是则返回True</td></tr><tr><td>string.find(str, start=0, end=len(string))</td><td>检测str包含在string中，如果start和end指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1</td></tr><tr><td>stiring.rfind(str, start=0, end=len(string))</td><td>类似于find()函数，不过是从右边开始查找</td></tr><tr><td>string.index(str, start=0, end=len(string))</td><td>跟find()方法类似，只不过str不在string会报错</td></tr><tr><td>string.rindex(str, start=0, end=len(string))</td><td>类似于index()，不过是从右边开始</td></tr><tr><td>string.replace(old_str, new_str, num=string.count(old))</td><td>把是string 中的old_str 替换成new_str，如果num 指定，则替换不超过 num次</td></tr></tbody></table><h3 id="大小写转换-5"><a href="#大小写转换-5" class="headerlink" title="大小写转换-5"></a>大小写转换-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.capitalize()</td><td>把字符串的第一个字符大写</td></tr><tr><td>string.title()</td><td>把字符串的每个单子首字母大写</td></tr><tr><td>string.lower()</td><td>转换string 中所有大写字符为小写</td></tr><tr><td>string.upper()</td><td>转换string中的小写字母为大写</td></tr><tr><td>string.swapcase()</td><td>翻转string中的大小写</td></tr></tbody></table><h3 id="文本对齐-3"><a href="#文本对齐-3" class="headerlink" title="文本对齐-3"></a>文本对齐-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.ljust(width)</td><td>返回一个原字符串左对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.rjust(width)</td><td>返回一个原字符串右对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.center(width)</td><td>返回一个原字符串居中，并使用空格填充至width的新字符串</td></tr></tbody></table><h3 id="去除空白字符-3"><a href="#去除空白字符-3" class="headerlink" title="去除空白字符-3"></a>去除空白字符-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>sting.lstrip()</td><td>截掉string左边（开始）的空白字符</td></tr><tr><td>string.rstrip()</td><td>截掉string右边（末尾）的空白字符</td></tr><tr><td>string.strip()</td><td>截掉string左右两边的空白字符</td></tr></tbody></table><h3 id="拆分和连接-5"><a href="#拆分和连接-5" class="headerlink" title="拆分和连接-5"></a>拆分和连接-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.partition(str)</td><td>把字符串string分成一个3元组的元组（str前面, str, str后面）</td></tr><tr><td>string.rpartition</td><td>类似于partition()函数，不过是从右边开始查找</td></tr><tr><td>string.split(str=””, num)</td><td>以str为分隔符切片string，如果num有指定值，则仅分隔num+1个子字符串，str默认包含’\t’, ‘\r’, ‘\n’和空格</td></tr><tr><td>string.splitlines()</td><td>按照行（’\t’, ‘\r’, ‘\n’）分隔，返回一个包含各行元素的列表</td></tr><tr><td>string.join(seq)</td><td>以string 作为分隔符，将seq中所有的元素（的字符串表示）合并为一个新的字符串</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<h3 id="判断类型-9"><a href="#判断类型-9" class="headerlink" title="判断类型-9"></a>判断类型-9</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.isspace()</td><td>如果string 中只包含空格，则返回True （’\t’, ‘\r’, ‘\n’）</td></tr><tr><td>string.isalnum()</td><td>如果string 至少有一个字符并且所有字符都是字母或数字则返回True</td></tr><tr><td>string.isalpha()</td><td>如果string 至少有一个字符并且所有字符都是字母则返回True</td></tr><tr><td>string.isdecimal()</td><td>如果string 只包含数字则返回True，全角数字 （常用）</td></tr><tr><td>string.isdigit</td><td>如果string 只包含数字则返回True，全角数字、（1）、\u00b2</td></tr><tr><td>string.isnumeric()</td><td>如果string 只包含数字则返回True，全角数字，汉字数字</td></tr><tr><td>string.istitle()</td><td>如果string 是标题化的（每个单词的首字母大写）则返回True</td></tr><tr><td>string.islower()</td><td>如果string 包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是小写的，则返回True</td></tr><tr><td>string.isupper()</td><td>如果string 中包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是大写，则返回True</td></tr></tbody></table><h3 id="查找和替换-7"><a href="#查找和替换-7" class="headerlink" title="查找和替换-7"></a>查找和替换-7</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.starstwith(str)</td><td>检查字符串是否以str开头（区分大小写），是则返回True</td></tr><tr><td>string.endswith(str)</td><td>检查字符串是否以str 结束（区分大小写），是则返回True</td></tr><tr><td>string.find(str, start=0, end=len(string))</td><td>检测str包含在string中，如果start和end指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则（不存在）返回-1，（index同样可以查找指定的字符串在大字符串中的索引，如果指定的字符串不存在，会报错）</td></tr><tr><td>stiring.rfind(str, start=0, end=len(string))</td><td>类似于find()函数，不过是从右边开始查找</td></tr><tr><td>string.index(str, start=0, end=len(string))</td><td>跟find()方法类似，只不过str不在string会报错</td></tr><tr><td>string.rindex(str, start=0, end=len(string))</td><td>类似于index()，不过是从右边开始</td></tr><tr><td>string.replace(old_str, new_str, num=string.count(old))</td><td>把是string 中的old_str 替换成new_str，如果num 指定，则替换不超过 num次（replace方法执行完成后，会返回一个新的字符串，注意：不会修改原有的字符串内容）</td></tr></tbody></table><h3 id="大小写转换-5"><a href="#大小写转换-5" class="headerlink" title="大小写转换-5"></a>大小写转换-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.capitalize()</td><td>把字符串的第一个字符大写</td></tr><tr><td>string.title()</td><td>把字符串的每个单子首字母大写</td></tr><tr><td>string.lower()</td><td>转换string 中所有大写字符为小写</td></tr><tr><td>string.upper()</td><td>转换string中的小写字母为大写</td></tr><tr><td>string.swapcase()</td><td>翻转string中的大小写</td></tr></tbody></table><h3 id="文本对齐-3"><a href="#文本对齐-3" class="headerlink" title="文本对齐-3"></a>文本对齐-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.ljust(width)</td><td>返回一个原字符串左对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.rjust(width)</td><td>返回一个原字符串右对齐，并使用空格填充至width的新字符串</td></tr><tr><td>string.center(width)</td><td>返回一个原字符串居中，并使用空格填充至width的新字符串</td></tr></tbody></table><h3 id="去除空白字符-3"><a href="#去除空白字符-3" class="headerlink" title="去除空白字符-3"></a>去除空白字符-3</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>sting.lstrip()</td><td>截掉string左边（开始）的空白字符</td></tr><tr><td>string.rstrip()</td><td>截掉string右边（末尾）的空白字符</td></tr><tr><td>string.strip()</td><td>截掉string左右两边的空白字符</td></tr></tbody></table><h3 id="拆分和连接-5"><a href="#拆分和连接-5" class="headerlink" title="拆分和连接-5"></a>拆分和连接-5</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>string.partition(str)</td><td>把字符串string分成一个3元组的元组（str前面, str, str后面）</td></tr><tr><td>string.rpartition</td><td>类似于partition()函数，不过是从右边开始查找</td></tr><tr><td>string.split(str=””, num)</td><td>以str为分隔符切片string，如果num有指定值，则仅分隔num+1个子字符串，str默认包含’\t’, ‘\r’, ‘\n’和空格</td></tr><tr><td>string.splitlines()</td><td>按照行（’\t’, ‘\r’, ‘\n’）分隔，返回一个包含各行元素的列表</td></tr><tr><td>string.join(seq)</td><td>以string 作为分隔符，将seq中所有的元素（的字符串表示）合并为一个新的字符串</td></tr></tbody></table>]]></content>
       
       
       <categories>
@@ -155,8 +255,8 @@
     
     <entry>
       <title>14.列表（1）循环遍历</title>
-      <link href="/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/"/>
-      <url>/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86/</url>
+      <link href="/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89-1/"/>
+      <url>/2019/08/01/14-%E5%88%97%E8%A1%A8%EF%BC%882%EF%BC%89-1/</url>
       
         <content type="html"><![CDATA[<h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><p>遍历就是从头到尾一次从列表中获取数据<br>在循环体内部针对每一个元素，执行相同的操作<br>在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历<br>使用for 就能够实现迭代遍历</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span> 循环内部使用的变量 <span class="keyword">in</span> 列表：</span><br><span class="line">循环内部针对列表元素进行的操作</span><br></pre></td></tr></table></figure><p><strong>应用场景</strong></p><ul><li>尽管python的列表中可以存储不同类型的数据</li><li>但是在开发中，更多的应用场景事</li></ul><ol><li>列表 存储相同类型的数据</li><li>通过 迭代遍历，在循环体内部，针对列表中的每一项元素，执行相同的操作</li></ol>]]></content>
       

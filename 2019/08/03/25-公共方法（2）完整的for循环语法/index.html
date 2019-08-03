@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>05.随机数的处理 | Welcome to my blog</title>
-  <meta name="keywords" content=" random ">
-  <meta name="description" content="05.随机数的处理 | Welcome to my blog">
+  <title>25.公共方法（2）完整的for循环语法 | Welcome to my blog</title>
+  <meta name="keywords" content=" 公共方法 ">
+  <meta name="description" content="25.公共方法（2）完整的for循环语法 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="判断类型-9   方法 说明    string.isspace() 如果string 中只包含空格，则返回True （’\t’, ‘\r’, ‘\n’）   string.isalnum() 如果string 至少有一个字符并且所有字符都是字母或数字则返回True   string.isalpha() 如果string 至少有一个字符并且所有字符都是字母则返回True   string.isde">
 <meta name="keywords" content="字符串">
@@ -630,9 +630,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-05-随机数的处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-25-公共方法（2）完整的for循环语法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">05.随机数的处理</h1>
+        <h1 class="article-title">25.公共方法（2）完整的for循环语法</h1>
     
     <div class="article-meta">
         
@@ -647,14 +647,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">random</a>
+            <a href="javascript:" class="color5">公共方法</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-30 22:20:09'>2019-07-30 21:48</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-03 09:12:25'>2019-08-03 08:47</time>
         
     </div>
     <div class="article-meta">
@@ -676,7 +676,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#完整的for循环语法"><span class="toc-text">完整的for循环语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -691,13 +691,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>再python中，要使用随机数，首先需要导入随机数的模块——“工具包”</li>
-<li>import random</li>
-<li>导入模块后，可以直接再模块后面敲一个 . 然后按tab键，会提示该模块中包含的所有函数</li>
-<li>random.randint(a, b)  返回[a, b]之间的一个随机数，包含a 和 b</li>
-</ul>
+        <h3 id="完整的for循环语法"><a href="#完整的for循环语法" class="headerlink" title="完整的for循环语法"></a>完整的for循环语法</h3><p>在Python中完整的for循环的语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 集合:</span><br><span class="line">	循环体代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	没有通过<span class="keyword">break</span>退出循环，循环结束后，会执行的代码</span><br></pre></td></tr></table></figure>
 
+<p>如果使用了break，那么else的代码就不会执行</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>在迭代遍历嵌套的数据类型时，例如一个列表包含了多个字典</li>
+<li>需求：要判断某一字典中是否存在指定的值<ol>
+<li>如果存在，提示并且退出循环</li>
+<li>如果不存在，在循环整体结束后，希望得到一个统一的提示</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"sex"</span>: <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"sex"</span>: <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"><span class="comment"># 搜索指定的姓名</span></span><br><span class="line">find_name = <span class="string">"张三"</span></span><br><span class="line"><span class="keyword">for</span> stu_dict <span class="keyword">in</span> students:</span><br><span class="line">    print(stu_dict)</span><br><span class="line">    <span class="keyword">if</span> stu_dict[<span class="string">"name"</span>] == find_name:</span><br><span class="line">        print(<span class="string">"找到了 %s"</span> % find_name)</span><br><span class="line">		<span class="comment"># 找到结束</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="comment"># 如果在搜索列表时，所有的字典检查之后，都没有需要的目标，得到一个统一的提示</span></span><br><span class="line">		print(<span class="string">"没找到"</span>)</span><br><span class="line">print(<span class="string">"循环结束"</span>)</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
     </div>
@@ -710,12 +716,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>05.随机数的处理</p>
+    <p><span class="copy-title">文章标题:</span>25.公共方法（2）完整的for循环语法</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-30, 21:48:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-30, 22:20:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/30/05-随机数的处理/" title="05.随机数的处理">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/30/05-随机数的处理/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-03, 08:47:45</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-03, 09:12:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/03/25-公共方法（2）完整的for循环语法/" title="25.公共方法（2）完整的for循环语法">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/03/25-公共方法（2）完整的for循环语法/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
