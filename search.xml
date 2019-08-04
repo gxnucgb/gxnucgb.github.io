@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>28.缺省参数</title>
+      <link href="/2019/08/04/28-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0/"/>
+      <url>/2019/08/04/28-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h3 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h3><ul><li>定义 函数时，可以给某个参数指定一个默认值，具有默认值的参数就叫做缺省参数</li><li>调用函数时，如果没有传入缺省参数的值，则在函数内部使用定义函数时指定的参数默认值</li><li>函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用</li><li>例如：对列表的排序方法<br><code>sort()</code><br><code>sort(reverse=True)</code></li></ul><h4 id="指定参数的缺省值"><a href="#指定参数的缺省值" class="headerlink" title="指定参数的缺省值"></a>指定参数的缺省值</h4><p>在参数后使用赋值语句，可以指定参数的缺省值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_info</span><span class="params">(name, gender=True)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param name: 班上同学姓名</span></span><br><span class="line"><span class="string">    :param gender: True为男生，False为女神</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    gender_text = <span class="string">"男生"</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> gender:</span><br><span class="line">        gender_text = <span class="string">"女"</span></span><br><span class="line">    print(name,  gender_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_info(<span class="string">"hh"</span>, <span class="literal">False</span>)</span><br></pre></td></tr></table></figure><p><strong>提示：</strong></p><ol><li>缺省参数，需要使用最常见的值作为默认值</li><li>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递</li></ol><h4 id="缺省参数的注意事项"><a href="#缺省参数的注意事项" class="headerlink" title="缺省参数的注意事项"></a>缺省参数的注意事项</h4><ul><li>缺省参数的定义位置<br>必须保证带有默认值的缺省参数在参数列表末尾</li><li>调用带有多个缺省参数的函数<br>在函数调用时，如果有多个缺省参数，需要指定参数名，这样解释器才能知道参数的对应关系</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>27.函数参数和返回值作用</title>
       <link href="/2019/08/04/27-%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%92%8C%E8%BF%94%E5%9B%9E%E5%80%BC%E4%BD%9C%E7%94%A8/"/>
       <url>/2019/08/04/27-%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%92%8C%E8%BF%94%E5%9B%9E%E5%80%BC%E4%BD%9C%E7%94%A8/</url>

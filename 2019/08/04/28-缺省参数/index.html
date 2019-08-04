@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>14.列表（1）循环遍历 | Welcome to my blog</title>
-  <meta name="keywords" content=" 列表 ">
-  <meta name="description" content="14.列表（1）循环遍历 | Welcome to my blog">
+  <title>28.缺省参数 | Welcome to my blog</title>
+  <meta name="keywords" content=" 函数 ">
+  <meta name="description" content="28.缺省参数 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="函数参数和返回值作用函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式1，无参数，无返回值2，无参数，有返回值3，有参数，有返回值4，有参数，有返回值 函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量参数：外界希望在函数内部处理的数据返回值：向外界报告函数的执行结果 定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的1，如果函数内部处理">
 <meta name="keywords" content="函数">
@@ -658,9 +658,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-14-列表（2）-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-28-缺省参数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">14.列表（1）循环遍历</h1>
+        <h1 class="article-title">28.缺省参数</h1>
     
     <div class="article-meta">
         
@@ -675,19 +675,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">列表</a>
+            <a href="javascript:" class="color3">函数</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 22:46:57'>2019-08-01 21:29</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-04 17:18:05'>2019-08-04 15:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:183</span>
+        <span>字数:332</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -706,7 +706,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#循环遍历"><span class="toc-text">循环遍历</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#缺省参数"><span class="toc-text">缺省参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#指定参数的缺省值"><span class="toc-text">指定参数的缺省值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缺省参数的注意事项"><span class="toc-text">缺省参数的注意事项</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -721,18 +721,24 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h3><p>遍历就是从头到尾一次从列表中获取数据<br>在循环体内部针对每一个元素，执行相同的操作<br>在python中为了提高列表的遍历效率，专门提高迭代iteration 遍历<br>使用for 就能够实现迭代遍历</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span> 循环内部使用的变量 <span class="keyword">in</span> 列表：</span><br><span class="line">循环内部针对列表元素进行的操作</span><br></pre></td></tr></table></figure>
-
-<p><strong>应用场景</strong></p>
-<ul>
-<li>尽管python的列表中可以存储不同类型的数据</li>
-<li>但是在开发中，更多的应用场景事</li>
+        <h3 id="缺省参数"><a href="#缺省参数" class="headerlink" title="缺省参数"></a>缺省参数</h3><ul>
+<li>定义 函数时，可以给某个参数指定一个默认值，具有默认值的参数就叫做缺省参数</li>
+<li>调用函数时，如果没有传入缺省参数的值，则在函数内部使用定义函数时指定的参数默认值</li>
+<li>函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用</li>
+<li>例如：对列表的排序方法<br><code>sort()</code><br><code>sort(reverse=True)</code></li>
 </ul>
+<h4 id="指定参数的缺省值"><a href="#指定参数的缺省值" class="headerlink" title="指定参数的缺省值"></a>指定参数的缺省值</h4><p>在参数后使用赋值语句，可以指定参数的缺省值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_info</span><span class="params">(name, gender=True)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param name: 班上同学姓名</span></span><br><span class="line"><span class="string">    :param gender: True为男生，False为女神</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    gender_text = <span class="string">"男生"</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> gender:</span><br><span class="line">        gender_text = <span class="string">"女"</span></span><br><span class="line">    print(name,  gender_text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print_info(<span class="string">"hh"</span>, <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ol>
-<li>列表 存储相同类型的数据</li>
-<li>通过 迭代遍历，在循环体内部，针对列表中的每一项元素，执行相同的操作</li>
+<li>缺省参数，需要使用最常见的值作为默认值</li>
+<li>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递</li>
 </ol>
+<h4 id="缺省参数的注意事项"><a href="#缺省参数的注意事项" class="headerlink" title="缺省参数的注意事项"></a>缺省参数的注意事项</h4><ul>
+<li>缺省参数的定义位置<br>必须保证带有默认值的缺省参数在参数列表末尾</li>
+<li>调用带有多个缺省参数的函数<br>在函数调用时，如果有多个缺省参数，需要指定参数名，这样解释器才能知道参数的对应关系</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -746,12 +752,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>14.列表（1）循环遍历</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">183</span></p>
+    <p><span class="copy-title">文章标题:</span>28.缺省参数</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">332</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-01, 21:29:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-01, 22:46:57</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/14-列表（2）-1/" title="14.列表（1）循环遍历">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/14-列表（2）-1/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-04, 15:41:32</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-04, 17:18:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/04/28-缺省参数/" title="28.缺省参数">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/04/28-缺省参数/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
