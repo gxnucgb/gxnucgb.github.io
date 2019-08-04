@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>08.函数基本使用 | Welcome to my blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="08.函数基本使用 | Welcome to my blog">
+  <title>27.函数参数和返回值作用 | Welcome to my blog</title>
+  <meta name="keywords" content=" 函数 ">
+  <meta name="description" content="27.函数参数和返回值作用 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="名片管理系统框架搭建1，准备文件，确定文件名，保证能够在需要的位置编写代码2，编写主运行循环，实现基本的用户输入和判断 字符串判断 1，使用 in 针对列表判断，避免使用or 拼接复杂的逻辑条件 2，没有使用int 转换用户输入，可以避免一旦用户输入的不是数字，导致程序运行出错 passpass就是一个空语句，不做任何事情，一般用作站位语句，是为了保持程序结构的完整性 无限循环在开发软件时，如果不">
 <meta property="og:type" content="article">
@@ -649,9 +649,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-08-函数基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-27-函数参数和返回值作用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">08.函数基本使用</h1>
+        <h1 class="article-title">27.函数参数和返回值作用</h1>
     
     <div class="article-meta">
         
@@ -664,10 +664,16 @@
         </span>
         
         
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">函数</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-01 17:08:43'>2019-08-01 10:59</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-04 15:40:37'>2019-08-04 14:17</time>
         
     </div>
     <div class="article-meta">
@@ -689,7 +695,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的定义"><span class="toc-text">函数的定义</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数参数和返回值作用"><span class="toc-text">函数参数和返回值作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#返回值"><span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数参数"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -704,22 +710,33 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>所谓函数，就是把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
-<li>函数的使用包含两个步骤：</li>
-</ul>
+        <h3 id="函数参数和返回值作用"><a href="#函数参数和返回值作用" class="headerlink" title="函数参数和返回值作用"></a>函数参数和返回值作用</h3><p>函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式<br>1，无参数，无返回值<br>2，无参数，有返回值<br>3，有参数，有返回值<br>4，有参数，有返回值</p>
+<p>函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量<br>参数：外界希望在函数内部处理的数据<br>返回值：向外界报告函数的执行结果</p>
+<p><strong>定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的</strong><br>1，如果函数内部处理的数据不确定，就可以将外界的数据以参数传递到函数内部<br>2，如果希望一个函数执行完成后，向外界汇报执行结果，就可以增加函数的返回值</p>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>元组可以包含多个数据，因此可以使用元组让函数一次返回多个值<br>如果函数返回的类型是元组，小括号可以省略</p>
+<p>如果函数返回的类型是元组，同事希望单独处理元组中的元素，可以使用多个变量，一次接受函数的返回结果<br>注意：使用多个变量接收结果时，变量的个数应该和元组中的个数保持一致</p>
+<p>(交换数据，右边的是一个元组，可以省去括号)<br>a, b = b, a</p>
+<h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><p>参数是可变类型的，如果一个是使用方法，一个是使用赋值，则赋值的不变，使用方法的变</p>
 <ol>
-<li>定义函数——封装独立的功能</li>
-<li>调用函数——享受封装的成果</li>
+<li>无论传递的参数是可变还是不可变，只要<strong>针对参数</strong>使用 <strong>赋值语句</strong> ，会在函数内部修改局部变量的引用，不会影响到外部变量的引用</li>
 </ol>
-<ul>
-<li>函数的作用，在开发程序时，使用函数可以提高编写的效率以及代码的重用<h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2>定义函数的格式如下：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">()</span>:</span></span><br><span class="line">	函数封装的代码</span><br><span class="line">	......</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demo</span><span class="params">(num, num_list)</span>:</span></span><br><span class="line">    <span class="comment"># 在函数内部，针对参数使用赋值语句，不会修改到外部的实参变量</span></span><br><span class="line">    num = <span class="number">100</span></span><br><span class="line">    num_list = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">    print(num)</span><br><span class="line">    print(num_list)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gl_num = <span class="number">90</span></span><br><span class="line">gl_list = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">demo(gl_num, gl_list)</span><br><span class="line">print(gl_num)</span><br><span class="line">print(gl_list)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="number">90</span></span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>如果传递的参数是 <strong>可变类型</strong>，在函数内部，使用 <strong>方法</strong> 修改了数据的内容，同样会影响到外部的数据</li>
+</ol>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">demo</span><span class="params">(num_list)</span>:</span></span><br><span class="line">    print(num_list)</span><br><span class="line">    print(<span class="string">"函数内部的代码"</span>)</span><br><span class="line">    <span class="comment"># 使用方法修改列表的内容</span></span><br><span class="line">    num_list.append(<span class="number">9</span>)  <span class="comment"># 参数的话是没有提示方法的</span></span><br><span class="line">    print(num_list)</span><br><span class="line">    print(<span class="string">"函数执行完成"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gl_list = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line">demo(gl_list)</span><br><span class="line">print(gl_list)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line">函数内部的代码</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line">函数执行完成</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>列表变量使用 += 不会做相加再赋值的操作，本质上是在调用列表的extend方法<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">不变</span><br><span class="line">num_list = num_list +num_list</span><br><span class="line">变</span><br><span class="line">num_list += num_list 等价于 num_list.extend(num_list)</span><br></pre></td></tr></table></figure>
+
 </li>
-</ul>
-<ol>
-<li>def 时英文 define 的缩写</li>
-<li>函数名称应该能够表达函数封装代码的功能，方便后续的调用</li>
-<li>函数名称的命名应该符合标识符的命名规则<br>可以由字母，下划线和数字组成<br>不能以数字开头<br>不能与关键字重名</li>
 </ol>
 
       
@@ -734,12 +751,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>08.函数基本使用</p>
+    <p><span class="copy-title">文章标题:</span>27.函数参数和返回值作用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-08-01, 10:59:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-01, 17:08:43</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/01/08-函数基本使用/" title="08.函数基本使用">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/01/08-函数基本使用/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-04, 14:17:52</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-04, 15:40:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/04/27-函数参数和返回值作用/" title="27.函数参数和返回值作用">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/04/27-函数参数和返回值作用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
