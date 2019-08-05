@@ -4,6 +4,206 @@
   
     
     <entry>
+      <title>36.面向对象-封装</title>
+      <link href="/2019/08/05/36-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%B0%81%E8%A3%85/"/>
+      <url>/2019/08/05/36-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%B0%81%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ol><li>封装时面向对象编程的一大特点</li><li>面向对象编程的第一步——将属性和方法封装到一个抽象的类中</li><li>外界使用类创建对象，然后让对象调用方法</li><li>对象方法的细节都被封装在类的内部</li></ol><p><strong>案例提示：</strong></p><ol><li>在对象方法内部，是可以可以直接访问对象的属性的</li><li>同一个类创建的多个对象之间，属性互不干预</li><li>一个对象的属性，可以是另一个类创建的对象</li></ol><p><strong>被使用的类，通常应该先开发</strong><br><strong>定义没有初始值的属性</strong><br><strong>在定义属性时，如果不知道设置什么初始值，可以设置为None</strong></p><ul><li>None关键字表示什么都没有</li><li>表示一个空对象，没有方法和属性，是一个特殊的常量</li><li>可以将None赋值给任何一个变量</li></ul><h3 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h3><p>身份运算符用于比较两个对象的内存地址是否一致——是否是同一个对象的引用</p><ul><li>在Python中针对None比较时，建议使用<code>is</code>判断</li></ul><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>is</td><td>用于判断两个标识符是不是引用同一个对象</td><td>x is y, 类似 id(x) == id(y)</td></tr><tr><td>is not</td><td>is not 是判断两个标识符是不是引用不同对象</td><td>x is not y, 类似 id(x) !=id(y)</td></tr></tbody></table><p><strong>is 与==区别：</strong></p><ul><li>is 用于判断两个变量引用对象是否为同一个</li><li>==用于判断引用对象的值是否相等</li></ul><p>例子1：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, weight)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.weight = weight</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我的名字是%s，体重是 %.2f公斤"</span> % (self.name, self.weight)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"%s跑步"</span> % self.name)</span><br><span class="line">        self.weight -= <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"吃东西%s"</span> % self.name)</span><br><span class="line">        self.weight += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaoming = Person(<span class="string">"小明"</span>, <span class="number">74.44</span>)</span><br><span class="line">xiaoming.run()</span><br><span class="line">xiaoming.eat()</span><br><span class="line"></span><br><span class="line">xiaomei = Person(<span class="string">"小美"</span>, <span class="number">45</span>)</span><br><span class="line">xiaomei.eat()</span><br><span class="line">xiaomei.run()</span><br><span class="line"></span><br><span class="line">print(xiaoming)</span><br><span class="line">print(xiaomei)</span><br><span class="line">print(xiaoming)</span><br></pre></td></tr></table></figure><p>例子2</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HouseItem</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, area)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.area = area</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"[%s]占地  %.2f"</span> % (self.name, self. area)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">House</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, house_type, area)</span>:</span></span><br><span class="line">        self.house_type = house_type</span><br><span class="line">        self.area = area</span><br><span class="line">        <span class="comment"># 剩余面积</span></span><br><span class="line">        self.free_area = area</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 家具名词</span></span><br><span class="line">        self.item_list = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># python 能够自动将一对括号内部的代码连接在一起</span></span><br><span class="line">        <span class="keyword">return</span> (<span class="string">"户型： %s\n总面积: %.2f[剩余:%.2f]\n家具:%s"</span></span><br><span class="line">                % (self.house_type, self.area,</span><br><span class="line">                   self.free_area, self.item_list))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_item</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        print(<span class="string">"要添加%s"</span> % item)</span><br><span class="line">        <span class="string">"""if里面变大于号的话，可以用return直接结束，然后不要else"""</span></span><br><span class="line">        <span class="keyword">if</span> item.area &lt; self.free_area:</span><br><span class="line">            self.free_area = self.free_area - item.area</span><br><span class="line">            self.item_list.append(item.name)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"空间不足，无法添加:%s"</span> % item.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bed = HouseItem(<span class="string">"床"</span>, <span class="number">3</span>)</span><br><span class="line">chest = HouseItem(<span class="string">"衣柜"</span>, <span class="number">2</span>)</span><br><span class="line">table = HouseItem(<span class="string">"餐桌"</span>, <span class="number">1.3</span>)</span><br><span class="line">ball = HouseItem(<span class="string">"巨无霸"</span>, <span class="number">60</span>)</span><br><span class="line"></span><br><span class="line">print(bed)</span><br><span class="line">print(chest)</span><br><span class="line">print(table)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建房子对象</span></span><br><span class="line">my_home = House(<span class="string">"两室一厅"</span>, <span class="number">60</span>)</span><br><span class="line">my_home.add_item(bed)</span><br><span class="line">my_home.add_item(chest)</span><br><span class="line">my_home.add_item(table)</span><br><span class="line">my_home.add_item(ball)</span><br><span class="line"></span><br><span class="line">print(my_home)</span><br></pre></td></tr></table></figure><p>例子3</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gun</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, model)</span>:</span></span><br><span class="line">        self.model = model</span><br><span class="line">        self.bullet_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_buller</span><span class="params">(self, count)</span>:</span></span><br><span class="line">        self.bullet_count += count</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shoot</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.bullet_count &lt;= <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"[%s]没有子弹了"</span> % self.model)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        self.bullet_count -= <span class="number">1</span></span><br><span class="line">        print(<span class="string">"%s 突突 [%d]"</span> % (self.model, self.bullet_count))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solder</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        <span class="comment"># 新兵没有枪</span></span><br><span class="line">        self.gun = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fire</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 身份运算符</span></span><br><span class="line">        <span class="comment"># if self.gun == None:</span></span><br><span class="line">        <span class="keyword">if</span> self.gun <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            print(<span class="string">"%s没有枪。。。"</span> % self.name)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        print(<span class="string">"冲%s"</span> % self.name)</span><br><span class="line">        self.gun.add_buller(<span class="number">50</span>)</span><br><span class="line">        self.gun.shoot()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ak47 = Gun(<span class="string">"ak47"</span>)</span><br><span class="line"></span><br><span class="line">xusanduo = Solder(<span class="string">"许三多"</span>)</span><br><span class="line">xusanduo.gun = ak47</span><br><span class="line">xusanduo.fire()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>35.面向对象-内置方法和属性</title>
+      <link href="/2019/08/05/35-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7/"/>
+      <url>/2019/08/05/35-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95%E5%92%8C%E5%B1%9E%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h3 id="内置方法和属性"><a href="#内置方法和属性" class="headerlink" title="内置方法和属性"></a>内置方法和属性</h3><table><thead><tr><th>序号</th><th>方法名</th><th>类型</th><th>作用</th></tr></thead><tbody><tr><td>01</td><td><code>__del__</code></td><td>方法</td><td>对象被从内存中销毁前，会被自动调用</td></tr><tr><td>02</td><td><code>__str__</code></td><td>方法</td><td>返回对象的描述信息，print函数输出使用</td></tr></tbody></table><p><strong>1.<code>__del__</code>方法</strong></p><ul><li><p><strong>在Python中</strong></p><ul><li>当使用 类名()创建对象时，为对象分配完空间后，自动调用<code>__init__</code>方法</li><li>当一个对象被从内存中销毁前，会自动调用<code>__del__</code>方法</li></ul></li><li><p><strong>应用场景</strong></p><ul><li><code>__del__</code>改造初始化方法，可以让创建对象更加灵活</li><li><code>__del__</code>如果希望在对象被销毁前，在做一些事，可以考虑一下<code>__del__</code>方法</li></ul></li><li><p><strong>生命周期</strong></p><ul><li>一个对象从调用 类名()创建，生命周期开始</li><li>一个对象的<code>__del__</code>方法一旦被调用，生命周期结束</li><li>在对象的生命周期内，可以访问对象属性或者让对象调用方法</li></ul></li></ul><p><strong>2.<code>__str__</code>方法</strong></p><ul><li>在Python中，使用print输出对象变量，默认情况下，会输出这个变量引用的对象是由哪一个类创建的对象，以及在内存在内存中的地址，（十六进制表示）</li><li>如果在开发中，希望使用print输出对象变量时，能够打印自定义的内容，就可以利用<code>__str__</code>这个内置方法了</li></ul><p><strong>注意</strong>：<code>__str__</code>方法必须返回一个字符串</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>34.面向对象-初始化方法</title>
+      <link href="/2019/08/05/34-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/05/34-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<ul><li>在日常开发中，不推荐在类的外部给对象增加属性<ul><li>如果在运行时，没有找到属性，程序会报错</li></ul></li><li>对象应该包含有哪些属性，应该封装在类的内部</li></ul><h4 id="初始化方法"><a href="#初始化方法" class="headerlink" title="初始化方法"></a>初始化方法</h4><ul><li>当使用 类名() 创建对象时，会自动执行以下操作：<ol><li>为对象在内存中分配空间——创建对象</li><li>为对象的属性设置初始值——初始化方法（init）</li></ol></li><li>这个初始化方法就是（<code>__init__</code>）方法，<code>__init__</code>是对象的内置方法<br><code>__init__</code>方法时专门用来定义一个类具体有哪些属性的方法！</li></ul><h4 id="在初始化方法内部定义属性"><a href="#在初始化方法内部定义属性" class="headerlink" title="在初始化方法内部定义属性"></a>在初始化方法内部定义属性</h4><ul><li>在<code>__init__</code>方法内部使用 <code>self.属性名=属性的初始值</code>就可以定义属性</li><li>定义属性之后，再使用类创建的对象都会拥有该属性</li></ul><p>改造初始化方法——初始化的同时设置初始值<br>在开发中，如果希望在创建对象的同时，就设置对象的属性，可以对<code>__init__</code>方法 进行改造<br>把希望设置的属性值，定义成<code>__init__</code>方法的参数<br>在方法内部使用<code>self.属性=形参</code>就收外部传递的参数<br>在创建对象时，使用<code>类名(属性1，属性2...)</code>调用</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, new_name)</span>:</span></span><br><span class="line">        self.name = new_name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"%s嗝"</span> % self.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用类名()创建对象的时候，会自动调用初始化方法 __init__</span></span><br><span class="line">tom = Cat(<span class="string">"Tom"</span>)</span><br><span class="line">print(tom.name)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>33.面向对象-self</title>
+      <link href="/2019/08/05/33-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-self/"/>
+      <url>/2019/08/05/33-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-self/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>32.面向对象-定义简单类</title>
+      <link href="/2019/08/04/32-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8D%95%E7%B1%BB/"/>
+      <url>/2019/08/04/32-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%AE%9A%E4%B9%89%E7%AE%80%E5%8D%95%E7%B1%BB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="定义简单的类"><a href="#定义简单的类" class="headerlink" title="定义简单的类"></a>定义简单的类</h3><p>面向对象是更大的封装，在一个类中封装多个方法，这样通过这个类创建出来的对象，就可以直接调用这些方法了</p><h4 id="定义只包含方法的类"><a href="#定义只包含方法的类" class="headerlink" title="定义只包含方法的类"></a>定义只包含方法的类</h4><p>在Python中要定义一个只包含方法的类，语法格式如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 方法1<span class="params">(self, 参数列表)</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 方法2<span class="params">(self, 参数列表)</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure><ul><li>方法的定义格式和之前学习过的函数几乎一样</li><li>区别在于第一个参数必须是self</li></ul><p><strong>注意：类名的命名规则要符合大驼峰命名法</strong></p><h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>当一个类定义完成后，要使用这个类来创建对象，语法格式如下：<br><code>对象变量 = 类名()</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>31.面向对象使用</title>
+      <link href="/2019/08/04/31-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/08/04/31-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h4 id="dir内置函数"><a href="#dir内置函数" class="headerlink" title="dir内置函数"></a>dir内置函数</h4><p>利用好dir()函数，可以查看对象内置的所有属性及方法</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__new__      方法     创建对象时，会被自动调用</span><br><span class="line">__init__       方法      对象被初始化时，会被自动调用</span><br><span class="line">__del__       方法       对象被从内存中前，会被自动调用</span><br><span class="line">__str__         方法       返回对象的信息描述，<span class="keyword">print</span> 函数输出使用</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>30.面向对象</title>
+      <link href="/2019/08/04/30-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <url>/2019/08/04/30-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="面向对象基本概念"><a href="#面向对象基本概念" class="headerlink" title="面向对象基本概念"></a>面向对象基本概念</h3><h4 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h4><p>相比较函数，面向对象是更大的封装，根据职责在一个对象中封装多个方法</p><ol><li>在完成某一需求前，首先确定职责——要做的事情（方法）</li><li>根据职责确定不同的对象，在对象内部封装不同的方法（多个）</li><li>最后完成的代码，就是顺序地让不同的对象调用不同的方法</li></ol><p><strong>特点</strong></p><ol><li>注重对象和职责，不同的对象承担不同的职责</li><li>更加适合应对复杂的需求变化，是专门应对复杂项目开发，提供的固定套路</li><li>需要在面向过程的基础上，再学习一些面向对象的语法</li></ol><h4 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h4><ul><li><p>类是对一群具有相同特征或者行为的事物的一个统称，是抽象的，不能只是使用</p><ul><li>特征被称为属性</li><li>行为被称为方法</li></ul></li><li><p>对象是由类创建出来的一个具体存在，可以直接使用</p></li><li><p>由哪一个类创建出来的对象，就拥有在哪一个类中定义的</p><ul><li>属性</li><li>方法</li></ul></li></ul><p><strong>在程序开发中，应该先有类，再有对象</strong></p><h4 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h4><ul><li>类是模板，对象是根据类这个模板创建出来的，应该先有类，再有对象</li><li>类只有一个，而对象可以有很多个<ul><li>不同对象之间属性可能会各不相同</li></ul></li><li>类中定义了什么属性和方法，对象中就有什么属性和方法，不可能多，也不可能少</li></ul><h4 id="类的设计"><a href="#类的设计" class="headerlink" title="类的设计"></a>类的设计</h4><p>在使用面向对象开发前，应该首先分析需求，确定一下，程序中需要包含哪些类！</p><p>在程序开发中，要设置一个类，通常要满足一下三个要素</p><ol><li><strong>类名</strong>，这类事物的名字，满足大驼峰命名法（每一个单词首字母大写，第一个也大写）</li><li><strong>属性</strong>，这类事物具有什么样的特征</li><li><strong>方法</strong>，这类事物具有什么样的行为</li></ol><h4 id="类名的确定"><a href="#类名的确定" class="headerlink" title="类名的确定"></a>类名的确定</h4><p>名词提炼法分析整个业务流程图，出现的名词，通常就是要找到的类</p><h4 id="属性和方法的确定"><a href="#属性和方法的确定" class="headerlink" title="属性和方法的确定"></a>属性和方法的确定</h4><ul><li>对 对象的特征描述，通常可以定义成属性</li><li>对象具有的行为（动词），通常可以定义成方法</li></ul><p><strong>提示</strong>：需求中没有涉及的属性或者方法在涉及类时，不需要考虑</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>29.函数的递归</title>
+      <link href="/2019/08/04/29-%E5%87%BD%E6%95%B0%E7%9A%84%E9%80%92%E5%BD%92/"/>
+      <url>/2019/08/04/29-%E5%87%BD%E6%95%B0%E7%9A%84%E9%80%92%E5%BD%92/</url>
+      
+        <content type="html"><![CDATA[<h3 id="函数的递归"><a href="#函数的递归" class="headerlink" title="函数的递归"></a>函数的递归</h3><p>函数调用自身的编程技巧称为递归</p><h4 id="递归函数的特点"><a href="#递归函数的特点" class="headerlink" title="递归函数的特点"></a>递归函数的特点</h4><p><strong>特点</strong></p><ul><li>一个函数内部调用自己<br>函数内部可以调用其他函数，当然在函数内部也可以调用自己</li><li>代码特点</li></ul><ol><li>函数内部的代码是相同的，只是针对参数不同，处理的结果不同</li><li>当参数满足一个条件时，函数不再执行<ul><li>这个<strong>非常重要</strong>，通常被称为递归的出口，否则就会出现死循环</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>28.缺省参数</title>
       <link href="/2019/08/04/28-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0/"/>
       <url>/2019/08/04/28-%E7%BC%BA%E7%9C%81%E5%8F%82%E6%95%B0/</url>
@@ -629,7 +829,7 @@
       <link href="/2019/07/28/python%E6%B3%A8%E9%87%8A%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/"/>
       <url>/2019/07/28/python%E6%B3%A8%E9%87%8A%E4%B8%8E%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/</url>
       
-        <content type="html"><![CDATA[<h4 id="什么时候使用注释"><a href="#什么时候使用注释" class="headerlink" title="什么时候使用注释"></a>什么时候使用注释</h4><ol><li><p>注释不是越多越好，对于一目了然的代码，不需要添加注释</p></li><li><p>对于复杂的操作，应该在操作开始之前写上若干行注释</p></li><li><p>对于不是一目了然的代码，应该在其行尾添加注释（注释应该至少离开代码2个空格）</p></li><li><p>绝不要描述代码，只要知道代码要做什么就可以了</p><h4 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h4></li><li><p>使用空格来表示缩进而不要用制表符（Tab）。</p></li><li><p>和语法相关的每一层缩进都用4个空格来表示。</p></li><li><p>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</p></li><li><p>函数和类的定义，代码前后都要用两个空行进行分隔。</p></li><li><p>在同一个类中，各个方法之间应该用一个空行进行分隔。</p></li><li><p>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</p><h4 id="标识符命名"><a href="#标识符命名" class="headerlink" title="标识符命名"></a>标识符命名</h4></li><li><p>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</p></li><li><p>类中受保护的实例属性，应该以一个下划线开头。</p></li><li><p>类中私有的实例属性，应该以两个下划线开头。</p></li><li><p>类和异常的命名，应该每个单词首字母大写。</p></li><li><p>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</p></li><li><p>类的实例方法，应该把第一个参数命名为self以表示对象自身。</p></li><li><p>类的类方法，应该把第一个参数命名为cls以表示该类自身。</p><h4 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h4></li><li><p>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。例如if a is not b就比if not a is b更容易让人理解。</p></li><li><p>不要用检查长度的方式来判断字符串、列表等是否为None或者没有元素，应该用if not x这样的写法来检查它。</p></li><li><p>就算if分支、for循环、except异常捕获等中只有一行代码，也不要将代码和if、for、except等写在一起，分开写才会让代码更清晰。</p></li><li><p>import语句总是放在文件开头的地方。</p></li><li><p>引入模块的时候，from math import sqrt比import math更好。</p></li><li><p>如果有多个import语句，应该将其分为三部分，从上到下分别是Python标准模块、第三方模块和自定义模块，每个部分内部应该按照模块名称的字母表顺序来排列。</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h4 id="什么时候使用注释"><a href="#什么时候使用注释" class="headerlink" title="什么时候使用注释"></a>什么时候使用注释</h4><ol><li>注释不是越多越好，对于一目了然的代码，不需要添加注释</li><li>对于复杂的操作，应该在操作开始之前写上若干行注释</li><li>对于不是一目了然的代码，应该在其行尾添加注释（注释应该至少离开代码2个空格）</li><li>绝不要描述代码，只要知道代码要做什么就可以了</li></ol><h4 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h4><ol><li>使用空格来表示缩进而不要用制表符（Tab）。</li><li>和语法相关的每一层缩进都用4个空格来表示。</li><li>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</li><li>函数和类的定义，代码前后都要用两个空行进行分隔。</li><li>在同一个类中，各个方法之间应该用一个空行进行分隔。</li><li>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</li></ol><h4 id="标识符命名"><a href="#标识符命名" class="headerlink" title="标识符命名"></a>标识符命名</h4><ol><li>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</li><li>类中受保护的实例属性，应该以一个下划线开头。</li><li>类中私有的实例属性，应该以两个下划线开头。</li><li>类和异常的命名，应该每个单词首字母大写。</li><li>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</li><li>类的实例方法，应该把第一个参数命名为self以表示对象自身。</li><li>类的类方法，应该把第一个参数命名为cls以表示该类自身。</li></ol><h4 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h4><ol><li>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。例如if a is not b就比if not a is b更容易让人理解。</li><li>不要用检查长度的方式来判断字符串、列表等是否为None或者没有元素，应该用if not x这样的写法来检查它。</li><li>就算if分支、for循环、except异常捕获等中只有一行代码，也不要将代码和if、for、except等写在一起，分开写才会让代码更清晰。</li><li>import语句总是放在文件开头的地方。</li><li>引入模块的时候，from math import sqrt比import math更好。</li><li>如果有多个import语句，应该将其分为三部分，从上到下分别是Python标准模块、第三方模块和自定义模块，每个部分内部应该按照模块名称的字母表顺序来排列。</li></ol>]]></content>
       
       
       <categories>
