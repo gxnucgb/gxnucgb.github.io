@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 面向对象 ">
   <meta name="description" content="36.面向对象-封装 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="函数参数和返回值作用函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式1，无参数，无返回值2，无参数，有返回值3，有参数，有返回值4，有参数，有返回值 函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量参数：外界希望在函数内部处理的数据返回值：向外界报告函数的执行结果 定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的1，如果函数内部处理">
-<meta name="keywords" content="函数">
+<meta name="description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
+<meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="27.函数参数和返回值作用">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/04/27-函数参数和返回值作用/index.html">
+<meta property="og:title" content="36.面向对象-封装">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/05/36-面向对象-封装/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="函数参数和返回值作用函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式1，无参数，无返回值2，无参数，有返回值3，有参数，有返回值4，有参数，有返回值 函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量参数：外界希望在函数内部处理的数据返回值：向外界报告函数的执行结果 定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的1，如果函数内部处理">
+<meta property="og:description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-04T07:40:37.417Z">
+<meta property="og:updated_time" content="2019-08-05T10:08:35.046Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="27.函数参数和返回值作用">
-<meta name="twitter:description" content="函数参数和返回值作用函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式1，无参数，无返回值2，无参数，有返回值3，有参数，有返回值4，有参数，有返回值 函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量参数：外界希望在函数内部处理的数据返回值：向外界报告函数的执行结果 定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的1，如果函数内部处理">
+<meta name="twitter:title" content="36.面向对象-封装">
+<meta name="twitter:description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -126,11 +126,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(57)</small></div></li>
+    <li><div class="all active">全部文章<small>(58)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(36)</small></div>
+            <li><div data-rel="python">python<small>(37)</small></div>
                 
             </li>
             
@@ -164,7 +164,7 @@
     </div>
     <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="57">
+<input type="hidden" id="yelog_site_posts_number" value="58">
 <input type="hidden" id="yelog_site_word_count" value="17.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -272,6 +272,14 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/37-私有属性和私有方法/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="37.私有属性和私有方法">37.私有属性和私有方法</span>
+            <span class="post-date" title="2019-08-05 18:10:37">2019/08/05</span>
         </a>
         
         <a  class="python "
