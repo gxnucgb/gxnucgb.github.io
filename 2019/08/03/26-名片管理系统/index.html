@@ -6,18 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="26.名片管理系统 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
+<meta name="description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="36.面向对象-封装">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/05/36-面向对象-封装/index.html">
+<meta property="og:title" content="37.私有属性和私有方法">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/05/37-私有属性和私有方法/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
+<meta property="og:description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T10:08:35.046Z">
+<meta property="og:updated_time" content="2019-08-05T10:42:39.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="36.面向对象-封装">
-<meta name="twitter:description" content="封装 封装时面向对象编程的一大特点 面向对象编程的第一步——将属性和方法封装到一个抽象的类中 外界使用类创建对象，然后让对象调用方法 对象方法的细节都被封装在类的内部  案例提示：  在对象方法内部，是可以可以直接访问对象的属性的 同一个类创建的多个对象之间，属性互不干预 一个对象的属性，可以是另一个类创建的对象  被使用的类，通常应该先开发定义没有初始值的属性在定义属性时，如果不知道设置什么初始">
+<meta name="twitter:title" content="37.私有属性和私有方法">
+<meta name="twitter:description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -126,11 +126,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(58)</small></div></li>
+    <li><div class="all active">全部文章<small>(59)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(37)</small></div>
+            <li><div data-rel="python">python<small>(38)</small></div>
                 
             </li>
             
@@ -164,8 +164,8 @@
     </div>
     <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="58">
-<input type="hidden" id="yelog_site_word_count" value="17.2k">
+<input type="hidden" id="yelog_site_posts_number" value="59">
+<input type="hidden" id="yelog_site_word_count" value="18k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -205,11 +205,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
+        <a href="javascript:" class="color1">while</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">while</a>
+        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -225,11 +225,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">字符串</a>
+        <a href="javascript:" class="color5">公共方法</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">公共方法</a>
+        <a href="javascript:" class="color4">字符串</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -242,6 +242,10 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color1">Linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">继承</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -272,6 +276,14 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/38-继承/"
+           data-tag="继承"
+           data-author="" >
+            <span class="post-title" title="38.继承">38.继承</span>
+            <span class="post-date" title="2019-08-05 18:46:37">2019/08/05</span>
         </a>
         
         <a  class="python "
@@ -878,7 +890,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#if','#random','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#Linux','#MySQL','#sqlite3',],
+            'data': ['#if','#while','#random','#列表','#元组','#字典','#公共方法','#字符串','#函数','#面向对象','#Linux','#继承','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

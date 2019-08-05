@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>38.继承</title>
+      <link href="/2019/08/05/38-%E7%BB%A7%E6%89%BF/"/>
+      <url>/2019/08/05/38-%E7%BB%A7%E6%89%BF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>面向对象三大特征</p><ul><li>封装，根据职责将属性和方法封装到一个抽象的类中</li><li>继承，实现代码的重用，相同的代码不需要重复编写</li><li>多态，不同的对象调用相同的方法，产生不同的执行结果，增加代码的灵活度</li><li>单继承<br>继承的概念：子类拥有父类的所有方法和属性</li></ul><h4 id="1，继承语法"><a href="#1，继承语法" class="headerlink" title="1，继承语法"></a>1，继承语法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名<span class="params">(父类名)</span>：</span></span><br><span class="line"><span class="class">    <span class="title">pass</span></span></span><br></pre></td></tr></table></figure><p>子类继承自父类，可以直接享受父类中已经封装好的方法，不需要再次开发<br>子类中应该根据职责，封装子类特有的属性和方法</p><h4 id="2，继承的传递性"><a href="#2，继承的传递性" class="headerlink" title="2，继承的传递性"></a>2，继承的传递性</h4><ul><li>C类从B类继承，B类有从A类继承，那么C类就具有B类和A类的所有属性和方法</li><li>子类拥有父类以及父类的父类中封装的所有属性和方法</li></ul><h4 id="3，方法的重写"><a href="#3，方法的重写" class="headerlink" title="3，方法的重写"></a>3，方法的重写</h4><ul><li>子类拥有父类的所有方法和属性</li><li>子类继承自父类，可以直接享受父类中已经封装好的方法，不需要再次开发</li></ul><p><strong>应用场景</strong></p><ul><li>当父类的方法不能满足子类需求时，可以对方法进行重写（override）</li></ul><p><strong>重写父类的方法有两种情况</strong></p><ol><li>覆盖父类的方法</li><li>对父类方法进行扩展</li></ol><p><strong>1）覆盖父类的方法</strong></p><ul><li>如果在开发中，父类的方法实现和子类的方法实现完全不同，就可以使用覆盖的方式，在子类中重新编写父类的方法实现</li></ul><p><em>具体的实现方式，就相当于在子类中定义了一个和父类同名的方法并且实现</em></p><p>重写之后，在运行时，只会调用子类中重写的方法，而不会调用父类封装的方法</p><p><strong>2）对父类方法进行扩展</strong></p><ul><li>如果在开发中，子类的方法实现方法中，包含父类的方法实现<ul><li>父类原本封装的方法实现时子类方法的一部分</li></ul></li><li>就可以使用扩展的方式<ol><li>在子类中重写父类的方法</li><li>在需要的位置使用<code>super().父类方法</code>来调用父类方法的执行</li><li>代码其他的位置针对子类的需求，编写子类特有的代码实现</li></ol></li></ul><p><strong>关于super</strong></p><ul><li>在Python中super是一个特殊的类</li><li>super()就是使用super类创建出来的对象</li><li>最常用的场景就是在重写父类时，调用在父类中封装的方法实现</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 继承 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>37.私有属性和私有方法</title>
       <link href="/2019/08/05/37-%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"/>
       <url>/2019/08/05/37-%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="私有属性和私有方法"><a href="#私有属性和私有方法" class="headerlink" title="私有属性和私有方法"></a>私有属性和私有方法</h3><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul><li>在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到</li><li>私有属性就是对象不希望公开的属性</li><li>私有方法就是对象不希望公开的方法</li></ul><h4 id="定义方式"><a href="#定义方式" class="headerlink" title="定义方式"></a>定义方式</h4><ul><li>在定义属性或方法时，在属性名或者方法名前面增加<strong>两个下划线</strong>，定义的就是私有属性或方法</li></ul><p><strong><em>注意：</em></strong><br><strong>私有属性在外界不能被直接访问</strong><br><strong>私有方法同样不允许在外界访问</strong><br><strong>在对象的方法内部，是可以访问对象的私有属性的</strong></p>]]></content>
       
       
       <categories>
@@ -108,7 +133,7 @@
       <link href="/2019/08/05/33-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-self/"/>
       <url>/2019/08/05/33-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-self/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>self指调用方法的对象</p>]]></content>
       
       
       <categories>
