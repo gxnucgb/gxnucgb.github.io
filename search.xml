@@ -4,6 +4,170 @@
   
     
     <entry>
+      <title>46.异常</title>
+      <link href="/2019/08/06/46-%E5%BC%82%E5%B8%B8/"/>
+      <url>/2019/08/06/46-%E5%BC%82%E5%B8%B8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 异常 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>45.单例</title>
+      <link href="/2019/08/06/45-%E5%8D%95%E4%BE%8B/"/>
+      <url>/2019/08/06/45-%E5%8D%95%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-单例设计模式"><a href="#1-单例设计模式" class="headerlink" title="1. 单例设计模式"></a>1. 单例设计模式</h4><ul><li>设计模式<ul><li>设计模式是前人工作的总结和提炼，通常，被人们广泛流传的设计模式都是针对某一特定问题的成熟解决方案</li><li>使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性</li></ul></li><li>单例设计模式</li><li>目的——让类创建的对象，在系统中只有唯一一个实例</li><li>每一次执行<code>类名()</code>返回的对象，内存地址是相同的</li></ul><h4 id="2-new-方法"><a href="#2-new-方法" class="headerlink" title="2. __new__方法"></a>2. <code>__new__</code>方法</h4><ul><li>使用 类名() 创建对象时，Python的解释器首先会调用 <code>__new__</code>方法为对象分配空间</li><li><code>__new__</code>是一个由object积累提供的内置静态方法，主要作用有两个：<ul><li>1 . 在内存中中为对象分配空间</li><li>2 . 返回对象的引用</li></ul></li><li>Python的解释器获得对象的引用后，将引用作为第一个参数，传递给 <code>__new__</code>方法</li></ul><p><em>重写 <code>__new__</code>方法的代码非常固定</em></p><ul><li>重写 <code>__new__</code>方法一定要<code>return super. __new__(cls)</code></li><li>否则Python的解释器得不到分配了空间的对象引用，就不会调用对象的初始化方法</li><li>注意： <code>__new__</code>是一个静态方法，在调用时需要主动传递 cls 参数</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MusicPlayer</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建对象时，new方法会被自动调用</span></span><br><span class="line">        print(<span class="string">"创建对象，分配空间"</span>)</span><br><span class="line">        <span class="comment"># 为对象分配空间，返回对象的引用</span></span><br><span class="line">        <span class="keyword">return</span> super().__new__(cls)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"初始化"</span>)</span><br><span class="line"></span><br><span class="line">music = MusicPlayer()</span><br><span class="line">print(music)</span><br></pre></td></tr></table></figure><h4 id="3-Python中的单例"><a href="#3-Python中的单例" class="headerlink" title="3.Python中的单例"></a>3.Python中的单例</h4><ul><li>单例——让类创建的对象，在系统中只有唯一的一个实例<ol><li>定义一个类属性，初始值时None，用于记录单例对象的引用</li><li>重写<code>__new__</code>方法</li><li>如果类属性 is None ，调用父类方法分配空间，并在类属性中记录结果</li><li>返回类属性中记录的对象停用</li></ol></li></ul><h4 id="只执行一次初始化工作"><a href="#只执行一次初始化工作" class="headerlink" title="只执行一次初始化工作"></a>只执行一次初始化工作</h4><p>在每次只使用 类名() 创建对象时，Python的解释器都会自动调用两个方法：<br> <code>__new__</code>分配空间<br>  <code>__init__</code>对象初始化</p><p>解决办法：</p><ol><li>定义一个类属性 init_flag 标记是否执行过初始化动作，初始值为False</li><li>在 <code>__init__</code>方法中，判断init_flag，如果为False就执行初始化动作</li><li>然后将init_flag设置为 True</li><li>这样，这次自动调用  <code>__init__</code>方法时，初始化动作就不会再次执行了</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MusicPlayer</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 记录第一个被创建对象的引用</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line">    <span class="comment"># 记录是否执行过初始化动作</span></span><br><span class="line">    init_flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="comment"># 1.判断类属性是否是空对象</span></span><br><span class="line">        <span class="keyword">if</span> cls.instance <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># 2.调用父类的方法，为第一个对象分配空间</span></span><br><span class="line">            cls.instance = super().__new__(cls)</span><br><span class="line">        <span class="comment"># 3.返回类属性保存的对象引用</span></span><br><span class="line">        <span class="keyword">return</span> cls.instance</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 1.判断是否执行过初始化动作</span></span><br><span class="line">        <span class="keyword">if</span> MusicPlayer.init_flag:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="comment"># 2.执行初始化动作</span></span><br><span class="line">        print(<span class="string">"aaaaaaaa"</span>)</span><br><span class="line">        <span class="comment"># 3.修改类属性标志</span></span><br><span class="line">        MusicPlayer.init_flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多个对象</span></span><br><span class="line">player1 = MusicPlayer()</span><br><span class="line">print(player1)</span><br><span class="line"></span><br><span class="line">player2 = MusicPlayer()</span><br><span class="line">print(player2)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 单例 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>44.静态方法</title>
+      <link href="/2019/08/06/44-%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/06/44-%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><ul><li>在开发时，如果需要在类中封装一个方法，这个方法：<ul><li>既不需要访问实例属性或者调用实例方法</li><li>也不需要访问类属性或者调用类方法</li></ul></li><li>这个时候，可以把这个方法封装成一个静态方法</li></ul><p>语法如下</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 静态方法名<span class="params">()</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure><ul><li>静态方法需要用修饰器<code>@staticmethod</code> 来标识，告诉解释器这是一个静态方法</li><li>通过 类名. 调用静态方法</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">(object)</span>:</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span>         <span class="comment"># 没有self了</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 不访问实例属性/类属性</span></span><br><span class="line">        print(<span class="string">"跑"</span>)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过类名.调用静态方法--不需要创建对象</span></span><br><span class="line">Dog.run()</span><br></pre></td></tr></table></figure><ol><li>实例方法——方法内部需要访问实例属性<ul><li>实例方法内部可以使用 类名. 访问类属性</li></ul></li><li>类方法——方法内部只需要访问类属性</li><li>静态方法——方法内部，不需要访问实例属性和类属性</li></ol><p>如果方法内部即需要访问实例属性，有需要访问类属性，应该定义成实例方法，因为类只有一个，在实例方法内部可以使用 类名. 访问类属性</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>43.类方法</title>
+      <link href="/2019/08/06/43-%E7%B1%BB%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/06/43-%E7%B1%BB%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><ul><li>类属性就是针对类对象定义的属性<ul><li>使用赋值语句在 class 关键字下方可以定义类属性</li><li>类属性用于记录与这个类相关的特征</li></ul></li><li>类方法就是针对类对象定义的方法<ul><li>在类方法内部可以直接访问类属性或者调用其他的类方法</li></ul></li></ul><p><strong>语法如下</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> 类方法名<span class="params">(cls)</span>:</span></span><br><span class="line"><span class="keyword">pass</span></span><br></pre></td></tr></table></figure><ul><li>类方法需要用修饰器@classmethod来标识，告诉解释器这是一个类方法</li><li>类方法的第一个参数应该是 cls<ul><li>由哪一个类调用的方法，方法内的 cls 就是哪一个类的引用</li><li>这个参数和实例方法的第一个参数 self 类似</li><li>提示 使用其他名称也可以，不过习惯使用cls</li></ul></li><li>通过 类名. 调用类方法，调用方法时，不需要传递cls 参数</li><li>在方法内部<ul><li>也可以通过 cls. 访问类的属性</li><li>也可以通过 cls. 调用其他的类方法</li></ul></li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tool</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 使用赋值语句定义类属性，记录所有工具对象的数量</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_tool_count</span><span class="params">(cls)</span>:</span></span><br><span class="line"><span class="comment"># 在类方法内部，可以直接使用cls访问雷属性或者调用类方法</span></span><br><span class="line">        print(<span class="string">"工具对象的数量%d"</span> % cls.count)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        <span class="comment"># 让类属性的值加一</span></span><br><span class="line">        Tool.count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tool1 = Tool(<span class="string">"aa"</span>)</span><br><span class="line">tool2 = Tool(<span class="string">"bb"</span>)</span><br><span class="line">tool3 = Tool(<span class="string">"cc"</span>)</span><br><span class="line">Tool.show_tool_count()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>42.类属性</title>
+      <link href="/2019/08/06/42-%E7%B1%BB%E5%B1%9E%E6%80%A7/"/>
+      <url>/2019/08/06/42-%E7%B1%BB%E5%B1%9E%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-术语——实例"><a href="#1-术语——实例" class="headerlink" title="1,  术语——实例"></a>1,  术语——实例</h4><ol><li>使用面向对象开发，第一步是设计类</li><li>使用类名()创建对象，创建对象的动作有两步：<ol><li>在内存中为对象分配空间</li><li>调用初始化方法<code>__init__</code>为对象初始化</li></ol></li><li>对象创建后，内存中就有了一个对象的实实在在的存在——实例</li></ol><p>因此，通常也会把：</p><ol><li>创建出来的对象叫做类的实例</li><li>创建对象的动作叫做实例化</li><li>对象的属性叫做实例属性</li><li>对象的调用方法叫做实例方法</li></ol><p>在程序执行时：</p><ol><li>对象各自拥有自己的实例属性</li><li>调用对象方法，可以通过<code>self.</code><ul><li>访问自己的属性</li><li>调用自己的方法</li></ul></li></ol><p>结论</p><ul><li>每一个对象都有自己独立的内存空间，保存各自不同的属性</li><li>多个对象的方法，在内存中只有一份，在调用方法时，需要把对象的引用传递到方法内部</li></ul><h4 id="2，类是一个特殊的对象"><a href="#2，类是一个特殊的对象" class="headerlink" title="2，类是一个特殊的对象"></a>2，类是一个特殊的对象</h4><p>Python中一切皆对象：<br><code>class AAA：</code>定义的类属于类对象<br><code>obj1 = AAA()</code>属于实例对象</p><ul><li>在程序运行时，类同样会被加载到内存</li><li>在Python中，类是一个特殊的对象——类对象</li><li>在程序运行时，类对象在内存中只有一份，使用一个类可以创造出很多个对象实例</li><li>除了封装实例的属性和方法外，类对象还可以拥有自己的属性和方法<br>1，类属性<br>2，类方法</li><li>通过 类名. 的方式可以访问类的属性或者调用的方法</li></ul><h4 id="3，类属性和实例属性"><a href="#3，类属性和实例属性" class="headerlink" title="3，类属性和实例属性"></a>3，类属性和实例属性</h4><h5 id="概念和使用"><a href="#概念和使用" class="headerlink" title="概念和使用"></a>概念和使用</h5><ul><li>类属性就是给类对象中定义的属性</li><li>通常用来记录与这个类相关的特征</li><li>类属性不会用于记录具体对象的特征</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tool</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 使用赋值语句定义类属性，记录所有工具对象的数量</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        <span class="comment"># 让类属性的值加一</span></span><br><span class="line">        Tool.count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tool1 = Tool(<span class="string">"aa"</span>)</span><br><span class="line">tool2 = Tool(<span class="string">"bb"</span>)</span><br><span class="line">tool3 = Tool(<span class="string">"cc"</span>)</span><br><span class="line">print(Tool.count)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>41.多态</title>
+      <link href="/2019/08/06/41-%E5%A4%9A%E6%80%81/"/>
+      <url>/2019/08/06/41-%E5%A4%9A%E6%80%81/</url>
+      
+        <content type="html"><![CDATA[<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>面向对象三大特性</p><ol><li>封装，根据职责将属性和方法封装到一个抽象的类中<pre><code>定义类的准则</code></pre></li><li>继承，实现代码的重用，相同的代码不需要重复的编写<pre><code>设计类的技巧子类针对自己特有的需求，编写特定的代码</code></pre></li><li>多态，不同的子类对象调用相同的父类方法，产生不同的执行结果<pre><code>多态可以增加代码的灵活度以继承和重写父类方法为前提是调用方法的技巧，不会影响到类的内部设计</code></pre></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">game</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"%s普通玩"</span> % self.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XiaoTianDog</span><span class="params">(Dog)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">game</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"%s天上玩"</span> % self.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">game_with_dog</span><span class="params">(self, dog)</span>:</span></span><br><span class="line">        print(<span class="string">"%s和狗%s玩"</span> % (self.name, dog.name))</span><br><span class="line">        dog.game()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dd = Dog(<span class="string">"狗"</span>)</span><br><span class="line">d = XiaoTianDog(<span class="string">"哮天犬"</span>)</span><br><span class="line">m = Person(<span class="string">"张三"</span>)</span><br><span class="line">m.game_with_dog(dd)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>40.多继承</title>
+      <link href="/2019/08/06/40-%E5%A4%9A%E7%BB%A7%E6%89%BF/"/>
+      <url>/2019/08/06/40-%E5%A4%9A%E7%BB%A7%E6%89%BF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h3><p>子类可以拥有多个父类，并且具有所有父类的属性和方法<br>语法</p><pre><code>class 子类名(父类名1，父类名2...)    pass</code></pre><h4 id="多继承的使用注意事项"><a href="#多继承的使用注意事项" class="headerlink" title="多继承的使用注意事项"></a>多继承的使用注意事项</h4><ul><li>问题：如果不同的父类存在同名的方法，子类对象在调用方法时，会调用哪一个父类中的方法呢？<br>开发时，应该尽量避免这种容易产生混淆的情况！——如果父类之间存在同名的属性或方法，应该尽量避免使用多继承</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 继承 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>39.父类的私有属性和私有方法</title>
+      <link href="/2019/08/05/39-%E7%88%B6%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/05/39-%E7%88%B6%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h4 id="父类的私有属性和私有方法"><a href="#父类的私有属性和私有方法" class="headerlink" title="父类的私有属性和私有方法"></a>父类的私有属性和私有方法</h4><ol><li>子类对象不能在自己的方法内部，直接访问父类的私有属性或私有方法</li><li>子类对象可以通过父类的共有方法间接访问到私有属性或私有方法<ul><li>私有属性、方法 是对象的隐私，不对外公开，外界以及子类都不能直接访问</li><li>私有属性、方法通常用于做一些内部的事情</li></ul></li></ol><p>实例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.num1 = <span class="number">100</span></span><br><span class="line">        self.__num2 = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"私有方法 %d % d"</span> % (self.num1, self.__num2))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"父类的公有方法%d"</span> % self.__num2)</span><br><span class="line">        self.__test()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">demo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 1.在子类的对象方法中，不能访问父类的私有属性</span></span><br><span class="line">        <span class="comment"># print("访问父类的私有属性 %d" % self.__num2)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 2.不能调用父类的私有方法</span></span><br><span class="line">        <span class="comment"># self.__test()</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 3.访问父类的公有属性</span></span><br><span class="line">        print(<span class="string">"子类方法 %d "</span> % self.num1)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 4.调用父类的公有方法</span></span><br><span class="line">        self.test()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个子类对象</span></span><br><span class="line">b = B()</span><br><span class="line">print(b)</span><br><span class="line">b.demo()</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 在外界不能直接访问对象的私有属性/调用私有方法</span></span><br><span class="line"><span class="comment"># print(b.__num2)</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>38.继承</title>
       <link href="/2019/08/05/38-%E7%BB%A7%E6%89%BF/"/>
       <url>/2019/08/05/38-%E7%BB%A7%E6%89%BF/</url>

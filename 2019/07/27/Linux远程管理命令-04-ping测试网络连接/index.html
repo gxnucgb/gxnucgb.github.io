@@ -6,18 +6,18 @@
   <meta name="keywords" content=" Linux ">
   <meta name="description" content="Linux远程管理命令-05-ping测试网络连接 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
+<meta name="description" content="内置方法和属性   序号 方法名 类型 作用    01 __del__ 方法 对象被从内存中销毁前，会被自动调用   02 __str__ 方法 返回对象的描述信息，print函数输出使用   1.__del__方法  在Python中  当使用 类名()创建对象时，为对象分配完空间后，自动调用__init__方法 当一个对象被从内存中销毁前，会自动调用__del__方法   应用场景  __d">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="37.私有属性和私有方法">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/05/37-私有属性和私有方法/index.html">
+<meta property="og:title" content="35.面向对象-内置方法和属性">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/05/35-面向对象-内置方法和属性/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
+<meta property="og:description" content="内置方法和属性   序号 方法名 类型 作用    01 __del__ 方法 对象被从内存中销毁前，会被自动调用   02 __str__ 方法 返回对象的描述信息，print函数输出使用   1.__del__方法  在Python中  当使用 类名()创建对象时，为对象分配完空间后，自动调用__init__方法 当一个对象被从内存中销毁前，会自动调用__del__方法   应用场景  __d">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T10:42:39.445Z">
+<meta property="og:updated_time" content="2019-08-05T09:34:26.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="37.私有属性和私有方法">
-<meta name="twitter:description" content="私有属性和私有方法应用场景 在实际开发中，对象的某些属性或方法可能只希望在对象内部被使用，而不希望在外部被访问到 私有属性就是对象不希望公开的属性 私有方法就是对象不希望公开的方法  定义方式 在定义属性或方法时，在属性名或者方法名前面增加两个下划线，定义的就是私有属性或方法  注意：私有属性在外界不能被直接访问私有方法同样不允许在外界访问在对象的方法内部，是可以访问对象的私有属性的">
+<meta name="twitter:title" content="35.面向对象-内置方法和属性">
+<meta name="twitter:description" content="内置方法和属性   序号 方法名 类型 作用    01 __del__ 方法 对象被从内存中销毁前，会被自动调用   02 __str__ 方法 返回对象的描述信息，print函数输出使用   1.__del__方法  在Python中  当使用 类名()创建对象时，为对象分配完空间后，自动调用__init__方法 当一个对象被从内存中销毁前，会自动调用__del__方法   应用场景  __d">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -126,11 +126,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(59)</small></div></li>
+    <li><div class="all active">全部文章<small>(67)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(38)</small></div>
+            <li><div data-rel="python">python<small>(45)</small></div>
                 
             </li>
             
@@ -164,8 +164,8 @@
     </div>
     <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="59">
-<input type="hidden" id="yelog_site_word_count" value="18k">
+<input type="hidden" id="yelog_site_posts_number" value="67">
+<input type="hidden" id="yelog_site_word_count" value="20.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -201,15 +201,15 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">random</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">if</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color1">while</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -221,15 +221,15 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">字符串</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">字典</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color5">公共方法</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">字符串</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -241,11 +241,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">Linux</a>
+        <a href="javascript:" class="color3">继承</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">继承</a>
+        <a href="javascript:" class="color3">单例</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">异常</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Linux</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -276,6 +284,70 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/46-异常/"
+           data-tag="异常"
+           data-author="" >
+            <span class="post-title" title="46.异常">46.异常</span>
+            <span class="post-date" title="2019-08-06 16:04:59">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/45-单例/"
+           data-tag="单例"
+           data-author="" >
+            <span class="post-title" title="45.单例">45.单例</span>
+            <span class="post-date" title="2019-08-06 14:34:10">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/44-静态方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44.静态方法">44.静态方法</span>
+            <span class="post-date" title="2019-08-06 11:51:08">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/43-类方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43.类方法">43.类方法</span>
+            <span class="post-date" title="2019-08-06 11:50:36">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/42-类属性/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="42.类属性">42.类属性</span>
+            <span class="post-date" title="2019-08-06 09:08:36">2019/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/08/06/41-多态/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41.多态">41.多态</span>
+            <span class="post-date" title="2019-08-06 08:38:47">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/40-多继承/"
+           data-tag="继承"
+           data-author="" >
+            <span class="post-title" title="40.多继承">40.多继承</span>
+            <span class="post-date" title="2019-08-06 08:08:08">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/39-父类的私有属性和私有方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39.父类的私有属性和私有方法">39.父类的私有属性和私有方法</span>
+            <span class="post-date" title="2019-08-05 22:44:44">2019/08/05</span>
         </a>
         
         <a  class="python "
@@ -894,7 +966,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#if','#while','#random','#列表','#元组','#字典','#公共方法','#字符串','#函数','#面向对象','#Linux','#继承','#MySQL','#sqlite3',],
+            'data': ['#random','#if','#while','#列表','#元组','#字符串','#字典','#公共方法','#函数','#面向对象','#继承','#单例','#异常','#Linux','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
