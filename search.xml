@@ -8,7 +8,7 @@
       <link href="/2019/08/07/51-eval%E5%87%BD%E6%95%B0/"/>
       <url>/2019/08/07/51-eval%E5%87%BD%E6%95%B0/</url>
       
-        <content type="html"><![CDATA[<p>eval()函数十分强大————将字符串当成有效的表达式来求值并返回计算结果<br>基本的数学计算<br>字符串重复  eval(“‘#’* 10”)<br>将字符串转换成列表  eval(“[1,2,3,4]”)<br>将字符串转换成字典 <code>eval(&quot;{&#39;name&#39;:&#39;xiaoming&#39;, &#39;age&#39;:18}&quot;)</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 混合计算加减乘除</span></span><br><span class="line">input_str = input(<span class="string">"输入一个算术题"</span>)</span><br><span class="line">print(eval(input_str))</span><br></pre></td></tr></table></figure><p>输入：<br>输入一个算术题3*(8+4)<br>36</p>]]></content>
+        <content type="html"><![CDATA[<p>eval()函数十分强大————将字符串当成有效的表达式来求值并返回计算结果<br>基本的数学计算<br>字符串重复  eval(“‘#’* 10”)<br>将字符串转换成列表  eval(“[1,2,3,4]”)<br>将字符串转换成字典 <code>eval(&quot;{&#39;name&#39;:&#39;xiaoming&#39;, &#39;age&#39;:18}&quot;)</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 混合计算加减乘除</span></span><br><span class="line">input_str = input(<span class="string">"输入一个算术题"</span>)</span><br><span class="line">print(eval(input_str))</span><br></pre></td></tr></table></figure><p>输入：<br>输入一个算术题3*(8+4)<br>36</p><p>开发：不要滥用eval 直接转换input的结果</p>]]></content>
       
       
       <categories>
