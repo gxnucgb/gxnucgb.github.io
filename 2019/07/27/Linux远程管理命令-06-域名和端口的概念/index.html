@@ -6,24 +6,24 @@
   <meta name="keywords" content=" Linux ">
   <meta name="description" content="Linux远程管理命令-06-域名和端口的概念 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="希尔排序希尔排序是插入排序的一种，也称缩小增量排序，是直接插入排序算法的一种更搞笑的改进版本，希尔排序是非稳定排序算法。 希尔排序过程希尔排序的基本思想是：将数组列在一个表中并对列分别进行Haru排序，重复这过程，不过没用更长的列来进行，最后整个表就只有一列了，将数组转换至表是为了更好地理解这算法，算法本身还是使用数组进行排序。 时间复杂度 最优时间复杂度：根据步长序列的不同而不同 最坏时间复杂度">
+<meta name="description" content="二叉树的结点表示以及树的创建12345678910111213141516171819202122232425262728293031323334353637383940# -*- coding: utf-8 -*-class Node(object):    &quot;&quot;&quot;节点类&quot;&quot;&quot;    def __init__(self, elem=-1, lchild=None, rchild=None):">
 <meta property="og:type" content="article">
-<meta property="og:title" content="希尔排序">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/15/希尔排序/index.html">
+<meta property="og:title" content="树">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/17/树/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="希尔排序希尔排序是插入排序的一种，也称缩小增量排序，是直接插入排序算法的一种更搞笑的改进版本，希尔排序是非稳定排序算法。 希尔排序过程希尔排序的基本思想是：将数组列在一个表中并对列分别进行Haru排序，重复这过程，不过没用更长的列来进行，最后整个表就只有一列了，将数组转换至表是为了更好地理解这算法，算法本身还是使用数组进行排序。 时间复杂度 最优时间复杂度：根据步长序列的不同而不同 最坏时间复杂度">
+<meta property="og:description" content="二叉树的结点表示以及树的创建12345678910111213141516171819202122232425262728293031323334353637383940# -*- coding: utf-8 -*-class Node(object):    &quot;&quot;&quot;节点类&quot;&quot;&quot;    def __init__(self, elem=-1, lchild=None, rchild=None):">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T14:31:07.927Z">
+<meta property="og:updated_time" content="2019-08-17T06:49:25.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="希尔排序">
-<meta name="twitter:description" content="希尔排序希尔排序是插入排序的一种，也称缩小增量排序，是直接插入排序算法的一种更搞笑的改进版本，希尔排序是非稳定排序算法。 希尔排序过程希尔排序的基本思想是：将数组列在一个表中并对列分别进行Haru排序，重复这过程，不过没用更长的列来进行，最后整个表就只有一列了，将数组转换至表是为了更好地理解这算法，算法本身还是使用数组进行排序。 时间复杂度 最优时间复杂度：根据步长序列的不同而不同 最坏时间复杂度">
+<meta name="twitter:title" content="树">
+<meta name="twitter:description" content="二叉树的结点表示以及树的创建12345678910111213141516171819202122232425262728293031323334353637383940# -*- coding: utf-8 -*-class Node(object):    &quot;&quot;&quot;节点类&quot;&quot;&quot;    def __init__(self, elem=-1, lchild=None, rchild=None):">
 
 
 <link rel="icon" href="/img/avatar.jpg">
 
 <link href="/css/style.css?v=1.0.1" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
 
 <link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -208,6 +208,10 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">random</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">if</a>
     </li>
     
@@ -216,15 +220,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
+        <a href="javascript:" class="color3">列表</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">元组</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">列表</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -240,15 +240,19 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">面向对象</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">函数</a>
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">面向对象</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">继承</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">异常</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -257,10 +261,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">模块</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">异常</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -1188,7 +1188,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#if','#while','#random','#元组','#列表','#字典','#字符串','#公共方法','#面向对象','#函数','#继承','#单例','#模块','#异常','#包','#Linux','#MySQL','#sqlite3',],
+            'data': ['#random','#if','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#异常','#单例','#模块','#包','#Linux','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
@@ -1275,7 +1275,7 @@
         border-right: 1px solid #C3CCD0;
         text-align: right;
         color: #AAA;
-        background-color: #fafafa;
+        background-color: ;
     }
     .pre-numbering.widther {
         width: 35px;
@@ -1324,6 +1324,10 @@
 
     /* 背景图样式 */
     
+    .post {
+        background: url([object Object]);
+    }
+    
     
 
 
@@ -1352,6 +1356,16 @@
     }
     
 
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
     
 </style>
 
