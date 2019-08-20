@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>MySql插入数据(3) | Welcome to my blog</title>
-  <meta name="keywords" content=" MySQL ">
-  <meta name="description" content="MySql插入数据(3) | Welcome to my blog">
+  <title>52.深拷贝浅拷贝 | Welcome to my blog</title>
+  <meta name="keywords" content>
+  <meta name="description" content="52.深拷贝浅拷贝 | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
 <meta property="og:type" content="article">
@@ -1001,9 +1001,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-MySql插入数据" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-52-深拷贝浅拷贝" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">MySql插入数据(3)</h1>
+        <h1 class="article-title">52.深拷贝浅拷贝</h1>
     
     <div class="article-meta">
         
@@ -1011,26 +1011,20 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="数据库">数据库</a>
+                <a href="javascript:" data-rel="python">python</a>
             
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color1">MySQL</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-08-20 14:58:29'>2019-08-20 12:11</time>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-27 16:00:04'>2019-07-26 10:20</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:155</span>
+        <span>字数:361</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1064,8 +1058,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  <strong>【实例】</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"><span class="comment"># 创建与数据的连接</span></span><br><span class="line">con = pymysql.connect(host=<span class="string">'localhost'</span>, password=<span class="string">'root'</span>, user=<span class="string">'root'</span>, database=<span class="string">'testmysql'</span>, port=3306)</span><br><span class="line"><span class="comment"># 创建游标对象</span></span><br><span class="line">cur = con.cursor()</span><br><span class="line"><span class="comment"># 写插入数据库的sql</span></span><br><span class="line">sql = <span class="string">'insert into student(sno, sname, sex, age, score) values(%s, %s, %s, %s, %s)'</span>      <span class="comment"># s要小写，不然会报unsupported format character 'S' (0x53) at index 72</span></span><br><span class="line">try:</span><br><span class="line">    <span class="comment"># 执行sql插入一条数据</span></span><br><span class="line">    <span class="comment"># cur.execute(sql, (1100, '张三', '男', 33, 33.3))</span></span><br><span class="line">    <span class="comment"># 插入多条数据</span></span><br><span class="line">    args = [(102, <span class="string">'张2'</span>, <span class="string">'男'</span>, 33, 33.3), (103, <span class="string">'张4'</span>, <span class="string">'男'</span>, 33, 33.3), (104, <span class="string">'张5'</span>, <span class="string">'男'</span>, 33, 33.3)]     <span class="comment"># 插入多条数据要用executemany</span></span><br><span class="line">    cur.executemany(sql, args)</span><br><span class="line">    con.commit()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入成功'</span>)</span><br><span class="line">except Exception as e:</span><br><span class="line">    <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'插入失败'</span>)</span><br><span class="line">finally:</span><br><span class="line">    con.close()</span><br><span class="line">    cur.close()</span><br></pre></td></tr></table></figure>
+        <p>可变类型：列表[]，字典{}<br>不可变类型：数字，元组()，字符串</p>
+<ul>
+<li>copy只是拷贝表层的出来（新生成的空间任然指向原来的数据），id与原来不一样了，但是修改原来的数据，新拷贝出来的仍然会变，如果拷贝之后再变，打印出来的东西还是原来拷贝的。</li>
+</ul>
+<p><strong>注意：</strong>copy.copy()拷贝的是元组，那么他不会进行浅拷贝，仅仅是指向，原因：因为元组是不可变类型，那么以为着数据一定不能修改，因此用copy.copy()的时候它会自动判断，如果是元组它就就是指向了它</p>
+<ul>
+<li>deepcopy是拷贝出另外一份数据存着（新生成的空间直接把数据复制过来了，不指向原来的数据），id与原来不一样，但是修改原来的数据与新拷贝出来的无关（如果是不可变数据，例如元组，那么拷出来id还是一样，但是不可变数据里面有可变数据，那么拷出来的id会变）</li>
+</ul>
+<ol>
+<li>如果用 copy.copy、copy.deepcopy 对一个全部都是不可变类型的数据进行拷贝，那么他们的结果相同，都是引用指向</li>
+<li>如果拷贝的是一个拥有不可变类型的数据，即使元组是最顶层，那么deepcopy依然是深拷贝，而copy.copy还是指向</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
     </div>
@@ -1078,12 +1083,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>MySql插入数据(3)</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">155</span></p>
+    <p><span class="copy-title">文章标题:</span>52.深拷贝浅拷贝</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">361</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-26, 10:20:26</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-27, 16:00:04</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/26/MySql插入数据/" title="MySql插入数据(3)">https://github.com/gxnucgb/gxnucgb.github.io/2019/07/26/MySql插入数据/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-20, 12:11:03</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-20, 14:58:29</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/20/52-深拷贝浅拷贝/" title="52.深拷贝浅拷贝">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/20/52-深拷贝浅拷贝/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

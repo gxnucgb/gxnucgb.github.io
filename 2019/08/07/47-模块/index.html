@@ -129,7 +129,7 @@
     
         
             
-            <li><div data-rel="python">python<small>(50)</small></div>
+            <li><div data-rel="python">python<small>(51)</small></div>
                 
             </li>
             
@@ -172,7 +172,7 @@
     <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="88">
-<input type="hidden" id="yelog_site_word_count" value="32k">
+<input type="hidden" id="yelog_site_word_count" value="32.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -216,11 +216,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">while</a>
+        <a href="javascript:" class="color3">列表</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">列表</a>
+        <a href="javascript:" class="color1">while</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -252,7 +252,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">异常</a>
+        <a href="javascript:" class="color3">模块</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">包</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -260,11 +264,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">模块</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">包</a>
+        <a href="javascript:" class="color3">异常</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -293,12 +293,12 @@
             <span class="post-date" title="2019-07-28 16:52:15">2019/07/28</span>
         </a>
         
-        <a id="top" class=""
-           href="/2019/07/24/hello-world/"
+        <a  class="python "
+           href="/2019/08/20/52-深拷贝浅拷贝/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+            <span class="post-title" title="52.深拷贝浅拷贝">52.深拷贝浅拷贝</span>
+            <span class="post-date" title="2019-08-20 12:11:03">2019/08/20</span>
         </a>
         
         <a  class="数据结构 "
@@ -974,19 +974,19 @@
         </a>
         
         <a  class=""
+           href="/2019/07/24/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class=""
            href="/2019/07/24/坦克项目小学习1/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
             <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/07/24/Thanks/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Thanks">Thanks</span>
-            <span class="post-date" title="2019-07-24 02:02:51">2019/07/24</span>
         </a>
         
     </nav>
@@ -1025,12 +1025,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-07 13:17:50'>2019-08-07 09:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-20 21:39:22'>2019-08-07 09:37</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:726</span>
+        <span>字数:746</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1069,7 +1069,7 @@
 <li>每一个扩展名 py 结尾 的Python源文件都是一个模块</li>
 <li>模块名同样也是一个标识符，需要符合标识符的命名规则</li>
 <li>在模块中定义个全局变量、函数、类都是提供给外界直接使用的工具</li>
-<li>模块就好比是工具包，想要使用这个工具包中的工具，就需要先导入这个模块</li>
+<li>模块就好比是工具包，想要使用这个工具包中的工具，就需要先导入这个模块<br>import sys<br>sys.pyth<br>可以显示搜索路径</li>
 </ul>
 <h4 id="模块的两种导入方式"><a href="#模块的两种导入方式" class="headerlink" title="模块的两种导入方式"></a>模块的两种导入方式</h4><p><strong>1）import 导入</strong><br><code>import 模块名1，模块名2</code><br>提示：在导入模块时，每个导入应该独占一行</p>
 <pre><code>import 模块名1
@@ -1124,6 +1124,7 @@ import 模块名2</code></pre><ul>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="comment"># 定义全局变量</span></span><br><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在代码的最下方</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	#....</span></span><br><span class="line"><span class="function">	<span class="title">pass</span></span></span><br><span class="line"><span class="function"># 根据 <span class="title">__name__</span>判断是否执行下方代码</span></span><br><span class="line">if __name__ == "__main__":</span><br><span class="line">	main()</span><br></pre></td></tr></table></figure>
 
+<p>form imp import reload<br>realad(xx)<br>重新导入</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
@@ -1138,10 +1139,10 @@ import 模块名2</code></pre><ul>
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>47.模块</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">726</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">746</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
     <p><span class="copy-title">发布时间:</span>2019-08-07, 09:37:54</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-07, 13:17:50</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-20, 21:39:22</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/07/47-模块/" title="47.模块">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/07/47-模块/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1203,7 +1204,7 @@ import 模块名2</code></pre><ul>
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#random','#if','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#异常','#单例','#模块','#包','#Linux','#MySQL','#sqlite3',],
+            'data': ['#random','#if','#列表','#while','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#模块','#包','#单例','#异常','#Linux','#MySQL','#sqlite3',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

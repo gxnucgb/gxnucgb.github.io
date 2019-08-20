@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>52.深拷贝浅拷贝</title>
+      <link href="/2019/08/20/52-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
+      <url>/2019/08/20/52-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
+      
+        <content type="html"><![CDATA[<p>可变类型：列表[]，字典{}<br>不可变类型：数字，元组()，字符串</p><ul><li>copy只是拷贝表层的出来（新生成的空间任然指向原来的数据），id与原来不一样了，但是修改原来的数据，新拷贝出来的仍然会变，如果拷贝之后再变，打印出来的东西还是原来拷贝的。</li></ul><p><strong>注意：</strong>copy.copy()拷贝的是元组，那么他不会进行浅拷贝，仅仅是指向，原因：因为元组是不可变类型，那么以为着数据一定不能修改，因此用copy.copy()的时候它会自动判断，如果是元组它就就是指向了它</p><ul><li>deepcopy是拷贝出另外一份数据存着（新生成的空间直接把数据复制过来了，不指向原来的数据），id与原来不一样，但是修改原来的数据与新拷贝出来的无关（如果是不可变数据，例如元组，那么拷出来id还是一样，但是不可变数据里面有可变数据，那么拷出来的id会变）</li></ul><ol><li>如果用 copy.copy、copy.deepcopy 对一个全部都是不可变类型的数据进行拷贝，那么他们的结果相同，都是引用指向</li><li>如果拷贝的是一个拥有不可变类型的数据，即使元组是最顶层，那么deepcopy依然是深拷贝，而copy.copy还是指向</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树</title>
       <link href="/2019/08/17/%E6%A0%91/"/>
       <url>/2019/08/17/%E6%A0%91/</url>
@@ -388,7 +407,7 @@
       <link href="/2019/08/07/47-%E6%A8%A1%E5%9D%97/"/>
       <url>/2019/08/07/47-%E6%A8%A1%E5%9D%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><h4 id="模块的概念"><a href="#模块的概念" class="headerlink" title="模块的概念"></a>模块的概念</h4><p><strong><em>模块是Python程序构架的一个核心概念</em></strong></p><ul><li>每一个扩展名 py 结尾 的Python源文件都是一个模块</li><li>模块名同样也是一个标识符，需要符合标识符的命名规则</li><li>在模块中定义个全局变量、函数、类都是提供给外界直接使用的工具</li><li>模块就好比是工具包，想要使用这个工具包中的工具，就需要先导入这个模块</li></ul><h4 id="模块的两种导入方式"><a href="#模块的两种导入方式" class="headerlink" title="模块的两种导入方式"></a>模块的两种导入方式</h4><p><strong>1）import 导入</strong><br><code>import 模块名1，模块名2</code><br>提示：在导入模块时，每个导入应该独占一行</p><pre><code>import 模块名1import 模块名2</code></pre><ul><li>导入之后<ul><li>通过 模块名. 使用模块提供的工具——全局变量、函数、类</li></ul></li></ul><p><strong>使用as指定模块的别名</strong></p><ul><li>如果模块名字太长，可以使用<code>import 模块名词 as 别名</code><br>模块别名应该符合大驼峰命名法</li></ul><p><strong>2）from…import 导入</strong></p><ul><li>如果如果希望从某一个模块中，导入部分工具，就可以使用<code>from...import</code>的方式</li><li>import 模块名 是一次性把模块中所有工具全部导入，并且通过模块/别名访问</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从模块中导入某一工具</span></span><br><span class="line">form 模块名<span class="number">1</span> <span class="keyword">import</span> 工具名</span><br></pre></td></tr></table></figure><ul><li>导入之后<ul><li>不需要通过 <code>模块名.</code></li><li>可以直接使用模块提供的工具——全局变量、函数、类</li></ul></li></ul><p><strong>注意</strong><br><strong>如果两个模块，存在同名的函数，那么后导入模块的函数会覆盖掉先导入的函数</strong></p><ul><li>开发时，import 代码应该统一写在代码顶部，更容易及时发现冲突（灰色）</li><li>一旦发现冲突，可以使用as关键字给其中一个工具起一个别名</li></ul><h4 id="原则——每一个文件都应该可以被导入的"><a href="#原则——每一个文件都应该可以被导入的" class="headerlink" title="原则——每一个文件都应该可以被导入的"></a>原则——每一个文件都应该可以被导入的</h4><ul><li>一个独立的Python文件就是一个模块</li><li>在导入文件时，文件中所有没有任何缩进的代码都会被执行一遍</li></ul><p><strong>实际开发场景</strong></p><ul><li>在实际开发中，每一个模块都是独立开发的，大多有专人负责</li><li>开发人员通常会在模块下方增加一些测试代码<ul><li>仅在模块内使用，而被导入到其他文件中不需要执行</li></ul></li></ul><p><strong><code>__name__</code>属性</strong></p><p><code>__name__</code>属性可以做到，测试模块的代码只在测试情况下被运行，而在被导入时不被执行！</p><ul><li><code>__name__</code>时Python的一个内置属性，记录着一个字符串</li><li>如果是被其他文件导入的 <code>__name__</code>就是模块名</li><li>如果是当前执行的程序，<code>__name__</code>就是<code>__mian__</code><br>在很多Python文件爱你中都会看到以下格式的代码</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="comment"># 定义全局变量</span></span><br><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在代码的最下方</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">#....</span></span><br><span class="line"><span class="function"><span class="title">pass</span></span></span><br><span class="line"><span class="function"># 根据 <span class="title">__name__</span>判断是否执行下方代码</span></span><br><span class="line">if __name__ == "__main__":</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><h4 id="模块的概念"><a href="#模块的概念" class="headerlink" title="模块的概念"></a>模块的概念</h4><p><strong><em>模块是Python程序构架的一个核心概念</em></strong></p><ul><li>每一个扩展名 py 结尾 的Python源文件都是一个模块</li><li>模块名同样也是一个标识符，需要符合标识符的命名规则</li><li>在模块中定义个全局变量、函数、类都是提供给外界直接使用的工具</li><li>模块就好比是工具包，想要使用这个工具包中的工具，就需要先导入这个模块<br>import sys<br>sys.pyth<br>可以显示搜索路径</li></ul><h4 id="模块的两种导入方式"><a href="#模块的两种导入方式" class="headerlink" title="模块的两种导入方式"></a>模块的两种导入方式</h4><p><strong>1）import 导入</strong><br><code>import 模块名1，模块名2</code><br>提示：在导入模块时，每个导入应该独占一行</p><pre><code>import 模块名1import 模块名2</code></pre><ul><li>导入之后<ul><li>通过 模块名. 使用模块提供的工具——全局变量、函数、类</li></ul></li></ul><p><strong>使用as指定模块的别名</strong></p><ul><li>如果模块名字太长，可以使用<code>import 模块名词 as 别名</code><br>模块别名应该符合大驼峰命名法</li></ul><p><strong>2）from…import 导入</strong></p><ul><li>如果如果希望从某一个模块中，导入部分工具，就可以使用<code>from...import</code>的方式</li><li>import 模块名 是一次性把模块中所有工具全部导入，并且通过模块/别名访问</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从模块中导入某一工具</span></span><br><span class="line">form 模块名<span class="number">1</span> <span class="keyword">import</span> 工具名</span><br></pre></td></tr></table></figure><ul><li>导入之后<ul><li>不需要通过 <code>模块名.</code></li><li>可以直接使用模块提供的工具——全局变量、函数、类</li></ul></li></ul><p><strong>注意</strong><br><strong>如果两个模块，存在同名的函数，那么后导入模块的函数会覆盖掉先导入的函数</strong></p><ul><li>开发时，import 代码应该统一写在代码顶部，更容易及时发现冲突（灰色）</li><li>一旦发现冲突，可以使用as关键字给其中一个工具起一个别名</li></ul><h4 id="原则——每一个文件都应该可以被导入的"><a href="#原则——每一个文件都应该可以被导入的" class="headerlink" title="原则——每一个文件都应该可以被导入的"></a>原则——每一个文件都应该可以被导入的</h4><ul><li>一个独立的Python文件就是一个模块</li><li>在导入文件时，文件中所有没有任何缩进的代码都会被执行一遍</li></ul><p><strong>实际开发场景</strong></p><ul><li>在实际开发中，每一个模块都是独立开发的，大多有专人负责</li><li>开发人员通常会在模块下方增加一些测试代码<ul><li>仅在模块内使用，而被导入到其他文件中不需要执行</li></ul></li></ul><p><strong><code>__name__</code>属性</strong></p><p><code>__name__</code>属性可以做到，测试模块的代码只在测试情况下被运行，而在被导入时不被执行！</p><ul><li><code>__name__</code>时Python的一个内置属性，记录着一个字符串</li><li>如果是被其他文件导入的 <code>__name__</code>就是模块名</li><li>如果是当前执行的程序，<code>__name__</code>就是<code>__mian__</code><br>在很多Python文件爱你中都会看到以下格式的代码</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="comment"># 定义全局变量</span></span><br><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在代码的最下方</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">#....</span></span><br><span class="line"><span class="function"><span class="title">pass</span></span></span><br><span class="line"><span class="function"># 根据 <span class="title">__name__</span>判断是否执行下方代码</span></span><br><span class="line">if __name__ == "__main__":</span><br><span class="line">main()</span><br></pre></td></tr></table></figure><p>form imp import reload<br>realad(xx)<br>重新导入</p>]]></content>
       
       
       <categories>
@@ -1931,19 +1950,6 @@
       <url>/2019/07/24/%E5%9D%A6%E5%85%8B%E9%A1%B9%E7%9B%AE%E5%B0%8F%E5%AD%A6%E4%B9%A01/</url>
       
         <content type="html"><![CDATA[<h4 id="坦克小项目学习"><a href="#坦克小项目学习" class="headerlink" title="坦克小项目学习"></a>坦克小项目学习</h4><h5 id="1，分析。"><a href="#1，分析。" class="headerlink" title="1，分析。"></a>1，分析。</h5><p>在写一个项目代码之前，应该要对项目进行分析，分析他可以分为多少个模块，进而得到他应该有多少个类，分析出他的主类是什么。  </p><h5 id="2，再分析。"><a href="#2，再分析。" class="headerlink" title="2，再分析。"></a>2，再分析。</h5><p>  在得到有多少个类之后，对类进行分析，分析他具有什么方法，具有什么属性（相似的类可以使用继承。  </p><h5 id="3，建框架。"><a href="#3，建框架。" class="headerlink" title="3，建框架。"></a>3，建框架。</h5><p>在pycharm创建的项目中，先写出这些类还有方法，构建出一个项目框架。  </p><h5 id="4，写主窗口。"><a href="#4，写主窗口。" class="headerlink" title="4，写主窗口。"></a>4，写主窗口。</h5><p>写出显示主窗口，可到官网<a href="http://www.pygame.org学习查看文档。" target="_blank" rel="noopener">www.pygame.org学习查看文档。</a>   </p><h6 id="1，导入pygame"><a href="#1，导入pygame" class="headerlink" title="1，导入pygame"></a>1，导入pygame</h6><h6 id="2，显示一个窗口先要调用init方法初始化一个窗口"><a href="#2，显示一个窗口先要调用init方法初始化一个窗口" class="headerlink" title="2，显示一个窗口先要调用init方法初始化一个窗口"></a>2，显示一个窗口先要调用init方法初始化一个窗口</h6><p>  set_mode(resolution = (0, 0), flags = 0, depth = 0)   -&gt;suface，创建一个显示surface，传入的参数是resolution参数是一对表示宽度和高度的数字用（元组），flags参数是其他选项的集合，depth表示用于颜色的位数。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Thanks</title>
-      <link href="/2019/07/24/Thanks/"/>
-      <url>/2019/07/24/Thanks/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h1><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="测试测试！！！"><a href="#测试测试！！！" class="headerlink" title="测试测试！！！"></a>测试测试！！！</h2>]]></content>
       
       
       
