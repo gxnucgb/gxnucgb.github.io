@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>numpy | Welcome to my blog</title>
+  <meta name="keywords" content=" numpy ">
+  <meta name="description" content="numpy | Welcome to my blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/17/二分查找/index.html">
+<meta property="og:site_name" content="Welcome to my blog">
+<meta property="og:description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-17T04:06:24.331Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二分查找">
+<meta name="twitter:description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>陈桂彬</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/gxnucgb" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:gxnucgb@qq.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1724910086&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(90)</small></div></li>
+    
+        
+            
+            <li><div data-rel="python">python<small>(52)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Linux">Linux<small>(13)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="numpy">numpy<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/gxnucgb">github</a>
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="90">
+<input type="hidden" id="yelog_site_word_count" value="35.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://github.com/gxnucgb">gxnucgb</a></li>
+            
+            <li><a target="_blank" href="https://www.gxnu.edu.cn/">师大官网</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">if</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">random</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">while</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">列表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">元组</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">字典</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">字符串</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">公共方法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">函数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">面向对象</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">继承</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">模块</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">单例</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">异常</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">包</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">sqlite3</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">numpy</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a id="top" class="python "
+           href="/2019/07/28/python注释与代码风格/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="python注释与代码风格">python注释与代码风格</span>
+            <span class="post-date" title="2019-07-28 16:52:15">2019/07/28</span>
+        </a>
+        
+        <a  class="numpy "
+           href="/2019/09/19/numpy的属性方法/"
+           data-tag="numpy"
+           data-author="" >
+            <span class="post-title" title="numpy">numpy</span>
+            <span class="post-date" title="2019-09-19 18:17:41">2019/09/19</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/21/53-类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53.类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法">53.类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法</span>
+            <span class="post-date" title="2019-08-21 21:46:32">2019/08/21</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/20/52-深拷贝浅拷贝/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="52.深拷贝浅拷贝">52.深拷贝浅拷贝</span>
+            <span class="post-date" title="2019-08-20 12:11:03">2019/08/20</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/17/树/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="树">树</span>
+            <span class="post-date" title="2019-08-17 12:06:46">2019/08/17</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/17/二分查找/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二分查找">二分查找</span>
+            <span class="post-date" title="2019-08-17 11:05:01">2019/08/17</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/16/快速排序/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="快速排序">快速排序</span>
+            <span class="post-date" title="2019-08-16 13:59:50">2019/08/16</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/15/希尔排序/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="希尔排序">希尔排序</span>
+            <span class="post-date" title="2019-08-15 13:05:24">2019/08/15</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/15/插入排序/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="插入排序">插入排序</span>
+            <span class="post-date" title="2019-08-15 11:55:55">2019/08/15</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/15/选择排序/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="选择排序">选择排序</span>
+            <span class="post-date" title="2019-08-15 11:47:20">2019/08/15</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/14/冒泡排序/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="冒泡排序">冒泡排序</span>
+            <span class="post-date" title="2019-08-14 22:02:57">2019/08/14</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/14/排序与搜索/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="排序与搜索">排序与搜索</span>
+            <span class="post-date" title="2019-08-14 12:09:56">2019/08/14</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/14/队列/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="队列">队列</span>
+            <span class="post-date" title="2019-08-14 11:18:32">2019/08/14</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/14/栈/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="栈">栈</span>
+            <span class="post-date" title="2019-08-14 09:19:33">2019/08/14</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/12/单向循环链表/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="单向循环链表">单向循环链表</span>
+            <span class="post-date" title="2019-08-12 12:19:31">2019/08/12</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/11/双向链表/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="双向链表">双向链表</span>
+            <span class="post-date" title="2019-08-11 22:28:24">2019/08/11</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/11/链表/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="链表">链表</span>
+            <span class="post-date" title="2019-08-11 13:34:16">2019/08/11</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/10/顺序表/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="顺序表">顺序表</span>
+            <span class="post-date" title="2019-08-10 15:16:49">2019/08/10</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/08/09/复杂度/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="复杂度">复杂度</span>
+            <span class="post-date" title="2019-08-09 20:35:59">2019/08/09</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/08/07/飞机大战/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="飞机大战">飞机大战</span>
+            <span class="post-date" title="2019-08-07 22:32:56">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/07/51-eval函数/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="51.eval函数">51.eval函数</span>
+            <span class="post-date" title="2019-08-07 17:04:29">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/07/50-文件-目录的管理/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="50.文件/目录的管理">50.文件/目录的管理</span>
+            <span class="post-date" title="2019-08-07 16:45:53">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/07/49-文件/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="49.文件操作">49.文件操作</span>
+            <span class="post-date" title="2019-08-07 13:17:31">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/07/48-包/"
+           data-tag="包"
+           data-author="" >
+            <span class="post-title" title="48.包">48.包</span>
+            <span class="post-date" title="2019-08-07 12:37:59">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/07/47-模块/"
+           data-tag="模块"
+           data-author="" >
+            <span class="post-title" title="47.模块">47.模块</span>
+            <span class="post-date" title="2019-08-07 09:37:54">2019/08/07</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/46-异常/"
+           data-tag="异常"
+           data-author="" >
+            <span class="post-title" title="46.异常">46.异常</span>
+            <span class="post-date" title="2019-08-06 16:04:59">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/45-单例/"
+           data-tag="单例"
+           data-author="" >
+            <span class="post-title" title="45.单例">45.单例</span>
+            <span class="post-date" title="2019-08-06 14:34:10">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/44-静态方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44.静态方法">44.静态方法</span>
+            <span class="post-date" title="2019-08-06 11:51:08">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/43-类方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43.类方法">43.类方法</span>
+            <span class="post-date" title="2019-08-06 11:50:36">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/42-类属性/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="42.类属性">42.类属性</span>
+            <span class="post-date" title="2019-08-06 09:08:36">2019/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/08/06/41-多态/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41.多态">41.多态</span>
+            <span class="post-date" title="2019-08-06 08:38:47">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/06/40-多继承/"
+           data-tag="继承"
+           data-author="" >
+            <span class="post-title" title="40.多继承，super">40.多继承，super</span>
+            <span class="post-date" title="2019-08-06 08:08:08">2019/08/06</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/39-父类的私有属性和私有方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39.父类的私有属性和私有方法">39.父类的私有属性和私有方法</span>
+            <span class="post-date" title="2019-08-05 22:44:44">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/38-继承/"
+           data-tag="继承"
+           data-author="" >
+            <span class="post-title" title="38.继承">38.继承</span>
+            <span class="post-date" title="2019-08-05 18:46:37">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/37-私有属性和私有方法/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="37.私有属性和私有方法">37.私有属性和私有方法</span>
+            <span class="post-date" title="2019-08-05 18:10:37">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/36-面向对象-封装/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="36.面向对象-封装">36.面向对象-封装</span>
+            <span class="post-date" title="2019-08-05 17:33:45">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/35-面向对象-内置方法和属性/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="35.面向对象-内置方法和属性">35.面向对象-内置方法和属性</span>
+            <span class="post-date" title="2019-08-05 11:06:55">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/34-面向对象-初始化方法/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="34.面向对象-初始化方法">34.面向对象-初始化方法</span>
+            <span class="post-date" title="2019-08-05 09:00:02">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/05/33-面向对象-self/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="33.面向对象-self">33.面向对象-self</span>
+            <span class="post-date" title="2019-08-05 08:51:04">2019/08/05</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/32-面向对象-定义简单类/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="32.面向对象-定义简单类">32.面向对象-定义简单类</span>
+            <span class="post-date" title="2019-08-04 22:31:10">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/31-面向对象使用/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="31.面向对象使用">31.面向对象使用</span>
+            <span class="post-date" title="2019-08-04 22:28:56">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/30-面向对象/"
+           data-tag="面向对象"
+           data-author="" >
+            <span class="post-title" title="30.面向对象">30.面向对象</span>
+            <span class="post-date" title="2019-08-04 20:41:39">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/29-函数的递归/"
+           data-tag="函数"
+           data-author="" >
+            <span class="post-title" title="29.函数的递归">29.函数的递归</span>
+            <span class="post-date" title="2019-08-04 20:11:13">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/28-缺省参数/"
+           data-tag="函数"
+           data-author="" >
+            <span class="post-title" title="28.缺省参数">28.缺省参数</span>
+            <span class="post-date" title="2019-08-04 15:41:32">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/04/27-函数参数和返回值作用/"
+           data-tag="函数"
+           data-author="" >
+            <span class="post-title" title="27.函数参数和返回值作用">27.函数参数和返回值作用</span>
+            <span class="post-date" title="2019-08-04 14:17:52">2019/08/04</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/03/26-名片管理系统/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26.名片管理系统">26.名片管理系统</span>
+            <span class="post-date" title="2019-08-03 11:18:48">2019/08/03</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/03/25-公共方法（2）完整的for循环语法/"
+           data-tag="公共方法"
+           data-author="" >
+            <span class="post-title" title="25.公共方法（2）完整的for循环语法">25.公共方法（2）完整的for循环语法</span>
+            <span class="post-date" title="2019-08-03 08:47:45">2019/08/03</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/03/24-公共方法（1）运算符/"
+           data-tag="公共方法"
+           data-author="" >
+            <span class="post-title" title="24.公共方法（1）运算符">24.公共方法（1）运算符</span>
+            <span class="post-date" title="2019-08-03 08:23:45">2019/08/03</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/22-公共方法/"
+           data-tag="公共方法"
+           data-author="" >
+            <span class="post-title" title="22.公共方法">22.公共方法</span>
+            <span class="post-date" title="2019-08-02 21:15:10">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/21-字符串的切片/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="21.字符串的切片">21.字符串的切片</span>
+            <span class="post-date" title="2019-08-02 18:12:24">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/20-字符串常用方法/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="20.字符串常用方法">20.字符串常用方法</span>
+            <span class="post-date" title="2019-08-02 16:29:20">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/19-字符串/"
+           data-tag="字符串"
+           data-author="" >
+            <span class="post-title" title="19.字符串">19.字符串</span>
+            <span class="post-date" title="2019-08-02 14:28:22">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/18-字典（1）循环遍历/"
+           data-tag="字典"
+           data-author="" >
+            <span class="post-title" title="18.字典（1）循环遍历">18.字典（1）循环遍历</span>
+            <span class="post-date" title="2019-08-02 12:22:49">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/17-字典/"
+           data-tag="字典"
+           data-author="" >
+            <span class="post-title" title="17.字典">17.字典</span>
+            <span class="post-date" title="2019-08-02 11:39:46">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/02/16-元组（1）循环遍历/"
+           data-tag="元组"
+           data-author="" >
+            <span class="post-title" title="16.元组（1）循环遍历">16.元组（1）循环遍历</span>
+            <span class="post-date" title="2019-08-02 11:00:40">2019/08/02</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/15-元组/"
+           data-tag="元组"
+           data-author="" >
+            <span class="post-title" title="15.元组">15.元组</span>
+            <span class="post-date" title="2019-08-01 22:24:31">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/14-列表（2）-1/"
+           data-tag="列表"
+           data-author="" >
+            <span class="post-title" title="14.列表（1）循环遍历">14.列表（1）循环遍历</span>
+            <span class="post-date" title="2019-08-01 21:29:02">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/13-列表（1）/"
+           data-tag="列表"
+           data-author="" >
+            <span class="post-title" title="13.列表（1）">13.列表（1）</span>
+            <span class="post-date" title="2019-08-01 18:06:04">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/12-列表/"
+           data-tag="列表"
+           data-author="" >
+            <span class="post-title" title="12.列表">12.列表</span>
+            <span class="post-date" title="2019-08-01 17:00:27">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/11-预先知识/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11.预先知识">11.预先知识</span>
+            <span class="post-date" title="2019-08-01 16:54:05">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/10-模块中的函数/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10.模块中的函数">10.模块中的函数</span>
+            <span class="post-date" title="2019-08-01 15:51:51">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/09-函数基本使用（1）/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="09.函数基本使用（1）">09.函数基本使用（1）</span>
+            <span class="post-date" title="2019-08-01 12:19:22">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/01/08-函数基本使用/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="08.函数基本使用">08.函数基本使用</span>
+            <span class="post-date" title="2019-08-01 10:59:02">2019/08/01</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/31/07-break和continue关键字/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="07.break和continue关键字">07.break和continue关键字</span>
+            <span class="post-date" title="2019-07-31 22:46:25">2019/07/31</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/30/06-while循环的基本使用/"
+           data-tag="while"
+           data-author="" >
+            <span class="post-title" title="06.while循环的基本使用">06.while循环的基本使用</span>
+            <span class="post-date" title="2019-07-30 22:19:54">2019/07/30</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/30/05-随机数的处理/"
+           data-tag="random"
+           data-author="" >
+            <span class="post-title" title="05.随机数的处理">05.随机数的处理</span>
+            <span class="post-date" title="2019-07-30 21:48:31">2019/07/30</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/29/04-逻辑运算/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="04.逻辑运算">04.逻辑运算</span>
+            <span class="post-date" title="2019-07-29 10:05:19">2019/07/29</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/28/03-if基础/"
+           data-tag="if"
+           data-author="" >
+            <span class="post-title" title="03.if基础">03.if基础</span>
+            <span class="post-date" title="2019-07-28 21:39:48">2019/07/28</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/28/02-表示符命名规则/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="02.表示符命名规则">02.表示符命名规则</span>
+            <span class="post-date" title="2019-07-28 21:35:13">2019/07/28</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/07/28/01-算数运算符/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="01.算数运算符">01.算数运算符</span>
+            <span class="post-date" title="2019-07-28 17:06:45">2019/07/28</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/28/Linux软件安装/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux软件安装">Linux软件安装</span>
+            <span class="post-date" title="2019-07-28 15:11:43">2019/07/28</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/28/Linux其他命令/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux其他命令">Linux其他命令</span>
+            <span class="post-date" title="2019-07-28 10:33:53">2019/07/28</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/28/Linux系统信息相关命令/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux系统信息相关命令">Linux系统信息相关命令</span>
+            <span class="post-date" title="2019-07-28 10:24:29">2019/07/28</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-08-scp作用以及命令格式/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-08-scp作用以及命令格式">Linux远程管理命令-08-scp作用以及命令格式</span>
+            <span class="post-date" title="2019-07-27 15:47:50">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-07-ssh命令格式介绍和演练目标确定/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-07-ssh命令格式介绍和演练目标确定">Linux远程管理命令-07-ssh命令格式介绍和演练目标确定</span>
+            <span class="post-date" title="2019-07-27 11:41:58">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-06-域名和端口的概念/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-06-域名和端口的概念">Linux远程管理命令-06-域名和端口的概念</span>
+            <span class="post-date" title="2019-07-27 11:38:49">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-05-SSH工作方式简介/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-04-SSH工作方式简介">Linux远程管理命令-04-SSH工作方式简介</span>
+            <span class="post-date" title="2019-07-27 11:37:57">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-04-ping测试网络连接/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-05-ping测试网络连接">Linux远程管理命令-05-ping测试网络连接</span>
+            <span class="post-date" title="2019-07-27 11:37:18">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-03-ifconfig查询网卡信息/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-03-ifconfig查询网卡信息">Linux远程管理命令-03-ifconfig查询网卡信息</span>
+            <span class="post-date" title="2019-07-27 11:36:40">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-02-网卡和IP地址的概念/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux远程管理命令-02-网卡和IP地址的概念">Linux远程管理命令-02-网卡和IP地址的概念</span>
+            <span class="post-date" title="2019-07-27 10:59:17">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/27/Linux远程管理命令-01-关机和重启/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux 远程管理命令-01-关机和重启">Linux 远程管理命令-01-关机和重启</span>
+            <span class="post-date" title="2019-07-27 10:41:29">2019/07/27</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/26/Linux常用命令/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux常用命令">Linux常用命令</span>
+            <span class="post-date" title="2019-07-26 18:29:52">2019/07/26</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/2019/07/26/Linux终端命令格式/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux终端命令格式">Linux终端命令格式</span>
+            <span class="post-date" title="2019-07-26 18:09:48">2019/07/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/26/MySql修改表/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySql修改表(2)">MySql修改表(2)</span>
+            <span class="post-date" title="2019-07-26 11:00:33">2019/07/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/26/Mysql查询数据/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="Mysql查询数据(4)">Mysql查询数据(4)</span>
+            <span class="post-date" title="2019-07-26 10:24:43">2019/07/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/26/MySql插入数据/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySql插入数据(3)">MySql插入数据(3)</span>
+            <span class="post-date" title="2019-07-26 10:20:26">2019/07/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/26/MySql创建表/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="MySql创建表(1)">MySql创建表(1)</span>
+            <span class="post-date" title="2019-07-26 08:50:25">2019/07/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2019/07/25/sqlite3学习/"
+           data-tag="sqlite3"
+           data-author="" >
+            <span class="post-title" title="sqlite3学习">sqlite3学习</span>
+            <span class="post-date" title="2019-07-25 12:24:44">2019/07/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/24/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-07-24 22:32:28">2019/07/24</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/24/坦克项目小学习1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坦克项目小学习1">坦克项目小学习1</span>
+            <span class="post-date" title="2019-07-24 22:14:16">2019/07/24</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-numpy的属性方法" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">numpy</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="numpy">numpy</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">numpy</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-22 14:15:57'>2019-09-19 18:17</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#numpy基础数据结构"><span class="toc-text">numpy基础数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多维数据ndarray"><span class="toc-text">多维数据ndarray</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的基本属性"><span class="toc-text">数组的基本属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数组"><span class="toc-text">创建数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#array-函数"><span class="toc-text">array()函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#arange-函数"><span class="toc-text">arange()函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#linspace-：num个均匀的样本"><span class="toc-text">linspace()：num个均匀的样本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建数组：zeros-zeros-like-ones-ones-like"><span class="toc-text">创建数组：zeros()/zeros_like()/ones()/ones_like()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建数组：eye"><span class="toc-text">创建数组：eye()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy通用函数"><span class="toc-text">numpy通用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组形状：-T-reshape-resize"><span class="toc-text">数组形状：.T/.reshape()/.resize()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的复制"><span class="toc-text">数组的复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组类型转换：-astype"><span class="toc-text">数组类型转换：.astype()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组堆叠"><span class="toc-text">数组堆叠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组拆分"><span class="toc-text">数组拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组简单运算"><span class="toc-text">数组简单运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy索引及切片"><span class="toc-text">numpy索引及切片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本索引及切片"><span class="toc-text">基本索引及切片</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一维数组索引及切片"><span class="toc-text">一维数组索引及切片</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二维数组及切片"><span class="toc-text">二维数组及切片</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三维数组及切片"><span class="toc-text">三维数组及切片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#布尔型索引及切片"><span class="toc-text">布尔型索引及切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy随机数"><span class="toc-text">numpy随机数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#存储数组数据-npy文件"><span class="toc-text">存储数组数据.npy文件</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="numpy基础数据结构"><a href="#numpy基础数据结构" class="headerlink" title="numpy基础数据结构"></a>numpy基础数据结构</h2><p>numpy数组是一个多维数组对象，称为ndarray。其有两部分组成：</p>
+<ol>
+<li>实际的数据</li>
+<li>描述这些数据的元数据</li>
+</ol>
+<h3 id="多维数据ndarray"><a href="#多维数据ndarray" class="headerlink" title="多维数据ndarray"></a>多维数据ndarray</h3><p>在使用这个属性方法之前，需要先导入numpy包<br><code>import numpy as np</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ar = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">print(ar)          <span class="comment"># 输出数组，注意数组的格式：中括号，元素之间没有逗号（和列表区分）</span></span><br><span class="line">print(ar.ndim)     <span class="comment"># 输出数组维度的个数（轴数），或者说“秩”，维度的数量也称rank</span></span><br><span class="line">print(ar.shape)    <span class="comment"># 数组的维度，对于n行m列的数组，shape为（n，m）</span></span><br><span class="line">print(ar.size)     <span class="comment"># 数组的元素总数，对于n行m列的数组，元素总数为n*m</span></span><br><span class="line">print(ar.dtype)    <span class="comment"># 数组中元素的类型，类似type()（注意了，type()是函数，.dtype是方法）</span></span><br><span class="line">print(ar.itemsize) <span class="comment"># 数组中每个元素的字节大小，int32l类型字节为4，float64的字节为8</span></span><br><span class="line">print(ar.data)     <span class="comment"># 包含实际数组元素的缓冲区，由于一般通过数组的索引获取元素，所以通常不需要使用这个属性。	输出一般会是一个地址如：&lt;memory at 0x0000000005927108&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的基本属性"><a href="#数组的基本属性" class="headerlink" title="数组的基本属性"></a>数组的基本属性</h3><p>① 数组的维数称为秩（rank），一维数组的秩为1，二维数组的秩为2，以此类推<br> ② 在NumPy中，每一个线性的数组称为是一个轴（axes），秩其实是描述轴的数量：<br> 比如说，二维数组相当于是两个一维数组，其中第一个一维数组中每个元素又是一个一维数组所以一维数组就是NumPy中的轴（axes），第一个轴相当于是底层数组，第二个轴是底层数组里的数组。而轴的数量——秩，就是数组的维数。 </p>
+<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><h4 id="array-函数"><a href="#array-函数" class="headerlink" title="array()函数"></a>array()函数</h4><p>括号内可以是列表、元组、数组、生成器等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ar1 = np.array(range(<span class="number">10</span>))   <span class="comment"># 整型</span></span><br><span class="line">ar2 = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3.14</span>,<span class="number">4</span>,<span class="number">5</span>])   <span class="comment"># 浮点型</span></span><br><span class="line">ar3 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)])   <span class="comment"># 二维数组：嵌套序列（列表，元祖均可）</span></span><br><span class="line">ar4 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>)])   <span class="comment"># 注意嵌套序列数量不一会怎么样</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="arange-函数"><a href="#arange-函数" class="headerlink" title="arange()函数"></a>arange()函数</h4><p>类似于range()，在给定间隔内返回均匀间隔的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(np.arange(<span class="number">10</span>))    <span class="comment"># 返回0-9，整型</span></span><br><span class="line">print(np.arange(<span class="number">10.0</span>))  <span class="comment"># 返回0.0-9.0，浮点型</span></span><br><span class="line">print(np.arange(<span class="number">5</span>,<span class="number">12</span>))  <span class="comment"># 返回5-11</span></span><br><span class="line">print(np.arange(<span class="number">5.0</span>,<span class="number">12</span>,<span class="number">2</span>))  <span class="comment"># 返回5.0-12.0，步长为2</span></span><br><span class="line">print(np.arange(<span class="number">10000</span>))  <span class="comment"># 如果数组太大而无法打印，NumPy会自动跳过数组的中心部分，并只打印边角</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="linspace-：num个均匀的样本"><a href="#linspace-：num个均匀的样本" class="headerlink" title="linspace()：num个均匀的样本"></a>linspace()：num个均匀的样本</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ar1 = np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>)</span><br><span class="line">ar2 = np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>, endpoint=<span class="literal">False</span>)</span><br><span class="line">ar3 = np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>, retstep=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>numpy.linspace(start,stop,num=50,endpoint=True,retstep=False, dtype=None)<br>start：起始值，stop：结束值<br>num：生成样本数，默认为50<br>endpoint：如果为真，则停止是最后一个样本。否则，不包括在内。默认值为True。<br>retstep：如果为真，返回（样本，步骤），其中步长是样本之间的间距 → 输出为一个包含2个元素的元祖，第一个元素为array，第二个为步长实际值</p>
+<h4 id="创建数组：zeros-zeros-like-ones-ones-like"><a href="#创建数组：zeros-zeros-like-ones-ones-like" class="headerlink" title="创建数组：zeros()/zeros_like()/ones()/ones_like()"></a>创建数组：zeros()/zeros_like()/ones()/ones_like()</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建数组：zeros()/zeros_like()/ones()/ones_like()</span></span><br><span class="line"></span><br><span class="line">ar1 = np.zeros(<span class="number">5</span>)  </span><br><span class="line">ar2 = np.zeros((<span class="number">2</span>,<span class="number">2</span>), dtype = np.int)</span><br><span class="line"></span><br><span class="line"><span class="comment"># numpy.zeros(shape, dtype=float, order='C'):返回给定形状和类型的新数组，用零填充。</span></span><br><span class="line"><span class="comment"># shape：数组纬度，二维以上需要用()，且输入参数为整数</span></span><br><span class="line"><span class="comment"># dtype：数据类型，默认numpy.float64</span></span><br><span class="line"><span class="comment"># order：是否在存储器中以C或Fortran连续（按行或列方式）存储多维数据。</span></span><br><span class="line"></span><br><span class="line">ar3 = np.array([list(range(<span class="number">5</span>)),list(range(<span class="number">5</span>,<span class="number">10</span>))])</span><br><span class="line">ar4 = np.zeros_like(ar3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回具有与给定数组相同的形状和类型的零数组，这里ar4根据ar3的形状和dtype创建一个全0的数组</span></span><br><span class="line"></span><br><span class="line">ar5 = np.ones(<span class="number">9</span>)</span><br><span class="line">ar6 = np.ones((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">ar7 = np.ones_like(ar3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ones()/ones_like()和zeros()/zeros_like()一样，只是填充为1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="创建数组：eye"><a href="#创建数组：eye" class="headerlink" title="创建数组：eye()"></a>创建数组：eye()</h4><p>创建一个正方的N*N的单位矩阵，对角线值为1，其余为0<br><code>print(np.eye(5))</code></p>
+<h3 id="numpy通用函数"><a href="#numpy通用函数" class="headerlink" title="numpy通用函数"></a>numpy通用函数</h3><h4 id="数组形状：-T-reshape-resize"><a href="#数组形状：-T-reshape-resize" class="headerlink" title="数组形状：.T/.reshape()/.resize()"></a>数组形状：.T/.reshape()/.resize()</h4><p> .T方法：转置，例如原shape为(3,4)/(2,3,4)，转置结果为(4,3)/(4,3,2) → 所以一维数组转置后结果不变</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ar3 = ar1.reshape(<span class="number">2</span>,<span class="number">5</span>)     <span class="comment"># 用法1：直接将已有数组改变形状</span></span><br><span class="line">ar4 = np.zeros((<span class="number">4</span>,<span class="number">6</span>)).reshape(<span class="number">3</span>,<span class="number">8</span>)   <span class="comment"># 用法2：生成数组后直接改变形状</span></span><br><span class="line">ar5 = np.reshape(np.arange(<span class="number">12</span>),(<span class="number">3</span>,<span class="number">4</span>))   <span class="comment"># 用法3：参数内添加数组，目标形状</span></span><br></pre></td></tr></table></figure>
+
+<p>numpy.reshape(a, newshape, order=’C’)：为数组提供新形状，而不更改其数据，所以元素数量需要一致！！</p>
+<p>numpy.resize(a, new_shape)：返回具有指定形状的新数组，如有必要可重复填充所需数量的元素。<br><strong>注意了：.T/.reshape()/.resize()都是生成新的数组！！！</strong></p>
+<h4 id="数组的复制"><a href="#数组的复制" class="headerlink" title="数组的复制"></a>数组的复制</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ar1 = np.arange(<span class="number">10</span>)</span><br><span class="line">ar2 = ar1</span><br><span class="line">print(ar2 <span class="keyword">is</span> ar1)</span><br><span class="line">ar1[<span class="number">2</span>] = <span class="number">9</span></span><br><span class="line">print(ar1,ar2)<span class="comment"># 一起改变了</span></span><br><span class="line"><span class="comment"># 回忆python的赋值逻辑：指向内存中生成的一个值 → 这里ar1和ar2指向同一个值，所以ar1改变，ar2一起改变</span></span><br><span class="line"></span><br><span class="line">ar3 = ar1.copy()</span><br><span class="line">print(ar3 <span class="keyword">is</span> ar1)</span><br><span class="line">ar1[<span class="number">0</span>] = <span class="number">9</span></span><br><span class="line">print(ar1,ar3) <span class="comment"># 只有ar1变了而已</span></span><br><span class="line"><span class="comment"># copy方法生成数组及其数据的完整拷贝</span></span><br><span class="line"><span class="comment"># 再次提醒：.T/.reshape()/.resize()都是生成新的数组！！！</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组类型转换：-astype"><a href="#数组类型转换：-astype" class="headerlink" title="数组类型转换：.astype()"></a>数组类型转换：.astype()</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ar1 = np.arange(<span class="number">10</span>,dtype=float)</span><br><span class="line">print(ar1,ar1.dtype)</span><br><span class="line">print(<span class="string">'-----'</span>)</span><br><span class="line"><span class="comment"># 可以在参数位置设置数组类型</span></span><br><span class="line"></span><br><span class="line">ar2 = ar1.astype(np.int32)</span><br><span class="line">print(ar2,ar2.dtype)</span><br><span class="line">print(ar1,ar1.dtype)</span><br><span class="line"><span class="comment"># a.astype()：转换数组类型</span></span><br><span class="line"><span class="comment"># 注意：养成好习惯，数组类型用np.int32，而不是直接int32</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组堆叠"><a href="#数组堆叠" class="headerlink" title="数组堆叠"></a>数组堆叠</h4><p>numpy.hstack(tup)：水平（按列顺序）堆叠数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">5</span>)    <span class="comment"># a为一维数组，5个元素</span></span><br><span class="line">b = np.arange(<span class="number">5</span>,<span class="number">9</span>) <span class="comment"># b为一维数组,4个元素</span></span><br><span class="line">ar1 = np.hstack((a,b))  <span class="comment"># 注意:((a,b))，这里形状可以不一样</span></span><br><span class="line">print(a,a.shape)</span><br><span class="line">print(b,b.shape)</span><br><span class="line">print(ar1,ar1.shape)</span><br><span class="line">a = np.array([[<span class="number">1</span>],[<span class="number">2</span>],[<span class="number">3</span>]])   <span class="comment"># a为二维数组，3行1列</span></span><br><span class="line">b = np.array([[<span class="string">'a'</span>],[<span class="string">'b'</span>],[<span class="string">'c'</span>]])  <span class="comment"># b为二维数组，3行1列</span></span><br><span class="line">ar2 = np.hstack((a,b))  <span class="comment"># 注意:((a,b))，这里形状必须一样</span></span><br><span class="line">print(a,a.shape)</span><br><span class="line">print(b,b.shape)</span><br><span class="line">print(ar2,ar2.shape)</span><br></pre></td></tr></table></figure>
+
+<p>numpy.vstack(tup)：垂直（按列顺序）堆叠数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">5</span>)    </span><br><span class="line">b = np.arange(<span class="number">5</span>,<span class="number">10</span>)</span><br><span class="line">ar1 = np.vstack((a,b))</span><br><span class="line">print(a,a.shape)</span><br><span class="line">print(b,b.shape)</span><br><span class="line">print(ar1,ar1.shape)</span><br><span class="line">a = np.array([[<span class="number">1</span>],[<span class="number">2</span>],[<span class="number">3</span>]])   </span><br><span class="line">b = np.array([[<span class="string">'a'</span>],[<span class="string">'b'</span>],[<span class="string">'c'</span>],[<span class="string">'d'</span>]])   </span><br><span class="line">ar2 = np.vstack((a,b))  <span class="comment"># 这里形状可以不一样</span></span><br><span class="line">print(a,a.shape)</span><br><span class="line">print(b,b.shape)</span><br><span class="line">print(ar2,ar2.shape)</span><br></pre></td></tr></table></figure>
+
+<p>numpy.stack(arrays, axis=0)：沿着新轴连接数组的序列，形状必须一样！<br>重点解释axis参数的意思，假设两个数组[1 2 3]和[4 5 6]，shape均为(3,0)<br>axis=0：[[1 2 3] [4 5 6]]，shape为(2,3)<br>axis=1：[[1 4] [2 5] [3 6]]，shape为(3,2)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">5</span>)    </span><br><span class="line">b = np.arange(<span class="number">5</span>,<span class="number">10</span>)</span><br><span class="line">ar1 = np.stack((a,b))</span><br><span class="line">ar2 = np.stack((a,b),axis = <span class="number">1</span>)</span><br><span class="line">print(a,a.shape)</span><br><span class="line">print(b,b.shape)</span><br><span class="line">print(ar1,ar1.shape)</span><br><span class="line">print(ar2,ar2.shape)</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组拆分"><a href="#数组拆分" class="headerlink" title="数组拆分"></a>数组拆分</h4><p>numpy.hsplit(ary, indices_or_sections)：将数组水平（逐列）拆分为多个子数组 → 按列拆分<br>输出结果为列表，列表中元素为数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">16</span>).reshape(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">ar1 = np.hsplit(ar,<span class="number">2</span>)</span><br><span class="line">print(ar)</span><br><span class="line">print(ar1,type(ar1))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span>]]</span><br><span class="line">[array([[ <span class="number">0</span>,  <span class="number">1</span>],</span><br><span class="line">       [ <span class="number">4</span>,  <span class="number">5</span>],</span><br><span class="line">       [ <span class="number">8</span>,  <span class="number">9</span>],</span><br><span class="line">       [<span class="number">12</span>, <span class="number">13</span>]]), array([[ <span class="number">2</span>,  <span class="number">3</span>],</span><br><span class="line">       [ <span class="number">6</span>,  <span class="number">7</span>],</span><br><span class="line">       [<span class="number">10</span>, <span class="number">11</span>],</span><br><span class="line">       [<span class="number">14</span>, <span class="number">15</span>]])]</span><br></pre></td></tr></table></figure>
+
+<p>numpy.vsplit(ary, indices_or_sections)：:将数组垂直（行方向）拆分为多个子数组 → 按行拆</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ar2 = np.vsplit(ar,<span class="number">4</span>)</span><br><span class="line">print(ar2,type(ar2))</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组简单运算"><a href="#数组简单运算" class="headerlink" title="数组简单运算"></a>数组简单运算</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">6</span>).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(ar + <span class="number">10</span>)   <span class="comment"># 加法</span></span><br><span class="line">print(ar * <span class="number">2</span>)   <span class="comment"># 乘法</span></span><br><span class="line">print(<span class="number">1</span> / (ar+<span class="number">1</span>))  <span class="comment"># 除法</span></span><br><span class="line">print(ar ** <span class="number">0.5</span>)  <span class="comment"># 幂</span></span><br><span class="line"><span class="comment"># 与标量的运算</span></span><br><span class="line"></span><br><span class="line">print(ar.mean())  <span class="comment"># 求平均值</span></span><br><span class="line">print(ar.max())  <span class="comment"># 求最大值</span></span><br><span class="line">print(ar.min())  <span class="comment"># 求最小值</span></span><br><span class="line">print(ar.std())  <span class="comment"># 求标准差</span></span><br><span class="line">print(ar.var())  <span class="comment"># 求方差</span></span><br><span class="line">print(ar.sum(), np.sum(ar,axis = <span class="number">0</span>))  <span class="comment"># 求和，np.sum() → axis为0，按列求和；axis为1，按行求和</span></span><br><span class="line">print(np.sort(np.array([<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>])))  <span class="comment"># 排序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="numpy索引及切片"><a href="#numpy索引及切片" class="headerlink" title="numpy索引及切片"></a>numpy索引及切片</h3><p>核心：基本索引及切片、布尔型索引及切片</p>
+<h4 id="基本索引及切片"><a href="#基本索引及切片" class="headerlink" title="基本索引及切片"></a>基本索引及切片</h4><h5 id="一维数组索引及切片"><a href="#一维数组索引及切片" class="headerlink" title="一维数组索引及切片"></a>一维数组索引及切片</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">20</span>)</span><br><span class="line">print(ar)</span><br><span class="line">print(ar[<span class="number">4</span>])</span><br><span class="line">print(ar[<span class="number">3</span>:<span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+
+<h5 id="二维数组及切片"><a href="#二维数组及切片" class="headerlink" title="二维数组及切片"></a>二维数组及切片</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">16</span>).reshape(<span class="number">4</span>,<span class="number">4</span>)</span><br><span class="line">print(ar, <span class="string">'数组轴数为%i'</span> %ar.ndim)   <span class="comment"># 4*4的数组</span></span><br><span class="line">print(ar[<span class="number">2</span>],  <span class="string">'数组轴数为%i'</span> %ar[<span class="number">2</span>].ndim)  <span class="comment"># 切片为下一维度的一个元素，所以是一维数组</span></span><br><span class="line">print(ar[<span class="number">2</span>][<span class="number">1</span>]) <span class="comment"># 二次索引，得到一维数组中的一个值</span></span><br><span class="line">print(ar[<span class="number">1</span>:<span class="number">3</span>],  <span class="string">'数组轴数为%i'</span> %ar[<span class="number">1</span>:<span class="number">3</span>].ndim)  <span class="comment"># 切片为两个一维数组组成的二维数组</span></span><br><span class="line">print(ar[<span class="number">2</span>,<span class="number">2</span>])  <span class="comment"># 切片数组中的第三行第三列 → 10</span></span><br><span class="line">print(ar[:<span class="number">2</span>,<span class="number">1</span>:])  <span class="comment"># 切片数组中的1,2行、2,3,4列 → 二维数组</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="三维数组及切片"><a href="#三维数组及切片" class="headerlink" title="三维数组及切片"></a>三维数组及切片</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">8</span>).reshape(<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">print(ar, <span class="string">'数组轴数为%i'</span> %ar.ndim)   <span class="comment"># 2*2*2的数组</span></span><br><span class="line">print(ar[<span class="number">0</span>],  <span class="string">'数组轴数为%i'</span> %ar[<span class="number">0</span>].ndim)  <span class="comment"># 三维数组的下一个维度的第一个元素 → 一个二维数组</span></span><br><span class="line">print(ar[<span class="number">0</span>][<span class="number">0</span>],  <span class="string">'数组轴数为%i'</span> %ar[<span class="number">0</span>][<span class="number">0</span>].ndim)  <span class="comment"># 三维数组的下一个维度的第一个元素下的第一个元素 → 一个一维数组</span></span><br><span class="line">print(ar[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>],  <span class="string">'数组轴数为%i'</span> %ar[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>].ndim)</span><br></pre></td></tr></table></figure>
+
+<h3 id="布尔型索引及切片"><a href="#布尔型索引及切片" class="headerlink" title="布尔型索引及切片"></a>布尔型索引及切片</h3><p>布尔型索引：以布尔型的矩阵去做筛选</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">i = np.array([<span class="literal">True</span>,<span class="literal">False</span>,<span class="literal">True</span>])</span><br><span class="line">j = np.array([<span class="literal">True</span>,<span class="literal">True</span>,<span class="literal">False</span>,<span class="literal">False</span>])</span><br><span class="line">print(ar)</span><br><span class="line">print(i)</span><br><span class="line">print(j)</span><br><span class="line">print(ar[i,:])  <span class="comment"># 在第一维度做判断，只保留True，这里第一维度就是行，ar[i,:] = ar[i]（简单书写格式）</span></span><br><span class="line">print(ar[:,j])  <span class="comment"># 在第二维度做判断，这里如果ar[:,i]会有警告，因为i是3个元素，而ar在列上有4个</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = ar &gt; <span class="number">5</span></span><br><span class="line">print(m)  <span class="comment"># 这里m是一个判断矩阵</span></span><br><span class="line">print(ar[m])  <span class="comment"># 用m判断矩阵去筛选ar数组中&gt;5的元素 → 重点！后面的pandas判断方式原理就来自此处</span></span><br></pre></td></tr></table></figure>
+
+<p>数组索引及切片的值更改、复制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">10</span>)</span><br><span class="line">print(ar)</span><br><span class="line">ar[<span class="number">5</span>] = <span class="number">100</span></span><br><span class="line">ar[<span class="number">7</span>:<span class="number">9</span>] = <span class="number">200</span></span><br><span class="line">print(ar)</span><br><span class="line"><span class="comment"># 一个标量赋值给一个索引/切片时，会自动改变/传播原始数组</span></span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ar = np.arange(<span class="number">10</span>)</span><br><span class="line">b = ar.copy()</span><br><span class="line">b[<span class="number">7</span>:<span class="number">9</span>] = <span class="number">200</span></span><br><span class="line">print(ar)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="numpy随机数"><a href="#numpy随机数" class="headerlink" title="numpy随机数"></a>numpy随机数</h3><p>numpy.random包含多种概率分布的随机样本，是数据分析辅助的重点工具之一</p>
+<p>随机数生成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">samples = np.random.normal(size=(<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line">print(samples)</span><br><span class="line"><span class="comment"># 生成一个标准正太分布的4*4样本值</span></span><br></pre></td></tr></table></figure>
+
+<p>numpy.random.rand(d0, d1, …, dn)：生成一个[0,1)之间的随机浮点数或N维浮点数组 —— 均匀分布</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = np.random.rand()</span><br><span class="line">print(a,type(a))  <span class="comment"># 生成一个随机浮点数</span></span><br><span class="line"></span><br><span class="line">b = np.random.rand(<span class="number">4</span>)</span><br><span class="line">print(b,type(b))  <span class="comment"># 生成形状为4的一维数组</span></span><br><span class="line"></span><br><span class="line">c = np.random.rand(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(c,type(c))  <span class="comment"># 生成形状为2*3的二维数组，注意这里不是((2,3))</span></span><br><span class="line"><span class="comment"># 生成1000个均匀分布的样本值</span></span><br><span class="line">samples1 = np.random.rand(<span class="number">1000</span>)</span><br><span class="line">samples2 = np.random.rand(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>numpy.random.randint(low, high=None, size=None, dtype=’l’)：生成一个整数或N维整数数组<br>若high不为None时，取[low,high)之间随机整数，否则取值[0,low)之间随机整数，且high必须大于low<br>dtype参数：只能是int类型 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">print(np.random.randint(<span class="number">2</span>))</span><br><span class="line"><span class="comment"># low=2：生成1个[0,2)之间随机整数  </span></span><br><span class="line"></span><br><span class="line">print(np.random.randint(<span class="number">2</span>,size=<span class="number">5</span>))</span><br><span class="line"><span class="comment"># low=2,size=5 ：生成5个[0,2)之间随机整数</span></span><br><span class="line"></span><br><span class="line">print(np.random.randint(<span class="number">2</span>,<span class="number">6</span>,size=<span class="number">5</span>))</span><br><span class="line"><span class="comment"># low=2,high=6,size=5：生成5个[2,6)之间随机整数  </span></span><br><span class="line"></span><br><span class="line">print(np.random.randint(<span class="number">2</span>,size=(<span class="number">2</span>,<span class="number">3</span>)))</span><br><span class="line"><span class="comment"># low=2,size=(2,3)：生成一个2x3整数数组,取数范围：[0,2)随机整数 </span></span><br><span class="line"></span><br><span class="line">print(np.random.randint(<span class="number">2</span>,<span class="number">6</span>,(<span class="number">2</span>,<span class="number">3</span>)))</span><br><span class="line"><span class="comment"># low=2,high=6,size=(2,3)：生成一个2*3整数数组,取值范围：[2,6)随机整数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="存储数组数据-npy文件"><a href="#存储数组数据-npy文件" class="headerlink" title="存储数组数据.npy文件"></a>存储数组数据.npy文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chdir(<span class="string">'C:/Users/Hjx/Desktop/'</span>) <span class="comment"># 路径</span></span><br><span class="line"></span><br><span class="line">ar = np.random.rand(<span class="number">5</span>,<span class="number">5</span>)</span><br><span class="line">print(ar)</span><br><span class="line">np.save(<span class="string">'arraydata.npy'</span>, ar)</span><br><span class="line"><span class="comment"># 也可以直接 np.save('C:/Users/Hjx/Desktop/arraydata.npy', ar)</span></span><br></pre></td></tr></table></figure>
+
+<p>读取.npy文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ar_load =np.load(<span class="string">'arraydata.npy'</span>)</span><br><span class="line">print(ar_load)</span><br><span class="line"><span class="comment"># 也可以直接 np.load('C:/Users/Hjx/Desktop/arraydata.npy')</span></span><br></pre></td></tr></table></figure>
+
+<p>存储、读取文本文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ar = np.random.rand(<span class="number">5</span>,<span class="number">5</span>)</span><br><span class="line">np.savetxt(<span class="string">'array.txt'</span>,ar, delimiter=<span class="string">','</span>)</span><br><span class="line"><span class="comment"># np.savetxt(fname, X, fmt='%.18e', delimiter=' ', newline='\n', header='', footer='', comments='# ')：存储为文本txt文件</span></span><br><span class="line"></span><br><span class="line">ar_loadtxt = np.loadtxt(<span class="string">'array.txt'</span>, delimiter=<span class="string">','</span>)</span><br><span class="line">print(ar_loadtxt)</span><br><span class="line"><span class="comment"># 也可以直接 np.loadtxt('C:/Users/Hjx/Desktop/array.txt')</span></span><br></pre></td></tr></table></figure>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎指出任何有错误或不够清晰的表达。可以邮件至gxnucgb@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>numpy</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-09-19, 18:17:41</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-22, 14:15:57</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/19/numpy的属性方法/" title="numpy">https://github.com/gxnucgb/gxnucgb.github.io/2019/09/19/numpy的属性方法/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 陈桂彬</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#if','#random','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#模块','#单例','#异常','#包','#Linux','#MySQL','#sqlite3','#numpy',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url([object Object]);
+    }
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/gxnucgb">github</a>
+    
+</div>
+
+
+</html>

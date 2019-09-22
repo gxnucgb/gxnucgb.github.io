@@ -125,11 +125,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(88)</small></div></li>
+    <li><div class="all active">全部文章<small>(90)</small></div></li>
     
         
             
-            <li><div data-rel="python">python<small>(51)</small></div>
+            <li><div data-rel="python">python<small>(52)</small></div>
                 
             </li>
             
@@ -159,6 +159,14 @@
             
         
     
+        
+            
+            <li><div data-rel="numpy">numpy<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -171,8 +179,8 @@
     </div>
     <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="88">
-<input type="hidden" id="yelog_site_word_count" value="32.4k">
+<input type="hidden" id="yelog_site_posts_number" value="90">
+<input type="hidden" id="yelog_site_word_count" value="35.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -208,19 +216,19 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">random</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">if</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">列表</a>
+        <a href="javascript:" class="color2">random</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color1">while</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">列表</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -256,15 +264,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">包</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color3">单例</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">异常</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">包</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -279,6 +287,10 @@
         <a href="javascript:" class="color3">sqlite3</a>
     </li>
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">numpy</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -291,6 +303,22 @@
            data-author="" >
             <span class="post-title" title="python注释与代码风格">python注释与代码风格</span>
             <span class="post-date" title="2019-07-28 16:52:15">2019/07/28</span>
+        </a>
+        
+        <a  class="numpy "
+           href="/2019/09/19/numpy的属性方法/"
+           data-tag="numpy"
+           data-author="" >
+            <span class="post-title" title="numpy">numpy</span>
+            <span class="post-date" title="2019-09-19 18:17:41">2019/09/19</span>
+        </a>
+        
+        <a  class="python "
+           href="/2019/08/21/53-类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53.类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法">53.类对象，实例对象，类方法，实例方法，类属性，实例属性，静态方法</span>
+            <span class="post-date" title="2019-08-21 21:46:32">2019/08/21</span>
         </a>
         
         <a  class="python "
@@ -521,7 +549,7 @@
            href="/2019/08/06/40-多继承/"
            data-tag="继承"
            data-author="" >
-            <span class="post-title" title="40.多继承">40.多继承</span>
+            <span class="post-title" title="40.多继承，super">40.多继承，super</span>
             <span class="post-date" title="2019-08-06 08:08:08">2019/08/06</span>
         </a>
         
@@ -1025,12 +1053,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-04 15:40:37'>2019-08-04 14:17</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-21 15:10:16'>2019-08-04 14:17</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:711</span>
+        <span>字数:851</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1064,7 +1092,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="函数参数和返回值作用"><a href="#函数参数和返回值作用" class="headerlink" title="函数参数和返回值作用"></a>函数参数和返回值作用</h3><p>函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式<br>1，无参数，无返回值<br>2，无参数，有返回值<br>3，有参数，有返回值<br>4，有参数，有返回值</p>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">(a, b, *args, **kwargs)</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">	print(b)</span><br><span class="line">	print(args)</span><br><span class="line">	print(kwargs)</span><br><span class="line">输出：</span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">22</span></span><br><span class="line">(<span class="number">33</span>, <span class="number">44</span>)</span><br><span class="line">&#123;<span class="string">'name'</span>: <span class="string">'laowang'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(a, b, *args, **kwargs)</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">	print(b)</span><br><span class="line">	print(args)</span><br><span class="line">	print(kwargs)</span><br><span class="line">	test2(a, b, args, kwargs)	<span class="comment"># 相当于test2(11, 22, (33, 44), &#123; "name":"laowang", "age":18&#125;</span></span><br><span class="line">输出：</span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">22</span></span><br><span class="line">((<span class="number">33</span>, <span class="number">44</span>), &#123;<span class="string">'name'</span>: <span class="string">'laowang'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;)</span><br><span class="line">&#123;&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># test2(a, b, *args, kwargs)   # 相当于test2(11, 22, 33, 44, &#123;"name":"laowang", "age":18&#125;</span></span><br><span class="line">输出：</span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">22</span></span><br><span class="line">(<span class="number">33</span>, <span class="number">44</span>, &#123;<span class="string">'name'</span>: <span class="string">'laowang'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;)</span><br><span class="line">&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment"># test2(a, b, *args, **kwargs)   # 相当于test2(11, 22, 33, 44, name="laowang", age=18&#125;</span></span><br><span class="line">输出：</span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">22</span></span><br><span class="line">(<span class="number">33</span>, <span class="number">44</span>)</span><br><span class="line">&#123;<span class="string">'name'</span>: <span class="string">'laowang'</span>, <span class="string">'age'</span>: <span class="string">'18'</span>&#125;	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test1(<span class="number">11</span>, <span class="number">22</span>)</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">22</span></span><br><span class="line">()</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数参数和返回值作用"><a href="#函数参数和返回值作用" class="headerlink" title="函数参数和返回值作用"></a>函数参数和返回值作用</h3><p>函数根据有没有参数一级有没有返回值，可以相互组合，一共有4种组合形式<br>1，无参数，无返回值<br>2，无参数，有返回值<br>3，有参数，有返回值<br>4，有参数，有返回值</p>
 <p>函数：封装独立功能的代码，在需要时通过函数名被调用，可以直接访问全局变量<br>参数：外界希望在函数内部处理的数据<br>返回值：向外界报告函数的执行结果</p>
 <p><strong>定义函数时，是否接收参数，或者是否返回结果，是根据实际功能需求来决定的</strong><br>1，如果函数内部处理的数据不确定，就可以将外界的数据以参数传递到函数内部<br>2，如果希望一个函数执行完成后，向外界汇报执行结果，就可以增加函数的返回值</p>
 <h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>元组可以包含多个数据，因此可以使用元组让函数一次返回多个值<br>如果函数返回的类型是元组，小括号可以省略</p>
@@ -1106,10 +1136,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>27.函数参数和返回值作用</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">711</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">851</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="陈桂彬">陈桂彬</a></p>
     <p><span class="copy-title">发布时间:</span>2019-08-04, 14:17:52</p>
-    <p><span class="copy-title">最后更新:</span>2019-08-04, 15:40:37</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-21, 15:10:16</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/04/27-函数参数和返回值作用/" title="27.函数参数和返回值作用">https://github.com/gxnucgb/gxnucgb.github.io/2019/08/04/27-函数参数和返回值作用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -1171,7 +1201,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#random','#if','#列表','#while','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#模块','#包','#单例','#异常','#Linux','#MySQL','#sqlite3',],
+            'data': ['#if','#random','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#模块','#单例','#异常','#包','#Linux','#MySQL','#sqlite3','#numpy',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
