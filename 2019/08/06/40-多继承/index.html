@@ -6,17 +6,18 @@
   <meta name="keywords" content=" 继承 ">
   <meta name="description" content="40.多继承，super | Welcome to my blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+<meta name="description" content="numpy基础数据结构numpy数组是一个多维数组对象，称为ndarray。其有两部分组成：  实际的数据 描述这些数据的元数据  多维数据ndarray在使用这个属性方法之前，需要先导入numpy包import numpy as np 12345678ar = np.array([1, 2, 3, 4])print(ar)          # 输出数组，注意数组的格式：中括号，元素之间没有逗号">
+<meta name="keywords" content="numpy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找">
-<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/08/17/二分查找/index.html">
+<meta property="og:title" content="numpy">
+<meta property="og:url" content="https://github.com/gxnucgb/gxnucgb.github.io/2019/09/19/numpy的属性方法/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+<meta property="og:description" content="numpy基础数据结构numpy数组是一个多维数组对象，称为ndarray。其有两部分组成：  实际的数据 描述这些数据的元数据  多维数据ndarray在使用这个属性方法之前，需要先导入numpy包import numpy as np 12345678ar = np.array([1, 2, 3, 4])print(ar)          # 输出数组，注意数组的格式：中括号，元素之间没有逗号">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-17T04:06:24.331Z">
+<meta property="og:updated_time" content="2019-09-22T06:21:37.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二分查找">
-<meta name="twitter:description" content="二分查找二分查找又称折半查找，有点事比较次数少，查找速度快，平均性能好；其缺点是要求待查表尾有序表，且插入删除困难。因此，折半查找哦方法适用于不经常变动而查找频繁的有序列表。 首先，假设表中是按升序排列，将表中 间位置的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表非常前后两个字表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一字表。重">
+<meta name="twitter:title" content="numpy">
+<meta name="twitter:description" content="numpy基础数据结构numpy数组是一个多维数组对象，称为ndarray。其有两部分组成：  实际的数据 描述这些数据的元数据  多维数据ndarray在使用这个属性方法之前，需要先导入numpy包import numpy as np 12345678ar = np.array([1, 2, 3, 4])print(ar)          # 输出数组，注意数组的格式：中括号，元素之间没有逗号">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -161,7 +162,7 @@
     
         
             
-            <li><div data-rel="numpy">numpy<small>(1)</small></div>
+            <li><div data-rel="数据分析">数据分析<small>(1)</small></div>
                 
             </li>
             
@@ -260,7 +261,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">模块</a>
+        <a href="javascript:" class="color3">异常</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">包</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -268,11 +273,7 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">异常</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">包</a>
+        <a href="javascript:" class="color3">模块</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -305,7 +306,7 @@
             <span class="post-date" title="2019-07-28 16:52:15">2019/07/28</span>
         </a>
         
-        <a  class="numpy "
+        <a  class="数据分析 "
            href="/2019/09/19/numpy的属性方法/"
            data-tag="numpy"
            data-author="" >
@@ -1185,7 +1186,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#if','#random','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#模块','#单例','#异常','#包','#Linux','#MySQL','#sqlite3','#numpy',],
+            'data': ['#if','#random','#while','#列表','#元组','#字典','#字符串','#公共方法','#函数','#面向对象','#继承','#异常','#包','#单例','#模块','#Linux','#MySQL','#sqlite3','#numpy',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
